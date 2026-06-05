@@ -1,0 +1,2098 @@
+[
+  {
+    "completed_at_utc": "2026-06-05T07:35:45.139738+00:00",
+    "events": [
+      {
+        "data": {},
+        "event_type": "run.start",
+        "framework": "langchain",
+        "message": "Started LangChain baseline workflow.",
+        "timestamp_utc": "2026-06-05T07:35:45.132842+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "corpus.loaded",
+        "framework": "langchain",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T07:35:45.137373+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Access Control"
+        },
+        "event_type": "question.classified",
+        "framework": "langchain",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T07:35:45.137408+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-f2cd0794",
+            "doc-a1e9a5a7",
+            "doc-3936ecce",
+            "doc-982b587d"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "langchain",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T07:35:45.139557+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77,
+          "gaps": [
+            "Access-control evidence contains missing, absent, or open items."
+          ]
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "langchain",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T07:35:45.139647+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "langchain",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T07:35:45.139661+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77
+        },
+        "event_type": "run.complete",
+        "framework": "langchain",
+        "message": "Completed LangChain baseline workflow.",
+        "timestamp_utc": "2026-06-05T07:35:45.139792+00:00"
+      }
+    ],
+    "framework": "langchain",
+    "question": "Is the evidence sufficient for access control?",
+    "report": {
+      "answer": "The retrieved mock evidence supports Access Control, but it is not fully sufficient. The baseline found 1 gap(s), so the safe conclusion is to require human review.",
+      "confidence": 0.77,
+      "control_area": "Access Control",
+      "evidence": [
+        {
+          "evidence_id": "doc-f2cd0794",
+          "path": "evidence/privileged_access_review.md",
+          "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-a1e9a5a7",
+          "path": "evidence/mfa_rollout_evidence.md",
+          "quote": "Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control.",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-3936ecce",
+          "path": "evidence/terminated_user_access_removal.md",
+          "quote": "# Terminated User Access Removal Evidence\n\n**Evidence ID:** EV-ACCESS-TERM-001  \n**Control area:** Access Control  \n**Mock event date:** 2026-05-10  \n**Evidence source:** Mock HR termination notification and IAM action s",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-982b587d",
+          "path": "tickets/jira_access_review_ticket.md",
+          "quote": "# Mock Jira Ticket: Access Review Follow-Up\n\n**Ticket ID:** SEC-2026-0412  \n**Control area:** Access Control  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nFollow up on Q1 privileged access review exceptions.\n\n## ",
+          "relevance_score": 1.0
+        }
+      ],
+      "evidence_ids": [
+        "doc-f2cd0794",
+        "doc-a1e9a5a7",
+        "doc-3936ecce",
+        "doc-982b587d"
+      ],
+      "evidence_summary": "# Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control. # Terminated User Access Removal Evidence **Evidence ID:** EV-ACCESS-TERM-001 **Control area:** Access Control **Mock event date:** 2026-05-10 **Evidence source:** Mock HR termination notification and IAM action summary **Dataset status:** Mock evidence only ## Summary A terminat... # Mock Jira Ticket: Access Review Follow-Up **Ticket ID:** SEC-2026-0412 **Control area:** Access Control **Dataset status:** Mock evidence only ## Summary Follow up on Q1 privileged access review exceptions. ## Descriptio",
+      "failure_modes": [],
+      "framework": "langchain",
+      "gaps": [
+        "Access-control evidence contains missing, absent, or open items."
+      ],
+      "human_review_required": true,
+      "question": "Is the evidence sufficient for access control?",
+      "recommended_next_action": "Request missing evidence and reviewer approval before declaring sufficiency.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "c9123203-2eb6-405d-956b-3d44e58430bb",
+    "started_at_utc": "2026-06-05T07:35:45.132814+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T07:35:45.146021+00:00",
+    "events": [
+      {
+        "data": {},
+        "event_type": "run.start",
+        "framework": "langchain",
+        "message": "Started LangChain baseline workflow.",
+        "timestamp_utc": "2026-06-05T07:35:45.140002+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "corpus.loaded",
+        "framework": "langchain",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T07:35:45.143242+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Unknown"
+        },
+        "event_type": "question.classified",
+        "framework": "langchain",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T07:35:45.143290+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-a90617eb",
+            "doc-8ec9a00b",
+            "doc-e75cfacc",
+            "doc-f2cd0794"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "langchain",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T07:35:45.145867+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gaps": []
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "langchain",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T07:35:45.145939+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "langchain",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T07:35:45.145953+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85
+        },
+        "event_type": "run.complete",
+        "framework": "langchain",
+        "message": "Completed LangChain baseline workflow.",
+        "timestamp_utc": "2026-06-05T07:35:45.146037+00:00"
+      }
+    ],
+    "framework": "langchain",
+    "question": "Which SOC 2 control area does this evidence support?",
+    "report": {
+      "answer": "The retrieved mock evidence supports Unknown with no explicit gap detected by the baseline. A human reviewer should still confirm before using this in an audit narrative.",
+      "confidence": 0.85,
+      "control_area": "Unknown",
+      "evidence": [
+        {
+          "evidence_id": "doc-a90617eb",
+          "path": "policies/access_control_policy.md",
+          "quote": "Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status.\n\n## Boundary\n\nThis policy is mock readiness evidence for a lab. It does not prove produc",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-8ec9a00b",
+          "path": "README.md",
+          "quote": "# Mock Evidence Dataset\n\nMock SOC 2-style evidence will be added in Phase 2.\n\nThis directory must not contain real customer evidence, production logs, credentials, secrets, or private audit materials.",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-e75cfacc",
+          "path": "policies/incident_response_policy.md",
+          "quote": "# Incident Response Policy\n\n**Document ID:** POL-IR-001  \n**Control area:** Incident Response  \n**Mock owner:** Security Operations  \n**Mock effective date:** 2026-02-01  \n**Dataset status:** Mock evidence only\n\n## Purpo",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-f2cd0794",
+          "path": "evidence/privileged_access_review.md",
+          "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+          "relevance_score": 1.0
+        }
+      ],
+      "evidence_ids": [
+        "doc-a90617eb",
+        "doc-8ec9a00b",
+        "doc-e75cfacc",
+        "doc-f2cd0794"
+      ],
+      "evidence_summary": "Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status. ## Boundary This policy is mock readiness evidence for a lab. It does not prove production operating effectiveness or SOC 2 certification. # Mock Evidence Dataset Mock SOC 2-style evidence will be added in Phase 2. This directory must not contain real customer evidence, production logs, credentials, secrets, or private audit materials. # Incident Response Policy **Document ID:** POL-IR-001 **Control area:** Incident Response **Mock owner:** Security Operations **Mock effective date:** 2026-02-01 **Dataset status:** Mock evidence only ## Purpose This mock policy defines incident-response expectations for the evi... # Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:*",
+      "failure_modes": [],
+      "framework": "langchain",
+      "gaps": [],
+      "human_review_required": false,
+      "question": "Which SOC 2 control area does this evidence support?",
+      "recommended_next_action": "Have a reviewer confirm evidence sufficiency and retain the trace.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "7ea2d95e-12bb-422a-943e-75d146521453",
+    "started_at_utc": "2026-06-05T07:35:45.139991+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T07:35:45.153490+00:00",
+    "events": [
+      {
+        "data": {},
+        "event_type": "run.start",
+        "framework": "langchain",
+        "message": "Started LangChain baseline workflow.",
+        "timestamp_utc": "2026-06-05T07:35:45.146217+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "corpus.loaded",
+        "framework": "langchain",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T07:35:45.149204+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Unknown"
+        },
+        "event_type": "question.classified",
+        "framework": "langchain",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T07:35:45.149249+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-f2cd0794",
+            "doc-3936ecce",
+            "doc-a90617eb",
+            "doc-a1e9a5a7"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "langchain",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T07:35:45.153273+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gaps": []
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "langchain",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T07:35:45.153387+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "langchain",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T07:35:45.153408+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85
+        },
+        "event_type": "run.complete",
+        "framework": "langchain",
+        "message": "Completed LangChain baseline workflow.",
+        "timestamp_utc": "2026-06-05T07:35:45.153516+00:00"
+      }
+    ],
+    "framework": "langchain",
+    "question": "What evidence is missing?",
+    "report": {
+      "answer": "The retrieved mock evidence supports Unknown with no explicit gap detected by the baseline. A human reviewer should still confirm before using this in an audit narrative.",
+      "confidence": 0.85,
+      "control_area": "Unknown",
+      "evidence": [
+        {
+          "evidence_id": "doc-f2cd0794",
+          "path": "evidence/privileged_access_review.md",
+          "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-3936ecce",
+          "path": "evidence/terminated_user_access_removal.md",
+          "quote": "# Terminated User Access Removal Evidence\n\n**Evidence ID:** EV-ACCESS-TERM-001  \n**Control area:** Access Control  \n**Mock event date:** 2026-05-10  \n**Evidence source:** Mock HR termination notification and IAM action s",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-a90617eb",
+          "path": "policies/access_control_policy.md",
+          "quote": "Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status.\n\n## Boundary\n\nThis policy is mock readiness evidence for a lab. It does not prove produc",
+          "relevance_score": 0.8006
+        },
+        {
+          "evidence_id": "doc-a1e9a5a7",
+          "path": "evidence/mfa_rollout_evidence.md",
+          "quote": "# MFA Rollout Evidence\n\n**Evidence ID:** EV-ACCESS-MFA-001  \n**Control area:** Access Control  \n**Mock capture date:** 2026-05-20  \n**Evidence source:** Mock identity-provider export summary  \n**Dataset status:** Mock ev",
+          "relevance_score": 0.7396
+        }
+      ],
+      "evidence_ids": [
+        "doc-f2cd0794",
+        "doc-3936ecce",
+        "doc-a90617eb",
+        "doc-a1e9a5a7"
+      ],
+      "evidence_summary": "# Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... # Terminated User Access Removal Evidence **Evidence ID:** EV-ACCESS-TERM-001 **Control area:** Access Control **Mock event date:** 2026-05-10 **Evidence source:** Mock HR termination notification and IAM action summary **Dataset status:** Mock evidence only ## Summary A terminat... Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status. ## Boundary This policy is mock readiness evidence for a lab. It does not prove production operating effectiveness or SOC 2 certification. # MFA Rollout Evidence **Evidence ID:** EV-ACCESS-MFA-001 **C",
+      "failure_modes": [],
+      "framework": "langchain",
+      "gaps": [],
+      "human_review_required": false,
+      "question": "What evidence is missing?",
+      "recommended_next_action": "Have a reviewer confirm evidence sufficiency and retain the trace.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 3,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "93bf03ef-b347-4146-bb64-53ffe8e5bced",
+    "started_at_utc": "2026-06-05T07:35:45.146208+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 3,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T07:35:45.163321+00:00",
+    "events": [
+      {
+        "data": {},
+        "event_type": "run.start",
+        "framework": "langchain",
+        "message": "Started LangChain baseline workflow.",
+        "timestamp_utc": "2026-06-05T07:35:45.153788+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "corpus.loaded",
+        "framework": "langchain",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T07:35:45.160730+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Change Management"
+        },
+        "event_type": "question.classified",
+        "framework": "langchain",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T07:35:45.160778+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-77fa58ed",
+            "doc-f2cd0794",
+            "doc-61e1c1bd",
+            "doc-fdfbdd11"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "langchain",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T07:35:45.163156+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.7666,
+          "gaps": [
+            "Secondary approval status remains ambiguous."
+          ]
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "langchain",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T07:35:45.163249+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "langchain",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T07:35:45.163263+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.7666
+        },
+        "event_type": "run.complete",
+        "framework": "langchain",
+        "message": "Completed LangChain baseline workflow.",
+        "timestamp_utc": "2026-06-05T07:35:45.163340+00:00"
+      }
+    ],
+    "framework": "langchain",
+    "question": "Does this require human reviewer approval?",
+    "report": {
+      "answer": "The retrieved mock evidence supports Change Management, but it is not fully sufficient. The baseline found 1 gap(s), so the safe conclusion is to require human review.",
+      "confidence": 0.7666,
+      "control_area": "Change Management",
+      "evidence": [
+        {
+          "evidence_id": "doc-77fa58ed",
+          "path": "tickets/change_approval_ticket.md",
+          "quote": "# Mock Change Ticket: CHG-2026-0518\n\n**Ticket ID:** CHG-2026-0518  \n**Control area:** Change Management  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nDeploy documentation and reporting metadata update to producti",
+          "relevance_score": 0.9901
+        },
+        {
+          "evidence_id": "doc-f2cd0794",
+          "path": "evidence/privileged_access_review.md",
+          "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+          "relevance_score": 0.7334
+        },
+        {
+          "evidence_id": "doc-61e1c1bd",
+          "path": "evidence/production_deploy_approval.md",
+          "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+          "relevance_score": 0.6682
+        },
+        {
+          "evidence_id": "doc-fdfbdd11",
+          "path": "policies/change_management_policy.md",
+          "quote": "# Change Management Policy\n\n**Document ID:** POL-CHANGE-001  \n**Control area:** Change Management  \n**Mock owner:** Engineering Governance  \n**Mock effective date:** 2026-01-20  \n**Dataset status:** Mock evidence only\n\n#",
+          "relevance_score": 0.5547
+        }
+      ],
+      "evidence_ids": [
+        "doc-77fa58ed",
+        "doc-f2cd0794",
+        "doc-61e1c1bd",
+        "doc-fdfbdd11"
+      ],
+      "evidence_summary": "# Mock Change Ticket: CHG-2026-0518 **Ticket ID:** CHG-2026-0518 **Control area:** Change Management **Dataset status:** Mock evidence only ## Summary Deploy documentation and reporting metadata update to production. ## Risk classification Low risk, pending final confirmation. ##... # Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... # Change Management Policy **Document ID:** POL-",
+      "failure_modes": [],
+      "framework": "langchain",
+      "gaps": [
+        "Secondary approval status remains ambiguous."
+      ],
+      "human_review_required": true,
+      "question": "Does this require human reviewer approval?",
+      "recommended_next_action": "Request missing evidence and reviewer approval before declaring sufficiency.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "e35982c0-6cd8-4995-b74f-4a6baaf2adcb",
+    "started_at_utc": "2026-06-05T07:35:45.153777+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T07:35:45.171355+00:00",
+    "events": [
+      {
+        "data": {},
+        "event_type": "run.start",
+        "framework": "langchain",
+        "message": "Started LangChain baseline workflow.",
+        "timestamp_utc": "2026-06-05T07:35:45.163585+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "corpus.loaded",
+        "framework": "langchain",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T07:35:45.167506+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Unknown"
+        },
+        "event_type": "question.classified",
+        "framework": "langchain",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T07:35:45.167549+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-a1e9a5a7",
+            "doc-61e1c1bd",
+            "doc-982b587d",
+            "doc-77fa58ed"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "langchain",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T07:35:45.171170+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.6294,
+          "gaps": []
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "langchain",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T07:35:45.171269+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "langchain",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T07:35:45.171286+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.6294
+        },
+        "event_type": "run.complete",
+        "framework": "langchain",
+        "message": "Completed LangChain baseline workflow.",
+        "timestamp_utc": "2026-06-05T07:35:45.171376+00:00"
+      }
+    ],
+    "framework": "langchain",
+    "question": "Generate an auditor-safe summary.",
+    "report": {
+      "answer": "The retrieved mock evidence supports Unknown with no explicit gap detected by the baseline. A human reviewer should still confirm before using this in an audit narrative.",
+      "confidence": 0.6294,
+      "control_area": "Unknown",
+      "evidence": [
+        {
+          "evidence_id": "doc-a1e9a5a7",
+          "path": "evidence/mfa_rollout_evidence.md",
+          "quote": "# MFA Rollout Evidence\n\n**Evidence ID:** EV-ACCESS-MFA-001  \n**Control area:** Access Control  \n**Mock capture date:** 2026-05-20  \n**Evidence source:** Mock identity-provider export summary  \n**Dataset status:** Mock ev",
+          "relevance_score": 0.3698
+        },
+        {
+          "evidence_id": "doc-61e1c1bd",
+          "path": "evidence/production_deploy_approval.md",
+          "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+          "relevance_score": 0.2673
+        },
+        {
+          "evidence_id": "doc-982b587d",
+          "path": "tickets/jira_access_review_ticket.md",
+          "quote": "# Mock Jira Ticket: Access Review Follow-Up\n\n**Ticket ID:** SEC-2026-0412  \n**Control area:** Access Control  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nFollow up on Q1 privileged access review exceptions.\n\n## ",
+          "relevance_score": 0.2132
+        },
+        {
+          "evidence_id": "doc-77fa58ed",
+          "path": "tickets/change_approval_ticket.md",
+          "quote": "# Mock Change Ticket: CHG-2026-0518\n\n**Ticket ID:** CHG-2026-0518  \n**Control area:** Change Management  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nDeploy documentation and reporting metadata update to producti",
+          "relevance_score": 0.198
+        }
+      ],
+      "evidence_ids": [
+        "doc-a1e9a5a7",
+        "doc-61e1c1bd",
+        "doc-982b587d",
+        "doc-77fa58ed"
+      ],
+      "evidence_summary": "# MFA Rollout Evidence **Evidence ID:** EV-ACCESS-MFA-001 **Control area:** Access Control **Mock capture date:** 2026-05-20 **Evidence source:** Mock identity-provider export summary **Dataset status:** Mock evidence only ## Summary The security team completed a mock MFA rollout... The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... # Mock Jira Ticket: Access Review Follow-Up **Ticket ID:** SEC-2026-0412 **Control area:** Access Control **Dataset status:** Mock evidence only ## Summary Follow up on Q1 privileged access review exceptions. ## Description The Q1 privileged access review found an exception for `... # Mock Change Ticket: CHG-2026-0518 **Ticket ID:",
+      "failure_modes": [],
+      "framework": "langchain",
+      "gaps": [],
+      "human_review_required": true,
+      "question": "Generate an auditor-safe summary.",
+      "recommended_next_action": "Have a reviewer confirm evidence sufficiency and retain the trace.",
+      "risk_level": "medium",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 3,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "e3ca9ab0-b4b6-49b4-b688-7568cfd610bd",
+    "started_at_utc": "2026-06-05T07:35:45.163565+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 3,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T07:35:45.178834+00:00",
+    "events": [
+      {
+        "data": {},
+        "event_type": "run.start",
+        "framework": "langchain",
+        "message": "Started LangChain baseline workflow.",
+        "timestamp_utc": "2026-06-05T07:35:45.171593+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "corpus.loaded",
+        "framework": "langchain",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T07:35:45.176121+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Unknown"
+        },
+        "event_type": "question.classified",
+        "framework": "langchain",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T07:35:45.176155+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-f2cd0794",
+            "doc-8ec9a00b",
+            "doc-e75cfacc",
+            "doc-a90617eb"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "langchain",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T07:35:45.178690+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.7567,
+          "gaps": []
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "langchain",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T07:35:45.178771+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "langchain",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T07:35:45.178784+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.7567
+        },
+        "event_type": "run.complete",
+        "framework": "langchain",
+        "message": "Completed LangChain baseline workflow.",
+        "timestamp_utc": "2026-06-05T07:35:45.178858+00:00"
+      }
+    ],
+    "framework": "langchain",
+    "question": "Identify conflicting or stale evidence.",
+    "report": {
+      "answer": "The retrieved mock evidence supports Unknown with no explicit gap detected by the baseline. A human reviewer should still confirm before using this in an audit narrative.",
+      "confidence": 0.7567,
+      "control_area": "Unknown",
+      "evidence": [
+        {
+          "evidence_id": "doc-f2cd0794",
+          "path": "evidence/privileged_access_review.md",
+          "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+          "relevance_score": 0.7334
+        },
+        {
+          "evidence_id": "doc-8ec9a00b",
+          "path": "README.md",
+          "quote": "# Mock Evidence Dataset\n\nMock SOC 2-style evidence will be added in Phase 2.\n\nThis directory must not contain real customer evidence, production logs, credentials, secrets, or private audit materials.",
+          "relevance_score": 0.7303
+        },
+        {
+          "evidence_id": "doc-e75cfacc",
+          "path": "policies/incident_response_policy.md",
+          "quote": "# Incident Response Policy\n\n**Document ID:** POL-IR-001  \n**Control area:** Incident Response  \n**Mock owner:** Security Operations  \n**Mock effective date:** 2026-02-01  \n**Dataset status:** Mock evidence only\n\n## Purpo",
+          "relevance_score": 0.6556
+        },
+        {
+          "evidence_id": "doc-a90617eb",
+          "path": "policies/access_control_policy.md",
+          "quote": "Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status.\n\n## Boundary\n\nThis policy is mock readiness evidence for a lab. It does not prove produc",
+          "relevance_score": 0.6405
+        }
+      ],
+      "evidence_ids": [
+        "doc-f2cd0794",
+        "doc-8ec9a00b",
+        "doc-e75cfacc",
+        "doc-a90617eb"
+      ],
+      "evidence_summary": "# Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... # Mock Evidence Dataset Mock SOC 2-style evidence will be added in Phase 2. This directory must not contain real customer evidence, production logs, credentials, secrets, or private audit materials. # Incident Response Policy **Document ID:** POL-IR-001 **Control area:** Incident Response **Mock owner:** Security Operations **Mock effective date:** 2026-02-01 **Dataset status:** Mock evidence only ## Purpose This mock policy defines incident-response expectations for the evi... Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status. #",
+      "failure_modes": [],
+      "framework": "langchain",
+      "gaps": [],
+      "human_review_required": false,
+      "question": "Identify conflicting or stale evidence.",
+      "recommended_next_action": "Have a reviewer confirm evidence sufficiency and retain the trace.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "7fe55825-a728-4bd8-9f67-22940117612f",
+    "started_at_utc": "2026-06-05T07:35:45.171584+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T07:35:45.190585+00:00",
+    "events": [
+      {
+        "data": {},
+        "event_type": "run.start",
+        "framework": "langchain",
+        "message": "Started LangChain baseline workflow.",
+        "timestamp_utc": "2026-06-05T07:35:45.179058+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "corpus.loaded",
+        "framework": "langchain",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T07:35:45.187801+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Unknown"
+        },
+        "event_type": "question.classified",
+        "framework": "langchain",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T07:35:45.187867+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-61e1c1bd",
+            "doc-a1e9a5a7",
+            "doc-f2cd0794",
+            "doc-a90617eb"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "langchain",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T07:35:45.190421+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gaps": []
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "langchain",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T07:35:45.190501+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "langchain",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T07:35:45.190514+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85
+        },
+        "event_type": "run.complete",
+        "framework": "langchain",
+        "message": "Completed LangChain baseline workflow.",
+        "timestamp_utc": "2026-06-05T07:35:45.190605+00:00"
+      }
+    ],
+    "framework": "langchain",
+    "question": "What is the confidence score and why?",
+    "report": {
+      "answer": "The retrieved mock evidence supports Unknown with no explicit gap detected by the baseline. A human reviewer should still confirm before using this in an audit narrative.",
+      "confidence": 0.85,
+      "control_area": "Unknown",
+      "evidence": [
+        {
+          "evidence_id": "doc-61e1c1bd",
+          "path": "evidence/production_deploy_approval.md",
+          "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-a1e9a5a7",
+          "path": "evidence/mfa_rollout_evidence.md",
+          "quote": "Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control.",
+          "relevance_score": 0.7276
+        },
+        {
+          "evidence_id": "doc-f2cd0794",
+          "path": "evidence/privileged_access_review.md",
+          "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+          "relevance_score": 0.55
+        },
+        {
+          "evidence_id": "doc-a90617eb",
+          "path": "policies/access_control_policy.md",
+          "quote": "# Access Control Policy\n\n**Document ID:** POL-ACCESS-001  \n**Control area:** Access Control  \n**Mock owner:** Security Governance  \n**Mock effective date:** 2026-01-15  \n**Dataset status:** Mock evidence only\n\n## Purpose",
+          "relevance_score": 0.5432
+        }
+      ],
+      "evidence_ids": [
+        "doc-61e1c1bd",
+        "doc-a1e9a5a7",
+        "doc-f2cd0794",
+        "doc-a90617eb"
+      ],
+      "evidence_summary": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control. # Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... # Access Control Policy **Document ID:** POL-ACCESS-001 **Control area:** Access Control **Mock owner:** Security Governance **Mock effective date:** 2026-01-15 **Dataset status:** Mock evidence only ## Purpose This mock p",
+      "failure_modes": [],
+      "framework": "langchain",
+      "gaps": [],
+      "human_review_required": false,
+      "question": "What is the confidence score and why?",
+      "recommended_next_action": "Have a reviewer confirm evidence sufficiency and retain the trace.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "3bd9dcec-edca-47eb-a903-f5375b1a65af",
+    "started_at_utc": "2026-06-05T07:35:45.179050+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T07:35:45.197611+00:00",
+    "events": [
+      {
+        "data": {},
+        "event_type": "run.start",
+        "framework": "langchain",
+        "message": "Started LangChain baseline workflow.",
+        "timestamp_utc": "2026-06-05T07:35:45.190823+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "corpus.loaded",
+        "framework": "langchain",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T07:35:45.194994+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Risk Assessment"
+        },
+        "event_type": "question.classified",
+        "framework": "langchain",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T07:35:45.195043+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-61e1c1bd",
+            "doc-a1e9a5a7",
+            "doc-77fa58ed",
+            "doc-e75cfacc"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "langchain",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T07:35:45.197430+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gaps": []
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "langchain",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T07:35:45.197522+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "langchain",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T07:35:45.197539+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85
+        },
+        "event_type": "run.complete",
+        "framework": "langchain",
+        "message": "Completed LangChain baseline workflow.",
+        "timestamp_utc": "2026-06-05T07:35:45.197640+00:00"
+      }
+    ],
+    "framework": "langchain",
+    "question": "Which evidence item creates the highest risk?",
+    "report": {
+      "answer": "The retrieved mock evidence supports Risk Assessment with no explicit gap detected by the baseline. A human reviewer should still confirm before using this in an audit narrative.",
+      "confidence": 0.85,
+      "control_area": "Risk Assessment",
+      "evidence": [
+        {
+          "evidence_id": "doc-61e1c1bd",
+          "path": "evidence/production_deploy_approval.md",
+          "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-a1e9a5a7",
+          "path": "evidence/mfa_rollout_evidence.md",
+          "quote": "# MFA Rollout Evidence\n\n**Evidence ID:** EV-ACCESS-MFA-001  \n**Control area:** Access Control  \n**Mock capture date:** 2026-05-20  \n**Evidence source:** Mock identity-provider export summary  \n**Dataset status:** Mock ev",
+          "relevance_score": 0.832
+        },
+        {
+          "evidence_id": "doc-77fa58ed",
+          "path": "tickets/change_approval_ticket.md",
+          "quote": "# Mock Change Ticket: CHG-2026-0518\n\n**Ticket ID:** CHG-2026-0518  \n**Control area:** Change Management  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nDeploy documentation and reporting metadata update to producti",
+          "relevance_score": 0.7921
+        },
+        {
+          "evidence_id": "doc-e75cfacc",
+          "path": "policies/incident_response_policy.md",
+          "quote": "# Incident Response Policy\n\n**Document ID:** POL-IR-001  \n**Control area:** Incident Response  \n**Mock owner:** Security Operations  \n**Mock effective date:** 2026-02-01  \n**Dataset status:** Mock evidence only\n\n## Purpo",
+          "relevance_score": 0.6556
+        }
+      ],
+      "evidence_ids": [
+        "doc-61e1c1bd",
+        "doc-a1e9a5a7",
+        "doc-77fa58ed",
+        "doc-e75cfacc"
+      ],
+      "evidence_summary": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... # MFA Rollout Evidence **Evidence ID:** EV-ACCESS-MFA-001 **Control area:** Access Control **Mock capture date:** 2026-05-20 **Evidence source:** Mock identity-provider export summary **Dataset status:** Mock evidence only ## Summary The security team completed a mock MFA rollout... # Mock Change Ticket: CHG-2026-0518 **Ticket ID:** CHG-2026-0518 **Control area:** Change Management **Dataset status:** Mock evidence only ## Summary Deploy documentation and reporting metadata update to production. ## Risk classification Low risk, pending final confirmation. ##... # Incident Response Policy **Document ID:** POL-",
+      "failure_modes": [],
+      "framework": "langchain",
+      "gaps": [],
+      "human_review_required": false,
+      "question": "Which evidence item creates the highest risk?",
+      "recommended_next_action": "Have a reviewer confirm evidence sufficiency and retain the trace.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "fe58d259-2d67-4e49-9d91-827e14c3177c",
+    "started_at_utc": "2026-06-05T07:35:45.190813+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T07:35:45.206242+00:00",
+    "events": [
+      {
+        "data": {},
+        "event_type": "run.start",
+        "framework": "langchain",
+        "message": "Started LangChain baseline workflow.",
+        "timestamp_utc": "2026-06-05T07:35:45.197811+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "corpus.loaded",
+        "framework": "langchain",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T07:35:45.201883+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Access Control"
+        },
+        "event_type": "question.classified",
+        "framework": "langchain",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T07:35:45.201922+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-3936ecce",
+            "doc-61e1c1bd",
+            "doc-f2cd0794",
+            "doc-a1e9a5a7"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "langchain",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T07:35:45.206021+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77,
+          "gaps": [
+            "Access-control evidence contains missing, absent, or open items."
+          ]
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "langchain",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T07:35:45.206142+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "langchain",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T07:35:45.206163+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77
+        },
+        "event_type": "run.complete",
+        "framework": "langchain",
+        "message": "Completed LangChain baseline workflow.",
+        "timestamp_utc": "2026-06-05T07:35:45.206267+00:00"
+      }
+    ],
+    "framework": "langchain",
+    "question": "Is the terminated user removal evidence complete?",
+    "report": {
+      "answer": "The retrieved mock evidence supports Access Control, but it is not fully sufficient. The baseline found 1 gap(s), so the safe conclusion is to require human review.",
+      "confidence": 0.77,
+      "control_area": "Access Control",
+      "evidence": [
+        {
+          "evidence_id": "doc-3936ecce",
+          "path": "evidence/terminated_user_access_removal.md",
+          "quote": "# Terminated User Access Removal Evidence\n\n**Evidence ID:** EV-ACCESS-TERM-001  \n**Control area:** Access Control  \n**Mock event date:** 2026-05-10  \n**Evidence source:** Mock HR termination notification and IAM action s",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-61e1c1bd",
+          "path": "evidence/production_deploy_approval.md",
+          "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-f2cd0794",
+          "path": "evidence/privileged_access_review.md",
+          "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-a1e9a5a7",
+          "path": "evidence/mfa_rollout_evidence.md",
+          "quote": "Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control.",
+          "relevance_score": 0.9701
+        }
+      ],
+      "evidence_ids": [
+        "doc-3936ecce",
+        "doc-61e1c1bd",
+        "doc-f2cd0794",
+        "doc-a1e9a5a7"
+      ],
+      "evidence_summary": "# Terminated User Access Removal Evidence **Evidence ID:** EV-ACCESS-TERM-001 **Control area:** Access Control **Mock event date:** 2026-05-10 **Evidence source:** Mock HR termination notification and IAM action summary **Dataset status:** Mock evidence only ## Summary A terminat... The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... # Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... Human review is recommended if the question asks",
+      "failure_modes": [],
+      "framework": "langchain",
+      "gaps": [
+        "Access-control evidence contains missing, absent, or open items."
+      ],
+      "human_review_required": true,
+      "question": "Is the terminated user removal evidence complete?",
+      "recommended_next_action": "Request missing evidence and reviewer approval before declaring sufficiency.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 4,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "b0a8cd71-180a-4437-9ca5-65931ddabf9f",
+    "started_at_utc": "2026-06-05T07:35:45.197804+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 4,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T07:35:45.212211+00:00",
+    "events": [
+      {
+        "data": {},
+        "event_type": "run.start",
+        "framework": "langchain",
+        "message": "Started LangChain baseline workflow.",
+        "timestamp_utc": "2026-06-05T07:35:45.206512+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "corpus.loaded",
+        "framework": "langchain",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T07:35:45.209757+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Change Management"
+        },
+        "event_type": "question.classified",
+        "framework": "langchain",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T07:35:45.209791+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-61e1c1bd",
+            "doc-fdfbdd11",
+            "doc-77fa58ed",
+            "doc-a1e9a5a7"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "langchain",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T07:35:45.212054+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77,
+          "gaps": [
+            "Secondary approval status remains ambiguous."
+          ]
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "langchain",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T07:35:45.212143+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "langchain",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T07:35:45.212159+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77
+        },
+        "event_type": "run.complete",
+        "framework": "langchain",
+        "message": "Completed LangChain baseline workflow.",
+        "timestamp_utc": "2026-06-05T07:35:45.212246+00:00"
+      }
+    ],
+    "framework": "langchain",
+    "question": "Is the production deploy approval evidence sufficient?",
+    "report": {
+      "answer": "The retrieved mock evidence supports Change Management, but it is not fully sufficient. The baseline found 1 gap(s), so the safe conclusion is to require human review.",
+      "confidence": 0.77,
+      "control_area": "Change Management",
+      "evidence": [
+        {
+          "evidence_id": "doc-61e1c1bd",
+          "path": "evidence/production_deploy_approval.md",
+          "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-fdfbdd11",
+          "path": "policies/change_management_policy.md",
+          "quote": "# Change Management Policy\n\n**Document ID:** POL-CHANGE-001  \n**Control area:** Change Management  \n**Mock owner:** Engineering Governance  \n**Mock effective date:** 2026-01-20  \n**Dataset status:** Mock evidence only\n\n#",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-77fa58ed",
+          "path": "tickets/change_approval_ticket.md",
+          "quote": "# Mock Change Ticket: CHG-2026-0518\n\n**Ticket ID:** CHG-2026-0518  \n**Control area:** Change Management  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nDeploy documentation and reporting metadata update to producti",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-a1e9a5a7",
+          "path": "evidence/mfa_rollout_evidence.md",
+          "quote": "Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control.",
+          "relevance_score": 1.0
+        }
+      ],
+      "evidence_ids": [
+        "doc-61e1c1bd",
+        "doc-fdfbdd11",
+        "doc-77fa58ed",
+        "doc-a1e9a5a7"
+      ],
+      "evidence_summary": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... # Change Management Policy **Document ID:** POL-CHANGE-001 **Control area:** Change Management **Mock owner:** Engineering Governance **Mock effective date:** 2026-01-20 **Dataset status:** Mock evidence only ## Purpose This mock policy defines change-approval expectations for th... # Mock Change Ticket: CHG-2026-0518 **Ticket ID:** CHG-2026-0518 **Control area:** Change Management **Dataset status:** Mock evidence only ## Summary Deploy documentation and reporting metadata update to production. ## Risk classification Low risk, pending final confirmation. ##... Human review is recommended if the question asks",
+      "failure_modes": [],
+      "framework": "langchain",
+      "gaps": [
+        "Secondary approval status remains ambiguous."
+      ],
+      "human_review_required": true,
+      "question": "Is the production deploy approval evidence sufficient?",
+      "recommended_next_action": "Request missing evidence and reviewer approval before declaring sufficiency.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "22d0686f-b967-4d13-8ebe-13e92541790e",
+    "started_at_utc": "2026-06-05T07:35:45.206500+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  }
+]

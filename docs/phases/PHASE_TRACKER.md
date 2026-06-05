@@ -2,7 +2,7 @@
 
 **Project:** Multi-Framework Agentic Evidence Lab  
 **Repository:** `S3curethecloud/multi-framework-agentic-evidence-lab`  
-**Current Status:** Phase 2 / Evidence Recorded
+**Current Status:** Phase 3 / Evidence Recorded
 
 ## Phase 0 - Project Baseline / Governance Boundary
 
@@ -96,7 +96,40 @@
 
 **Goal:** Implement the baseline RAG and tool-calling workflow with structured output.
 
-**Status:** Not started
+**Status:** Evidence Recorded
+
+### Checklist
+
+- [x] LangChain baseline tool module created
+- [x] LangChain baseline agent orchestration created
+- [x] Shared schema contract reused
+- [x] Shared retrieval helper reused
+- [x] Structured `AgentReport` generated
+- [x] Tool-call records generated
+- [x] Trace envelope generated
+- [x] Shared benchmark questions executed
+- [x] LangChain report artifact generated
+- [x] LangChain trace artifact generated
+- [x] Phase 3 verification script created
+- [x] Phase 3 verification passed
+- [x] Phase 3 evidence recorded
+
+### Exit criteria
+
+- [x] LangChain baseline can run without API keys
+- [x] Output validates against shared schema
+- [x] Report contains framework value `langchain`
+- [x] Trace contains tool calls
+- [x] Human-review routing is present
+- [x] No LangGraph, Strands, or ADK implementation leakage is present
+- [x] Forbidden positive-claim scan passes
+
+### Evidence
+
+- Phase 3 document: `docs/phases/PHASE_3_LANGCHAIN_BASELINE_AGENT.md`
+- Phase 3 verification printout: `docs/verification/PHASE_3_VERIFICATION_PRINTOUT.txt`
+- LangChain report: `results/reports/langchain_report.json`
+- LangChain trace: `results/traces/langchain_trace.json`
 
 ## Phase 4 - LangGraph Governed Workflow
 
