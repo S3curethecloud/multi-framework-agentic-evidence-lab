@@ -1,0 +1,3442 @@
+[
+  {
+    "completed_at_utc": "2026-06-05T07:55:10.678432+00:00",
+    "events": [
+      {
+        "data": {
+          "instruction_summary": "Evaluate mock SOC 2-style evidence using registered tools, preserve read-only boundaries, return structured AgentReport output, and route un",
+          "registered_tools": [
+            "classify_question",
+            "generate_report",
+            "load_evidence_corpus",
+            "score_evidence",
+            "search_evidence",
+            "summarize_document"
+          ]
+        },
+        "event_type": "strands.agent.start",
+        "framework": "strands",
+        "message": "Started local Strands-style autonomous-agent workflow.",
+        "timestamp_utc": "2026-06-05T07:55:10.671966+00:00"
+      },
+      {
+        "data": {
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.672019+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "strands.tool.load_evidence_corpus",
+        "framework": "strands",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T07:55:10.675861+00:00"
+      },
+      {
+        "data": {
+          "tool": "classify_question"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.675885+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Access Control"
+        },
+        "event_type": "strands.tool.classify_question",
+        "framework": "strands",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T07:55:10.675904+00:00"
+      },
+      {
+        "data": {
+          "tool": "search_evidence"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.675912+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-f2cd0794",
+            "doc-a1e9a5a7",
+            "doc-3936ecce",
+            "doc-982b587d"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "strands",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T07:55:10.678191+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-f2cd0794",
+            "doc-a1e9a5a7",
+            "doc-3936ecce",
+            "doc-982b587d"
+          ]
+        },
+        "event_type": "strands.tool.search_evidence.result",
+        "framework": "strands",
+        "message": "Stored retrieval results in Strands run context.",
+        "timestamp_utc": "2026-06-05T07:55:10.678210+00:00"
+      },
+      {
+        "data": {
+          "tool": "summarize_document"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.678218+00:00"
+      },
+      {
+        "data": {
+          "summary_count": 4
+        },
+        "event_type": "strands.tool.summarize_document.result",
+        "framework": "strands",
+        "message": "Summarized retrieved evidence snippets.",
+        "timestamp_utc": "2026-06-05T07:55:10.678271+00:00"
+      },
+      {
+        "data": {
+          "tool": "score_evidence"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.678279+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77,
+          "gaps": [
+            "Access-control evidence contains missing, absent, or open items."
+          ]
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "strands",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T07:55:10.678315+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77,
+          "gaps": [
+            "Access-control evidence contains missing, absent, or open items."
+          ],
+          "human_review_required": true
+        },
+        "event_type": "strands.guardrail.review_route",
+        "framework": "strands",
+        "message": "Applied Strands-style review guardrail.",
+        "timestamp_utc": "2026-06-05T07:55:10.678328+00:00"
+      },
+      {
+        "data": {
+          "tool": "generate_report"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.678334+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "strands",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T07:55:10.678343+00:00"
+      },
+      {
+        "data": {
+          "framework": "strands"
+        },
+        "event_type": "strands.tool.generate_report.result",
+        "framework": "strands",
+        "message": "Prepared structured report generation marker.",
+        "timestamp_utc": "2026-06-05T07:55:10.678349+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77,
+          "human_review_required": true
+        },
+        "event_type": "strands.agent.complete",
+        "framework": "strands",
+        "message": "Completed local Strands-style workflow.",
+        "timestamp_utc": "2026-06-05T07:55:10.678424+00:00"
+      }
+    ],
+    "framework": "strands",
+    "question": "Is the evidence sufficient for access control?",
+    "report": {
+      "answer": "The Strands-style agent retrieved mock evidence for Access Control, but found 1 gap(s). The safe output is review-required, not audit-ready.",
+      "confidence": 0.77,
+      "control_area": "Access Control",
+      "evidence": [
+        {
+          "evidence_id": "doc-f2cd0794",
+          "path": "evidence/privileged_access_review.md",
+          "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-a1e9a5a7",
+          "path": "evidence/mfa_rollout_evidence.md",
+          "quote": "Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control.",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-3936ecce",
+          "path": "evidence/terminated_user_access_removal.md",
+          "quote": "# Terminated User Access Removal Evidence\n\n**Evidence ID:** EV-ACCESS-TERM-001  \n**Control area:** Access Control  \n**Mock event date:** 2026-05-10  \n**Evidence source:** Mock HR termination notification and IAM action s",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-982b587d",
+          "path": "tickets/jira_access_review_ticket.md",
+          "quote": "# Mock Jira Ticket: Access Review Follow-Up\n\n**Ticket ID:** SEC-2026-0412  \n**Control area:** Access Control  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nFollow up on Q1 privileged access review exceptions.\n\n## ",
+          "relevance_score": 1.0
+        }
+      ],
+      "evidence_ids": [
+        "doc-f2cd0794",
+        "doc-a1e9a5a7",
+        "doc-3936ecce",
+        "doc-982b587d"
+      ],
+      "evidence_summary": "# Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control. # Terminated User Access Removal Evidence **Evidence ID:** EV-ACCESS-TERM-001 **Control area:** Access Control **Mock event date:** 2026-05-10 **Evidence source:** Mock HR termination notification and IAM action summary **Dataset status:** Mock evidence only ## Summary A terminat... # Mock Jira Ticket: Access Review Follow-Up **Ticket ID:** SEC-2026-0412 **Control area:** Access Control **Dataset status:** Mock evidence only ## Summary Follow up on Q1 privileged access review exceptions. ## Descriptio",
+      "failure_modes": [
+        "human_review_required_before_audit_use"
+      ],
+      "framework": "strands",
+      "gaps": [
+        "Access-control evidence contains missing, absent, or open items."
+      ],
+      "human_review_required": true,
+      "question": "Is the evidence sufficient for access control?",
+      "recommended_next_action": "Route to simulated human review before using the result in an audit narrative.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 3,
+          "status": "success",
+          "tool": "load_evidence_corpus"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "classify_question"
+        },
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "8cb0bfca-89d9-4abb-adcf-b40140e4919d",
+    "started_at_utc": "2026-06-05T07:55:10.671920+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 3,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T07:55:10.684143+00:00",
+    "events": [
+      {
+        "data": {
+          "instruction_summary": "Evaluate mock SOC 2-style evidence using registered tools, preserve read-only boundaries, return structured AgentReport output, and route un",
+          "registered_tools": [
+            "classify_question",
+            "generate_report",
+            "load_evidence_corpus",
+            "score_evidence",
+            "search_evidence",
+            "summarize_document"
+          ]
+        },
+        "event_type": "strands.agent.start",
+        "framework": "strands",
+        "message": "Started local Strands-style autonomous-agent workflow.",
+        "timestamp_utc": "2026-06-05T07:55:10.678694+00:00"
+      },
+      {
+        "data": {
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.678708+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "strands.tool.load_evidence_corpus",
+        "framework": "strands",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T07:55:10.681630+00:00"
+      },
+      {
+        "data": {
+          "tool": "classify_question"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.681652+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Unknown"
+        },
+        "event_type": "strands.tool.classify_question",
+        "framework": "strands",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T07:55:10.681689+00:00"
+      },
+      {
+        "data": {
+          "tool": "search_evidence"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.681697+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-a90617eb",
+            "doc-8ec9a00b",
+            "doc-e75cfacc",
+            "doc-f2cd0794"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "strands",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T07:55:10.683926+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-a90617eb",
+            "doc-8ec9a00b",
+            "doc-e75cfacc",
+            "doc-f2cd0794"
+          ]
+        },
+        "event_type": "strands.tool.search_evidence.result",
+        "framework": "strands",
+        "message": "Stored retrieval results in Strands run context.",
+        "timestamp_utc": "2026-06-05T07:55:10.683944+00:00"
+      },
+      {
+        "data": {
+          "tool": "summarize_document"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.683952+00:00"
+      },
+      {
+        "data": {
+          "summary_count": 4
+        },
+        "event_type": "strands.tool.summarize_document.result",
+        "framework": "strands",
+        "message": "Summarized retrieved evidence snippets.",
+        "timestamp_utc": "2026-06-05T07:55:10.683997+00:00"
+      },
+      {
+        "data": {
+          "tool": "score_evidence"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.684004+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gaps": []
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "strands",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T07:55:10.684028+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gaps": [],
+          "human_review_required": false
+        },
+        "event_type": "strands.guardrail.review_route",
+        "framework": "strands",
+        "message": "Applied Strands-style review guardrail.",
+        "timestamp_utc": "2026-06-05T07:55:10.684052+00:00"
+      },
+      {
+        "data": {
+          "tool": "generate_report"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.684064+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "strands",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T07:55:10.684074+00:00"
+      },
+      {
+        "data": {
+          "framework": "strands"
+        },
+        "event_type": "strands.tool.generate_report.result",
+        "framework": "strands",
+        "message": "Prepared structured report generation marker.",
+        "timestamp_utc": "2026-06-05T07:55:10.684079+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "human_review_required": false
+        },
+        "event_type": "strands.agent.complete",
+        "framework": "strands",
+        "message": "Completed local Strands-style workflow.",
+        "timestamp_utc": "2026-06-05T07:55:10.684124+00:00"
+      }
+    ],
+    "framework": "strands",
+    "question": "Which SOC 2 control area does this evidence support?",
+    "report": {
+      "answer": "The Strands-style agent retrieved mock evidence for Unknown without detecting an explicit gap in the local dataset.",
+      "confidence": 0.85,
+      "control_area": "Unknown",
+      "evidence": [
+        {
+          "evidence_id": "doc-a90617eb",
+          "path": "policies/access_control_policy.md",
+          "quote": "Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status.\n\n## Boundary\n\nThis policy is mock readiness evidence for a lab. It does not prove produc",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-8ec9a00b",
+          "path": "README.md",
+          "quote": "# Mock Evidence Dataset\n\nMock SOC 2-style evidence will be added in Phase 2.\n\nThis directory must not contain real customer evidence, production logs, credentials, secrets, or private audit materials.",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-e75cfacc",
+          "path": "policies/incident_response_policy.md",
+          "quote": "# Incident Response Policy\n\n**Document ID:** POL-IR-001  \n**Control area:** Incident Response  \n**Mock owner:** Security Operations  \n**Mock effective date:** 2026-02-01  \n**Dataset status:** Mock evidence only\n\n## Purpo",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-f2cd0794",
+          "path": "evidence/privileged_access_review.md",
+          "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+          "relevance_score": 1.0
+        }
+      ],
+      "evidence_ids": [
+        "doc-a90617eb",
+        "doc-8ec9a00b",
+        "doc-e75cfacc",
+        "doc-f2cd0794"
+      ],
+      "evidence_summary": "Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status. ## Boundary This policy is mock readiness evidence for a lab. It does not prove production operating effectiveness or SOC 2 certification. # Mock Evidence Dataset Mock SOC 2-style evidence will be added in Phase 2. This directory must not contain real customer evidence, production logs, credentials, secrets, or private audit materials. # Incident Response Policy **Document ID:** POL-IR-001 **Control area:** Incident Response **Mock owner:** Security Operations **Mock effective date:** 2026-02-01 **Dataset status:** Mock evidence only ## Purpose This mock policy defines incident-response expectations for the evi... # Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:*",
+      "failure_modes": [],
+      "framework": "strands",
+      "gaps": [],
+      "human_review_required": false,
+      "question": "Which SOC 2 control area does this evidence support?",
+      "recommended_next_action": "Have a reviewer confirm the evidence narrative before portfolio use.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "load_evidence_corpus"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "classify_question"
+        },
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "b6eecd42-a8a3-4ab6-ae1e-ab725dd37d5e",
+    "started_at_utc": "2026-06-05T07:55:10.678668+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T07:55:10.690106+00:00",
+    "events": [
+      {
+        "data": {
+          "instruction_summary": "Evaluate mock SOC 2-style evidence using registered tools, preserve read-only boundaries, return structured AgentReport output, and route un",
+          "registered_tools": [
+            "classify_question",
+            "generate_report",
+            "load_evidence_corpus",
+            "score_evidence",
+            "search_evidence",
+            "summarize_document"
+          ]
+        },
+        "event_type": "strands.agent.start",
+        "framework": "strands",
+        "message": "Started local Strands-style autonomous-agent workflow.",
+        "timestamp_utc": "2026-06-05T07:55:10.684325+00:00"
+      },
+      {
+        "data": {
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.684335+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "strands.tool.load_evidence_corpus",
+        "framework": "strands",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T07:55:10.687496+00:00"
+      },
+      {
+        "data": {
+          "tool": "classify_question"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.687517+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Unknown"
+        },
+        "event_type": "strands.tool.classify_question",
+        "framework": "strands",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T07:55:10.687536+00:00"
+      },
+      {
+        "data": {
+          "tool": "search_evidence"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.687544+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-f2cd0794",
+            "doc-3936ecce",
+            "doc-a90617eb",
+            "doc-a1e9a5a7"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "strands",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T07:55:10.689891+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-f2cd0794",
+            "doc-3936ecce",
+            "doc-a90617eb",
+            "doc-a1e9a5a7"
+          ]
+        },
+        "event_type": "strands.tool.search_evidence.result",
+        "framework": "strands",
+        "message": "Stored retrieval results in Strands run context.",
+        "timestamp_utc": "2026-06-05T07:55:10.689909+00:00"
+      },
+      {
+        "data": {
+          "tool": "summarize_document"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.689917+00:00"
+      },
+      {
+        "data": {
+          "summary_count": 4
+        },
+        "event_type": "strands.tool.summarize_document.result",
+        "framework": "strands",
+        "message": "Summarized retrieved evidence snippets.",
+        "timestamp_utc": "2026-06-05T07:55:10.689963+00:00"
+      },
+      {
+        "data": {
+          "tool": "score_evidence"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.689970+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gaps": []
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "strands",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T07:55:10.689991+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gaps": [],
+          "human_review_required": true
+        },
+        "event_type": "strands.guardrail.review_route",
+        "framework": "strands",
+        "message": "Applied Strands-style review guardrail.",
+        "timestamp_utc": "2026-06-05T07:55:10.690007+00:00"
+      },
+      {
+        "data": {
+          "tool": "generate_report"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.690018+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "strands",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T07:55:10.690032+00:00"
+      },
+      {
+        "data": {
+          "framework": "strands"
+        },
+        "event_type": "strands.tool.generate_report.result",
+        "framework": "strands",
+        "message": "Prepared structured report generation marker.",
+        "timestamp_utc": "2026-06-05T07:55:10.690041+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "human_review_required": true
+        },
+        "event_type": "strands.agent.complete",
+        "framework": "strands",
+        "message": "Completed local Strands-style workflow.",
+        "timestamp_utc": "2026-06-05T07:55:10.690087+00:00"
+      }
+    ],
+    "framework": "strands",
+    "question": "What evidence is missing?",
+    "report": {
+      "answer": "The Strands-style agent retrieved mock evidence for Unknown without detecting an explicit gap in the local dataset.",
+      "confidence": 0.85,
+      "control_area": "Unknown",
+      "evidence": [
+        {
+          "evidence_id": "doc-f2cd0794",
+          "path": "evidence/privileged_access_review.md",
+          "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-3936ecce",
+          "path": "evidence/terminated_user_access_removal.md",
+          "quote": "# Terminated User Access Removal Evidence\n\n**Evidence ID:** EV-ACCESS-TERM-001  \n**Control area:** Access Control  \n**Mock event date:** 2026-05-10  \n**Evidence source:** Mock HR termination notification and IAM action s",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-a90617eb",
+          "path": "policies/access_control_policy.md",
+          "quote": "Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status.\n\n## Boundary\n\nThis policy is mock readiness evidence for a lab. It does not prove produc",
+          "relevance_score": 0.8006
+        },
+        {
+          "evidence_id": "doc-a1e9a5a7",
+          "path": "evidence/mfa_rollout_evidence.md",
+          "quote": "# MFA Rollout Evidence\n\n**Evidence ID:** EV-ACCESS-MFA-001  \n**Control area:** Access Control  \n**Mock capture date:** 2026-05-20  \n**Evidence source:** Mock identity-provider export summary  \n**Dataset status:** Mock ev",
+          "relevance_score": 0.7396
+        }
+      ],
+      "evidence_ids": [
+        "doc-f2cd0794",
+        "doc-3936ecce",
+        "doc-a90617eb",
+        "doc-a1e9a5a7"
+      ],
+      "evidence_summary": "# Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... # Terminated User Access Removal Evidence **Evidence ID:** EV-ACCESS-TERM-001 **Control area:** Access Control **Mock event date:** 2026-05-10 **Evidence source:** Mock HR termination notification and IAM action summary **Dataset status:** Mock evidence only ## Summary A terminat... Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status. ## Boundary This policy is mock readiness evidence for a lab. It does not prove production operating effectiveness or SOC 2 certification. # MFA Rollout Evidence **Evidence ID:** EV-ACCESS-MFA-001 **C",
+      "failure_modes": [
+        "human_review_required_before_audit_use"
+      ],
+      "framework": "strands",
+      "gaps": [],
+      "human_review_required": true,
+      "question": "What evidence is missing?",
+      "recommended_next_action": "Route to simulated human review before using the result in an audit narrative.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 3,
+          "status": "success",
+          "tool": "load_evidence_corpus"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "classify_question"
+        },
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "889f9809-837b-4d13-8f15-064528dc49d3",
+    "started_at_utc": "2026-06-05T07:55:10.684307+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 3,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T07:55:10.696018+00:00",
+    "events": [
+      {
+        "data": {
+          "instruction_summary": "Evaluate mock SOC 2-style evidence using registered tools, preserve read-only boundaries, return structured AgentReport output, and route un",
+          "registered_tools": [
+            "classify_question",
+            "generate_report",
+            "load_evidence_corpus",
+            "score_evidence",
+            "search_evidence",
+            "summarize_document"
+          ]
+        },
+        "event_type": "strands.agent.start",
+        "framework": "strands",
+        "message": "Started local Strands-style autonomous-agent workflow.",
+        "timestamp_utc": "2026-06-05T07:55:10.690288+00:00"
+      },
+      {
+        "data": {
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.690300+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "strands.tool.load_evidence_corpus",
+        "framework": "strands",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T07:55:10.693393+00:00"
+      },
+      {
+        "data": {
+          "tool": "classify_question"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.693417+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Change Management"
+        },
+        "event_type": "strands.tool.classify_question",
+        "framework": "strands",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T07:55:10.693458+00:00"
+      },
+      {
+        "data": {
+          "tool": "search_evidence"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.693470+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-77fa58ed",
+            "doc-f2cd0794",
+            "doc-61e1c1bd",
+            "doc-fdfbdd11"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "strands",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T07:55:10.695815+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-77fa58ed",
+            "doc-f2cd0794",
+            "doc-61e1c1bd",
+            "doc-fdfbdd11"
+          ]
+        },
+        "event_type": "strands.tool.search_evidence.result",
+        "framework": "strands",
+        "message": "Stored retrieval results in Strands run context.",
+        "timestamp_utc": "2026-06-05T07:55:10.695833+00:00"
+      },
+      {
+        "data": {
+          "tool": "summarize_document"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.695840+00:00"
+      },
+      {
+        "data": {
+          "summary_count": 4
+        },
+        "event_type": "strands.tool.summarize_document.result",
+        "framework": "strands",
+        "message": "Summarized retrieved evidence snippets.",
+        "timestamp_utc": "2026-06-05T07:55:10.695887+00:00"
+      },
+      {
+        "data": {
+          "tool": "score_evidence"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.695894+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.7666,
+          "gaps": [
+            "Secondary approval status remains ambiguous."
+          ]
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "strands",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T07:55:10.695917+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.7666,
+          "gaps": [
+            "Secondary approval status remains ambiguous."
+          ],
+          "human_review_required": true
+        },
+        "event_type": "strands.guardrail.review_route",
+        "framework": "strands",
+        "message": "Applied Strands-style review guardrail.",
+        "timestamp_utc": "2026-06-05T07:55:10.695929+00:00"
+      },
+      {
+        "data": {
+          "tool": "generate_report"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.695936+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "strands",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T07:55:10.695945+00:00"
+      },
+      {
+        "data": {
+          "framework": "strands"
+        },
+        "event_type": "strands.tool.generate_report.result",
+        "framework": "strands",
+        "message": "Prepared structured report generation marker.",
+        "timestamp_utc": "2026-06-05T07:55:10.695950+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.7666,
+          "human_review_required": true
+        },
+        "event_type": "strands.agent.complete",
+        "framework": "strands",
+        "message": "Completed local Strands-style workflow.",
+        "timestamp_utc": "2026-06-05T07:55:10.696006+00:00"
+      }
+    ],
+    "framework": "strands",
+    "question": "Does this require human reviewer approval?",
+    "report": {
+      "answer": "The Strands-style agent retrieved mock evidence for Change Management, but found 1 gap(s). The safe output is review-required, not audit-ready.",
+      "confidence": 0.7666,
+      "control_area": "Change Management",
+      "evidence": [
+        {
+          "evidence_id": "doc-77fa58ed",
+          "path": "tickets/change_approval_ticket.md",
+          "quote": "# Mock Change Ticket: CHG-2026-0518\n\n**Ticket ID:** CHG-2026-0518  \n**Control area:** Change Management  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nDeploy documentation and reporting metadata update to producti",
+          "relevance_score": 0.9901
+        },
+        {
+          "evidence_id": "doc-f2cd0794",
+          "path": "evidence/privileged_access_review.md",
+          "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+          "relevance_score": 0.7334
+        },
+        {
+          "evidence_id": "doc-61e1c1bd",
+          "path": "evidence/production_deploy_approval.md",
+          "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+          "relevance_score": 0.6682
+        },
+        {
+          "evidence_id": "doc-fdfbdd11",
+          "path": "policies/change_management_policy.md",
+          "quote": "# Change Management Policy\n\n**Document ID:** POL-CHANGE-001  \n**Control area:** Change Management  \n**Mock owner:** Engineering Governance  \n**Mock effective date:** 2026-01-20  \n**Dataset status:** Mock evidence only\n\n#",
+          "relevance_score": 0.5547
+        }
+      ],
+      "evidence_ids": [
+        "doc-77fa58ed",
+        "doc-f2cd0794",
+        "doc-61e1c1bd",
+        "doc-fdfbdd11"
+      ],
+      "evidence_summary": "# Mock Change Ticket: CHG-2026-0518 **Ticket ID:** CHG-2026-0518 **Control area:** Change Management **Dataset status:** Mock evidence only ## Summary Deploy documentation and reporting metadata update to production. ## Risk classification Low risk, pending final confirmation. ##... # Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... # Change Management Policy **Document ID:** POL-",
+      "failure_modes": [
+        "human_review_required_before_audit_use"
+      ],
+      "framework": "strands",
+      "gaps": [
+        "Secondary approval status remains ambiguous."
+      ],
+      "human_review_required": true,
+      "question": "Does this require human reviewer approval?",
+      "recommended_next_action": "Route to simulated human review before using the result in an audit narrative.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 3,
+          "status": "success",
+          "tool": "load_evidence_corpus"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "classify_question"
+        },
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "7b2e9df4-e87b-4ed6-b485-64918cd6554b",
+    "started_at_utc": "2026-06-05T07:55:10.690267+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 3,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T07:55:10.702414+00:00",
+    "events": [
+      {
+        "data": {
+          "instruction_summary": "Evaluate mock SOC 2-style evidence using registered tools, preserve read-only boundaries, return structured AgentReport output, and route un",
+          "registered_tools": [
+            "classify_question",
+            "generate_report",
+            "load_evidence_corpus",
+            "score_evidence",
+            "search_evidence",
+            "summarize_document"
+          ]
+        },
+        "event_type": "strands.agent.start",
+        "framework": "strands",
+        "message": "Started local Strands-style autonomous-agent workflow.",
+        "timestamp_utc": "2026-06-05T07:55:10.696192+00:00"
+      },
+      {
+        "data": {
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.696202+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "strands.tool.load_evidence_corpus",
+        "framework": "strands",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T07:55:10.699588+00:00"
+      },
+      {
+        "data": {
+          "tool": "classify_question"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.699609+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Unknown"
+        },
+        "event_type": "strands.tool.classify_question",
+        "framework": "strands",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T07:55:10.699628+00:00"
+      },
+      {
+        "data": {
+          "tool": "search_evidence"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.699635+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-a1e9a5a7",
+            "doc-61e1c1bd",
+            "doc-982b587d",
+            "doc-77fa58ed"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "strands",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T07:55:10.702208+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-a1e9a5a7",
+            "doc-61e1c1bd",
+            "doc-982b587d",
+            "doc-77fa58ed"
+          ]
+        },
+        "event_type": "strands.tool.search_evidence.result",
+        "framework": "strands",
+        "message": "Stored retrieval results in Strands run context.",
+        "timestamp_utc": "2026-06-05T07:55:10.702228+00:00"
+      },
+      {
+        "data": {
+          "tool": "summarize_document"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.702236+00:00"
+      },
+      {
+        "data": {
+          "summary_count": 4
+        },
+        "event_type": "strands.tool.summarize_document.result",
+        "framework": "strands",
+        "message": "Summarized retrieved evidence snippets.",
+        "timestamp_utc": "2026-06-05T07:55:10.702284+00:00"
+      },
+      {
+        "data": {
+          "tool": "score_evidence"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.702291+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.6294,
+          "gaps": []
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "strands",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T07:55:10.702313+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.6294,
+          "gaps": [],
+          "human_review_required": true
+        },
+        "event_type": "strands.guardrail.review_route",
+        "framework": "strands",
+        "message": "Applied Strands-style review guardrail.",
+        "timestamp_utc": "2026-06-05T07:55:10.702325+00:00"
+      },
+      {
+        "data": {
+          "tool": "generate_report"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.702332+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "strands",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T07:55:10.702353+00:00"
+      },
+      {
+        "data": {
+          "framework": "strands"
+        },
+        "event_type": "strands.tool.generate_report.result",
+        "framework": "strands",
+        "message": "Prepared structured report generation marker.",
+        "timestamp_utc": "2026-06-05T07:55:10.702359+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.6294,
+          "human_review_required": true
+        },
+        "event_type": "strands.agent.complete",
+        "framework": "strands",
+        "message": "Completed local Strands-style workflow.",
+        "timestamp_utc": "2026-06-05T07:55:10.702407+00:00"
+      }
+    ],
+    "framework": "strands",
+    "question": "Generate an auditor-safe summary.",
+    "report": {
+      "answer": "The Strands-style agent retrieved mock evidence for Unknown without detecting an explicit gap in the local dataset.",
+      "confidence": 0.6294,
+      "control_area": "Unknown",
+      "evidence": [
+        {
+          "evidence_id": "doc-a1e9a5a7",
+          "path": "evidence/mfa_rollout_evidence.md",
+          "quote": "# MFA Rollout Evidence\n\n**Evidence ID:** EV-ACCESS-MFA-001  \n**Control area:** Access Control  \n**Mock capture date:** 2026-05-20  \n**Evidence source:** Mock identity-provider export summary  \n**Dataset status:** Mock ev",
+          "relevance_score": 0.3698
+        },
+        {
+          "evidence_id": "doc-61e1c1bd",
+          "path": "evidence/production_deploy_approval.md",
+          "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+          "relevance_score": 0.2673
+        },
+        {
+          "evidence_id": "doc-982b587d",
+          "path": "tickets/jira_access_review_ticket.md",
+          "quote": "# Mock Jira Ticket: Access Review Follow-Up\n\n**Ticket ID:** SEC-2026-0412  \n**Control area:** Access Control  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nFollow up on Q1 privileged access review exceptions.\n\n## ",
+          "relevance_score": 0.2132
+        },
+        {
+          "evidence_id": "doc-77fa58ed",
+          "path": "tickets/change_approval_ticket.md",
+          "quote": "# Mock Change Ticket: CHG-2026-0518\n\n**Ticket ID:** CHG-2026-0518  \n**Control area:** Change Management  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nDeploy documentation and reporting metadata update to producti",
+          "relevance_score": 0.198
+        }
+      ],
+      "evidence_ids": [
+        "doc-a1e9a5a7",
+        "doc-61e1c1bd",
+        "doc-982b587d",
+        "doc-77fa58ed"
+      ],
+      "evidence_summary": "# MFA Rollout Evidence **Evidence ID:** EV-ACCESS-MFA-001 **Control area:** Access Control **Mock capture date:** 2026-05-20 **Evidence source:** Mock identity-provider export summary **Dataset status:** Mock evidence only ## Summary The security team completed a mock MFA rollout... The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... # Mock Jira Ticket: Access Review Follow-Up **Ticket ID:** SEC-2026-0412 **Control area:** Access Control **Dataset status:** Mock evidence only ## Summary Follow up on Q1 privileged access review exceptions. ## Description The Q1 privileged access review found an exception for `... # Mock Change Ticket: CHG-2026-0518 **Ticket ID:",
+      "failure_modes": [
+        "human_review_required_before_audit_use"
+      ],
+      "framework": "strands",
+      "gaps": [],
+      "human_review_required": true,
+      "question": "Generate an auditor-safe summary.",
+      "recommended_next_action": "Route to simulated human review before using the result in an audit narrative.",
+      "risk_level": "medium",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 3,
+          "status": "success",
+          "tool": "load_evidence_corpus"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "classify_question"
+        },
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "450d9b1e-021d-4030-9c8e-289d5c6a1e55",
+    "started_at_utc": "2026-06-05T07:55:10.696174+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 3,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T07:55:10.707798+00:00",
+    "events": [
+      {
+        "data": {
+          "instruction_summary": "Evaluate mock SOC 2-style evidence using registered tools, preserve read-only boundaries, return structured AgentReport output, and route un",
+          "registered_tools": [
+            "classify_question",
+            "generate_report",
+            "load_evidence_corpus",
+            "score_evidence",
+            "search_evidence",
+            "summarize_document"
+          ]
+        },
+        "event_type": "strands.agent.start",
+        "framework": "strands",
+        "message": "Started local Strands-style autonomous-agent workflow.",
+        "timestamp_utc": "2026-06-05T07:55:10.702592+00:00"
+      },
+      {
+        "data": {
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.702601+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "strands.tool.load_evidence_corpus",
+        "framework": "strands",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T07:55:10.705415+00:00"
+      },
+      {
+        "data": {
+          "tool": "classify_question"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.705437+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Unknown"
+        },
+        "event_type": "strands.tool.classify_question",
+        "framework": "strands",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T07:55:10.705456+00:00"
+      },
+      {
+        "data": {
+          "tool": "search_evidence"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.705463+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-f2cd0794",
+            "doc-8ec9a00b",
+            "doc-e75cfacc",
+            "doc-a90617eb"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "strands",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T07:55:10.707594+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-f2cd0794",
+            "doc-8ec9a00b",
+            "doc-e75cfacc",
+            "doc-a90617eb"
+          ]
+        },
+        "event_type": "strands.tool.search_evidence.result",
+        "framework": "strands",
+        "message": "Stored retrieval results in Strands run context.",
+        "timestamp_utc": "2026-06-05T07:55:10.707610+00:00"
+      },
+      {
+        "data": {
+          "tool": "summarize_document"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.707618+00:00"
+      },
+      {
+        "data": {
+          "summary_count": 4
+        },
+        "event_type": "strands.tool.summarize_document.result",
+        "framework": "strands",
+        "message": "Summarized retrieved evidence snippets.",
+        "timestamp_utc": "2026-06-05T07:55:10.707660+00:00"
+      },
+      {
+        "data": {
+          "tool": "score_evidence"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.707667+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.7567,
+          "gaps": []
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "strands",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T07:55:10.707688+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.7567,
+          "gaps": [],
+          "human_review_required": true
+        },
+        "event_type": "strands.guardrail.review_route",
+        "framework": "strands",
+        "message": "Applied Strands-style review guardrail.",
+        "timestamp_utc": "2026-06-05T07:55:10.707709+00:00"
+      },
+      {
+        "data": {
+          "tool": "generate_report"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.707716+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "strands",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T07:55:10.707725+00:00"
+      },
+      {
+        "data": {
+          "framework": "strands"
+        },
+        "event_type": "strands.tool.generate_report.result",
+        "framework": "strands",
+        "message": "Prepared structured report generation marker.",
+        "timestamp_utc": "2026-06-05T07:55:10.707731+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.7567,
+          "human_review_required": true
+        },
+        "event_type": "strands.agent.complete",
+        "framework": "strands",
+        "message": "Completed local Strands-style workflow.",
+        "timestamp_utc": "2026-06-05T07:55:10.707787+00:00"
+      }
+    ],
+    "framework": "strands",
+    "question": "Identify conflicting or stale evidence.",
+    "report": {
+      "answer": "The Strands-style agent retrieved mock evidence for Unknown without detecting an explicit gap in the local dataset.",
+      "confidence": 0.7567,
+      "control_area": "Unknown",
+      "evidence": [
+        {
+          "evidence_id": "doc-f2cd0794",
+          "path": "evidence/privileged_access_review.md",
+          "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+          "relevance_score": 0.7334
+        },
+        {
+          "evidence_id": "doc-8ec9a00b",
+          "path": "README.md",
+          "quote": "# Mock Evidence Dataset\n\nMock SOC 2-style evidence will be added in Phase 2.\n\nThis directory must not contain real customer evidence, production logs, credentials, secrets, or private audit materials.",
+          "relevance_score": 0.7303
+        },
+        {
+          "evidence_id": "doc-e75cfacc",
+          "path": "policies/incident_response_policy.md",
+          "quote": "# Incident Response Policy\n\n**Document ID:** POL-IR-001  \n**Control area:** Incident Response  \n**Mock owner:** Security Operations  \n**Mock effective date:** 2026-02-01  \n**Dataset status:** Mock evidence only\n\n## Purpo",
+          "relevance_score": 0.6556
+        },
+        {
+          "evidence_id": "doc-a90617eb",
+          "path": "policies/access_control_policy.md",
+          "quote": "Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status.\n\n## Boundary\n\nThis policy is mock readiness evidence for a lab. It does not prove produc",
+          "relevance_score": 0.6405
+        }
+      ],
+      "evidence_ids": [
+        "doc-f2cd0794",
+        "doc-8ec9a00b",
+        "doc-e75cfacc",
+        "doc-a90617eb"
+      ],
+      "evidence_summary": "# Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... # Mock Evidence Dataset Mock SOC 2-style evidence will be added in Phase 2. This directory must not contain real customer evidence, production logs, credentials, secrets, or private audit materials. # Incident Response Policy **Document ID:** POL-IR-001 **Control area:** Incident Response **Mock owner:** Security Operations **Mock effective date:** 2026-02-01 **Dataset status:** Mock evidence only ## Purpose This mock policy defines incident-response expectations for the evi... Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status. #",
+      "failure_modes": [
+        "human_review_required_before_audit_use"
+      ],
+      "framework": "strands",
+      "gaps": [],
+      "human_review_required": true,
+      "question": "Identify conflicting or stale evidence.",
+      "recommended_next_action": "Route to simulated human review before using the result in an audit narrative.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "load_evidence_corpus"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "classify_question"
+        },
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "cf922331-f551-4319-bb6a-87ff57c6b89a",
+    "started_at_utc": "2026-06-05T07:55:10.702573+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T07:55:10.713954+00:00",
+    "events": [
+      {
+        "data": {
+          "instruction_summary": "Evaluate mock SOC 2-style evidence using registered tools, preserve read-only boundaries, return structured AgentReport output, and route un",
+          "registered_tools": [
+            "classify_question",
+            "generate_report",
+            "load_evidence_corpus",
+            "score_evidence",
+            "search_evidence",
+            "summarize_document"
+          ]
+        },
+        "event_type": "strands.agent.start",
+        "framework": "strands",
+        "message": "Started local Strands-style autonomous-agent workflow.",
+        "timestamp_utc": "2026-06-05T07:55:10.707991+00:00"
+      },
+      {
+        "data": {
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.708002+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "strands.tool.load_evidence_corpus",
+        "framework": "strands",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T07:55:10.710942+00:00"
+      },
+      {
+        "data": {
+          "tool": "classify_question"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.710964+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Unknown"
+        },
+        "event_type": "strands.tool.classify_question",
+        "framework": "strands",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T07:55:10.710982+00:00"
+      },
+      {
+        "data": {
+          "tool": "search_evidence"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.710994+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-61e1c1bd",
+            "doc-a1e9a5a7",
+            "doc-f2cd0794",
+            "doc-a90617eb"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "strands",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T07:55:10.713677+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-61e1c1bd",
+            "doc-a1e9a5a7",
+            "doc-f2cd0794",
+            "doc-a90617eb"
+          ]
+        },
+        "event_type": "strands.tool.search_evidence.result",
+        "framework": "strands",
+        "message": "Stored retrieval results in Strands run context.",
+        "timestamp_utc": "2026-06-05T07:55:10.713700+00:00"
+      },
+      {
+        "data": {
+          "tool": "summarize_document"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.713712+00:00"
+      },
+      {
+        "data": {
+          "summary_count": 4
+        },
+        "event_type": "strands.tool.summarize_document.result",
+        "framework": "strands",
+        "message": "Summarized retrieved evidence snippets.",
+        "timestamp_utc": "2026-06-05T07:55:10.713771+00:00"
+      },
+      {
+        "data": {
+          "tool": "score_evidence"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.713783+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gaps": []
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "strands",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T07:55:10.713829+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gaps": [],
+          "human_review_required": false
+        },
+        "event_type": "strands.guardrail.review_route",
+        "framework": "strands",
+        "message": "Applied Strands-style review guardrail.",
+        "timestamp_utc": "2026-06-05T07:55:10.713849+00:00"
+      },
+      {
+        "data": {
+          "tool": "generate_report"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.713860+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "strands",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T07:55:10.713874+00:00"
+      },
+      {
+        "data": {
+          "framework": "strands"
+        },
+        "event_type": "strands.tool.generate_report.result",
+        "framework": "strands",
+        "message": "Prepared structured report generation marker.",
+        "timestamp_utc": "2026-06-05T07:55:10.713883+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "human_review_required": false
+        },
+        "event_type": "strands.agent.complete",
+        "framework": "strands",
+        "message": "Completed local Strands-style workflow.",
+        "timestamp_utc": "2026-06-05T07:55:10.713942+00:00"
+      }
+    ],
+    "framework": "strands",
+    "question": "What is the confidence score and why?",
+    "report": {
+      "answer": "The Strands-style agent retrieved mock evidence for Unknown without detecting an explicit gap in the local dataset.",
+      "confidence": 0.85,
+      "control_area": "Unknown",
+      "evidence": [
+        {
+          "evidence_id": "doc-61e1c1bd",
+          "path": "evidence/production_deploy_approval.md",
+          "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-a1e9a5a7",
+          "path": "evidence/mfa_rollout_evidence.md",
+          "quote": "Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control.",
+          "relevance_score": 0.7276
+        },
+        {
+          "evidence_id": "doc-f2cd0794",
+          "path": "evidence/privileged_access_review.md",
+          "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+          "relevance_score": 0.55
+        },
+        {
+          "evidence_id": "doc-a90617eb",
+          "path": "policies/access_control_policy.md",
+          "quote": "# Access Control Policy\n\n**Document ID:** POL-ACCESS-001  \n**Control area:** Access Control  \n**Mock owner:** Security Governance  \n**Mock effective date:** 2026-01-15  \n**Dataset status:** Mock evidence only\n\n## Purpose",
+          "relevance_score": 0.5432
+        }
+      ],
+      "evidence_ids": [
+        "doc-61e1c1bd",
+        "doc-a1e9a5a7",
+        "doc-f2cd0794",
+        "doc-a90617eb"
+      ],
+      "evidence_summary": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control. # Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... # Access Control Policy **Document ID:** POL-ACCESS-001 **Control area:** Access Control **Mock owner:** Security Governance **Mock effective date:** 2026-01-15 **Dataset status:** Mock evidence only ## Purpose This mock p",
+      "failure_modes": [],
+      "framework": "strands",
+      "gaps": [],
+      "human_review_required": false,
+      "question": "What is the confidence score and why?",
+      "recommended_next_action": "Have a reviewer confirm the evidence narrative before portfolio use.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "load_evidence_corpus"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "classify_question"
+        },
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "a94f1795-cf87-4d41-a144-9dae30b15287",
+    "started_at_utc": "2026-06-05T07:55:10.707962+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T07:55:10.720140+00:00",
+    "events": [
+      {
+        "data": {
+          "instruction_summary": "Evaluate mock SOC 2-style evidence using registered tools, preserve read-only boundaries, return structured AgentReport output, and route un",
+          "registered_tools": [
+            "classify_question",
+            "generate_report",
+            "load_evidence_corpus",
+            "score_evidence",
+            "search_evidence",
+            "summarize_document"
+          ]
+        },
+        "event_type": "strands.agent.start",
+        "framework": "strands",
+        "message": "Started local Strands-style autonomous-agent workflow.",
+        "timestamp_utc": "2026-06-05T07:55:10.714199+00:00"
+      },
+      {
+        "data": {
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.714219+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "strands.tool.load_evidence_corpus",
+        "framework": "strands",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T07:55:10.717589+00:00"
+      },
+      {
+        "data": {
+          "tool": "classify_question"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.717610+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Risk Assessment"
+        },
+        "event_type": "strands.tool.classify_question",
+        "framework": "strands",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T07:55:10.717630+00:00"
+      },
+      {
+        "data": {
+          "tool": "search_evidence"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.717638+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-61e1c1bd",
+            "doc-a1e9a5a7",
+            "doc-77fa58ed",
+            "doc-e75cfacc"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "strands",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T07:55:10.719904+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-61e1c1bd",
+            "doc-a1e9a5a7",
+            "doc-77fa58ed",
+            "doc-e75cfacc"
+          ]
+        },
+        "event_type": "strands.tool.search_evidence.result",
+        "framework": "strands",
+        "message": "Stored retrieval results in Strands run context.",
+        "timestamp_utc": "2026-06-05T07:55:10.719920+00:00"
+      },
+      {
+        "data": {
+          "tool": "summarize_document"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.719929+00:00"
+      },
+      {
+        "data": {
+          "summary_count": 4
+        },
+        "event_type": "strands.tool.summarize_document.result",
+        "framework": "strands",
+        "message": "Summarized retrieved evidence snippets.",
+        "timestamp_utc": "2026-06-05T07:55:10.719998+00:00"
+      },
+      {
+        "data": {
+          "tool": "score_evidence"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.720007+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gaps": []
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "strands",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T07:55:10.720029+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gaps": [],
+          "human_review_required": true
+        },
+        "event_type": "strands.guardrail.review_route",
+        "framework": "strands",
+        "message": "Applied Strands-style review guardrail.",
+        "timestamp_utc": "2026-06-05T07:55:10.720041+00:00"
+      },
+      {
+        "data": {
+          "tool": "generate_report"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.720052+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "strands",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T07:55:10.720066+00:00"
+      },
+      {
+        "data": {
+          "framework": "strands"
+        },
+        "event_type": "strands.tool.generate_report.result",
+        "framework": "strands",
+        "message": "Prepared structured report generation marker.",
+        "timestamp_utc": "2026-06-05T07:55:10.720074+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "human_review_required": true
+        },
+        "event_type": "strands.agent.complete",
+        "framework": "strands",
+        "message": "Completed local Strands-style workflow.",
+        "timestamp_utc": "2026-06-05T07:55:10.720132+00:00"
+      }
+    ],
+    "framework": "strands",
+    "question": "Which evidence item creates the highest risk?",
+    "report": {
+      "answer": "The Strands-style agent retrieved mock evidence for Risk Assessment without detecting an explicit gap in the local dataset.",
+      "confidence": 0.85,
+      "control_area": "Risk Assessment",
+      "evidence": [
+        {
+          "evidence_id": "doc-61e1c1bd",
+          "path": "evidence/production_deploy_approval.md",
+          "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-a1e9a5a7",
+          "path": "evidence/mfa_rollout_evidence.md",
+          "quote": "# MFA Rollout Evidence\n\n**Evidence ID:** EV-ACCESS-MFA-001  \n**Control area:** Access Control  \n**Mock capture date:** 2026-05-20  \n**Evidence source:** Mock identity-provider export summary  \n**Dataset status:** Mock ev",
+          "relevance_score": 0.832
+        },
+        {
+          "evidence_id": "doc-77fa58ed",
+          "path": "tickets/change_approval_ticket.md",
+          "quote": "# Mock Change Ticket: CHG-2026-0518\n\n**Ticket ID:** CHG-2026-0518  \n**Control area:** Change Management  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nDeploy documentation and reporting metadata update to producti",
+          "relevance_score": 0.7921
+        },
+        {
+          "evidence_id": "doc-e75cfacc",
+          "path": "policies/incident_response_policy.md",
+          "quote": "# Incident Response Policy\n\n**Document ID:** POL-IR-001  \n**Control area:** Incident Response  \n**Mock owner:** Security Operations  \n**Mock effective date:** 2026-02-01  \n**Dataset status:** Mock evidence only\n\n## Purpo",
+          "relevance_score": 0.6556
+        }
+      ],
+      "evidence_ids": [
+        "doc-61e1c1bd",
+        "doc-a1e9a5a7",
+        "doc-77fa58ed",
+        "doc-e75cfacc"
+      ],
+      "evidence_summary": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... # MFA Rollout Evidence **Evidence ID:** EV-ACCESS-MFA-001 **Control area:** Access Control **Mock capture date:** 2026-05-20 **Evidence source:** Mock identity-provider export summary **Dataset status:** Mock evidence only ## Summary The security team completed a mock MFA rollout... # Mock Change Ticket: CHG-2026-0518 **Ticket ID:** CHG-2026-0518 **Control area:** Change Management **Dataset status:** Mock evidence only ## Summary Deploy documentation and reporting metadata update to production. ## Risk classification Low risk, pending final confirmation. ##... # Incident Response Policy **Document ID:** POL-",
+      "failure_modes": [
+        "human_review_required_before_audit_use"
+      ],
+      "framework": "strands",
+      "gaps": [],
+      "human_review_required": true,
+      "question": "Which evidence item creates the highest risk?",
+      "recommended_next_action": "Route to simulated human review before using the result in an audit narrative.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 3,
+          "status": "success",
+          "tool": "load_evidence_corpus"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "classify_question"
+        },
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "78ca89c3-fce0-4921-a977-a55474df2e67",
+    "started_at_utc": "2026-06-05T07:55:10.714167+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 3,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T07:55:10.725934+00:00",
+    "events": [
+      {
+        "data": {
+          "instruction_summary": "Evaluate mock SOC 2-style evidence using registered tools, preserve read-only boundaries, return structured AgentReport output, and route un",
+          "registered_tools": [
+            "classify_question",
+            "generate_report",
+            "load_evidence_corpus",
+            "score_evidence",
+            "search_evidence",
+            "summarize_document"
+          ]
+        },
+        "event_type": "strands.agent.start",
+        "framework": "strands",
+        "message": "Started local Strands-style autonomous-agent workflow.",
+        "timestamp_utc": "2026-06-05T07:55:10.720346+00:00"
+      },
+      {
+        "data": {
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.720360+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "strands.tool.load_evidence_corpus",
+        "framework": "strands",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T07:55:10.723535+00:00"
+      },
+      {
+        "data": {
+          "tool": "classify_question"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.723555+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Access Control"
+        },
+        "event_type": "strands.tool.classify_question",
+        "framework": "strands",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T07:55:10.723570+00:00"
+      },
+      {
+        "data": {
+          "tool": "search_evidence"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.723577+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-3936ecce",
+            "doc-61e1c1bd",
+            "doc-f2cd0794",
+            "doc-a1e9a5a7"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "strands",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T07:55:10.725728+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-3936ecce",
+            "doc-61e1c1bd",
+            "doc-f2cd0794",
+            "doc-a1e9a5a7"
+          ]
+        },
+        "event_type": "strands.tool.search_evidence.result",
+        "framework": "strands",
+        "message": "Stored retrieval results in Strands run context.",
+        "timestamp_utc": "2026-06-05T07:55:10.725744+00:00"
+      },
+      {
+        "data": {
+          "tool": "summarize_document"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.725751+00:00"
+      },
+      {
+        "data": {
+          "summary_count": 4
+        },
+        "event_type": "strands.tool.summarize_document.result",
+        "framework": "strands",
+        "message": "Summarized retrieved evidence snippets.",
+        "timestamp_utc": "2026-06-05T07:55:10.725804+00:00"
+      },
+      {
+        "data": {
+          "tool": "score_evidence"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.725811+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77,
+          "gaps": [
+            "Access-control evidence contains missing, absent, or open items."
+          ]
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "strands",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T07:55:10.725850+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77,
+          "gaps": [
+            "Access-control evidence contains missing, absent, or open items."
+          ],
+          "human_review_required": true
+        },
+        "event_type": "strands.guardrail.review_route",
+        "framework": "strands",
+        "message": "Applied Strands-style review guardrail.",
+        "timestamp_utc": "2026-06-05T07:55:10.725863+00:00"
+      },
+      {
+        "data": {
+          "tool": "generate_report"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.725871+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "strands",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T07:55:10.725880+00:00"
+      },
+      {
+        "data": {
+          "framework": "strands"
+        },
+        "event_type": "strands.tool.generate_report.result",
+        "framework": "strands",
+        "message": "Prepared structured report generation marker.",
+        "timestamp_utc": "2026-06-05T07:55:10.725885+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77,
+          "human_review_required": true
+        },
+        "event_type": "strands.agent.complete",
+        "framework": "strands",
+        "message": "Completed local Strands-style workflow.",
+        "timestamp_utc": "2026-06-05T07:55:10.725927+00:00"
+      }
+    ],
+    "framework": "strands",
+    "question": "Is the terminated user removal evidence complete?",
+    "report": {
+      "answer": "The Strands-style agent retrieved mock evidence for Access Control, but found 1 gap(s). The safe output is review-required, not audit-ready.",
+      "confidence": 0.77,
+      "control_area": "Access Control",
+      "evidence": [
+        {
+          "evidence_id": "doc-3936ecce",
+          "path": "evidence/terminated_user_access_removal.md",
+          "quote": "# Terminated User Access Removal Evidence\n\n**Evidence ID:** EV-ACCESS-TERM-001  \n**Control area:** Access Control  \n**Mock event date:** 2026-05-10  \n**Evidence source:** Mock HR termination notification and IAM action s",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-61e1c1bd",
+          "path": "evidence/production_deploy_approval.md",
+          "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-f2cd0794",
+          "path": "evidence/privileged_access_review.md",
+          "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-a1e9a5a7",
+          "path": "evidence/mfa_rollout_evidence.md",
+          "quote": "Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control.",
+          "relevance_score": 0.9701
+        }
+      ],
+      "evidence_ids": [
+        "doc-3936ecce",
+        "doc-61e1c1bd",
+        "doc-f2cd0794",
+        "doc-a1e9a5a7"
+      ],
+      "evidence_summary": "# Terminated User Access Removal Evidence **Evidence ID:** EV-ACCESS-TERM-001 **Control area:** Access Control **Mock event date:** 2026-05-10 **Evidence source:** Mock HR termination notification and IAM action summary **Dataset status:** Mock evidence only ## Summary A terminat... The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... # Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... Human review is recommended if the question asks",
+      "failure_modes": [
+        "human_review_required_before_audit_use"
+      ],
+      "framework": "strands",
+      "gaps": [
+        "Access-control evidence contains missing, absent, or open items."
+      ],
+      "human_review_required": true,
+      "question": "Is the terminated user removal evidence complete?",
+      "recommended_next_action": "Route to simulated human review before using the result in an audit narrative.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 3,
+          "status": "success",
+          "tool": "load_evidence_corpus"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "classify_question"
+        },
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "ad8cd79b-37c3-45f3-aea2-1223d16a933c",
+    "started_at_utc": "2026-06-05T07:55:10.720324+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 3,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T07:55:10.731220+00:00",
+    "events": [
+      {
+        "data": {
+          "instruction_summary": "Evaluate mock SOC 2-style evidence using registered tools, preserve read-only boundaries, return structured AgentReport output, and route un",
+          "registered_tools": [
+            "classify_question",
+            "generate_report",
+            "load_evidence_corpus",
+            "score_evidence",
+            "search_evidence",
+            "summarize_document"
+          ]
+        },
+        "event_type": "strands.agent.start",
+        "framework": "strands",
+        "message": "Started local Strands-style autonomous-agent workflow.",
+        "timestamp_utc": "2026-06-05T07:55:10.726105+00:00"
+      },
+      {
+        "data": {
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.726115+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "strands.tool.load_evidence_corpus",
+        "framework": "strands",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T07:55:10.728796+00:00"
+      },
+      {
+        "data": {
+          "tool": "classify_question"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.728814+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Change Management"
+        },
+        "event_type": "strands.tool.classify_question",
+        "framework": "strands",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T07:55:10.728832+00:00"
+      },
+      {
+        "data": {
+          "tool": "search_evidence"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.728840+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-61e1c1bd",
+            "doc-fdfbdd11",
+            "doc-77fa58ed",
+            "doc-a1e9a5a7"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "strands",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T07:55:10.731021+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-61e1c1bd",
+            "doc-fdfbdd11",
+            "doc-77fa58ed",
+            "doc-a1e9a5a7"
+          ]
+        },
+        "event_type": "strands.tool.search_evidence.result",
+        "framework": "strands",
+        "message": "Stored retrieval results in Strands run context.",
+        "timestamp_utc": "2026-06-05T07:55:10.731037+00:00"
+      },
+      {
+        "data": {
+          "tool": "summarize_document"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.731045+00:00"
+      },
+      {
+        "data": {
+          "summary_count": 4
+        },
+        "event_type": "strands.tool.summarize_document.result",
+        "framework": "strands",
+        "message": "Summarized retrieved evidence snippets.",
+        "timestamp_utc": "2026-06-05T07:55:10.731086+00:00"
+      },
+      {
+        "data": {
+          "tool": "score_evidence"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.731093+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77,
+          "gaps": [
+            "Secondary approval status remains ambiguous."
+          ]
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "strands",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T07:55:10.731117+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77,
+          "gaps": [
+            "Secondary approval status remains ambiguous."
+          ],
+          "human_review_required": true
+        },
+        "event_type": "strands.guardrail.review_route",
+        "framework": "strands",
+        "message": "Applied Strands-style review guardrail.",
+        "timestamp_utc": "2026-06-05T07:55:10.731129+00:00"
+      },
+      {
+        "data": {
+          "tool": "generate_report"
+        },
+        "event_type": "strands.tool.dispatch",
+        "framework": "strands",
+        "message": "Dispatching registered Strands-style tool.",
+        "timestamp_utc": "2026-06-05T07:55:10.731136+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "strands",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T07:55:10.731145+00:00"
+      },
+      {
+        "data": {
+          "framework": "strands"
+        },
+        "event_type": "strands.tool.generate_report.result",
+        "framework": "strands",
+        "message": "Prepared structured report generation marker.",
+        "timestamp_utc": "2026-06-05T07:55:10.731150+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77,
+          "human_review_required": true
+        },
+        "event_type": "strands.agent.complete",
+        "framework": "strands",
+        "message": "Completed local Strands-style workflow.",
+        "timestamp_utc": "2026-06-05T07:55:10.731213+00:00"
+      }
+    ],
+    "framework": "strands",
+    "question": "Is the production deploy approval evidence sufficient?",
+    "report": {
+      "answer": "The Strands-style agent retrieved mock evidence for Change Management, but found 1 gap(s). The safe output is review-required, not audit-ready.",
+      "confidence": 0.77,
+      "control_area": "Change Management",
+      "evidence": [
+        {
+          "evidence_id": "doc-61e1c1bd",
+          "path": "evidence/production_deploy_approval.md",
+          "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-fdfbdd11",
+          "path": "policies/change_management_policy.md",
+          "quote": "# Change Management Policy\n\n**Document ID:** POL-CHANGE-001  \n**Control area:** Change Management  \n**Mock owner:** Engineering Governance  \n**Mock effective date:** 2026-01-20  \n**Dataset status:** Mock evidence only\n\n#",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-77fa58ed",
+          "path": "tickets/change_approval_ticket.md",
+          "quote": "# Mock Change Ticket: CHG-2026-0518\n\n**Ticket ID:** CHG-2026-0518  \n**Control area:** Change Management  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nDeploy documentation and reporting metadata update to producti",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-a1e9a5a7",
+          "path": "evidence/mfa_rollout_evidence.md",
+          "quote": "Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control.",
+          "relevance_score": 1.0
+        }
+      ],
+      "evidence_ids": [
+        "doc-61e1c1bd",
+        "doc-fdfbdd11",
+        "doc-77fa58ed",
+        "doc-a1e9a5a7"
+      ],
+      "evidence_summary": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... # Change Management Policy **Document ID:** POL-CHANGE-001 **Control area:** Change Management **Mock owner:** Engineering Governance **Mock effective date:** 2026-01-20 **Dataset status:** Mock evidence only ## Purpose This mock policy defines change-approval expectations for th... # Mock Change Ticket: CHG-2026-0518 **Ticket ID:** CHG-2026-0518 **Control area:** Change Management **Dataset status:** Mock evidence only ## Summary Deploy documentation and reporting metadata update to production. ## Risk classification Low risk, pending final confirmation. ##... Human review is recommended if the question asks",
+      "failure_modes": [
+        "human_review_required_before_audit_use"
+      ],
+      "framework": "strands",
+      "gaps": [
+        "Secondary approval status remains ambiguous."
+      ],
+      "human_review_required": true,
+      "question": "Is the production deploy approval evidence sufficient?",
+      "recommended_next_action": "Route to simulated human review before using the result in an audit narrative.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "load_evidence_corpus"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "classify_question"
+        },
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "25970c22-9313-458e-a081-a5f2935ca494",
+    "started_at_utc": "2026-06-05T07:55:10.726087+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  }
+]

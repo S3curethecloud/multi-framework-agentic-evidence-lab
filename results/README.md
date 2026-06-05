@@ -15,3 +15,9 @@ Planned outputs:
 - `results/comparison_matrix.md`
 - `results/executive_summary.md`
 - `results/framework_scores.json`
+
+
+## Phase 5 artifacts
+
+- `results/reports/strands_report.json` - Strands-style benchmark reports.
+- `results/traces/strands_trace.json` - Strands-style trace envelopes.
