@@ -1,9 +1,9 @@
 # MFA Rollout Evidence
 
-**Evidence ID:** EV-ACCESS-MFA-001  
-**Control area:** Access Control  
-**Mock capture date:** 2026-05-20  
-**Evidence source:** Mock identity-provider export summary  
+**Evidence ID:** EV-ACCESS-MFA-001
+**Control area:** Access Control
+**Mock capture date:** 2026-05-20
+**Evidence source:** Mock identity-provider export summary
 **Dataset status:** Mock evidence only
 
 ## Summary

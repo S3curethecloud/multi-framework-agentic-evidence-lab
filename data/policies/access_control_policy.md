@@ -1,9 +1,9 @@
 # Access Control Policy
 
-**Document ID:** POL-ACCESS-001  
-**Control area:** Access Control  
-**Mock owner:** Security Governance  
-**Mock effective date:** 2026-01-15  
+**Document ID:** POL-ACCESS-001
+**Control area:** Access Control
+**Mock owner:** Security Governance
+**Mock effective date:** 2026-01-15
 **Dataset status:** Mock evidence only
 
 ## Purpose

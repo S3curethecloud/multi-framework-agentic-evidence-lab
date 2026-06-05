@@ -1,9 +1,9 @@
 # Production Deploy Approval Evidence
 
-**Evidence ID:** EV-CHANGE-DEPLOY-001  
-**Control area:** Change Management  
-**Mock change date:** 2026-05-18  
-**Evidence source:** Mock deployment approval summary  
+**Evidence ID:** EV-CHANGE-DEPLOY-001
+**Control area:** Change Management
+**Mock change date:** 2026-05-18
+**Evidence source:** Mock deployment approval summary
 **Dataset status:** Mock evidence only
 
 ## Summary

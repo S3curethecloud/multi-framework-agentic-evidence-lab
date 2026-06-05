@@ -1,7 +1,7 @@
 # Framework Comparison Matrix
 
-**Status:** Phase 7 / Evidence Recorded  
-**Scope:** Deterministic local comparison of this repository's four framework implementations.  
+**Status:** Phase 7 / Evidence Recorded
+**Scope:** Deterministic local comparison of this repository's four framework implementations.
 **Boundary:** This matrix compares lab artifacts only. It does not claim SOC 2 certification, production operating effectiveness, live enforcement, runtime authorization, token issuance, or production control operation.
 
 ## Summary ranking

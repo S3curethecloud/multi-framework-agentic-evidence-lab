@@ -1,7 +1,7 @@
 # Mock Change Ticket: CHG-2026-0518
 
-**Ticket ID:** CHG-2026-0518  
-**Control area:** Change Management  
+**Ticket ID:** CHG-2026-0518
+**Control area:** Change Management
 **Dataset status:** Mock evidence only
 
 ## Summary

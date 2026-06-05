@@ -1,9 +1,9 @@
 # Privileged Access Review
 
-**Evidence ID:** EV-ACCESS-PAR-001  
-**Control area:** Access Control  
-**Mock review period:** 2026-Q1  
-**Evidence source:** Mock access-review worksheet  
+**Evidence ID:** EV-ACCESS-PAR-001
+**Control area:** Access Control
+**Mock review period:** 2026-Q1
+**Evidence source:** Mock access-review worksheet
 **Dataset status:** Mock evidence only
 
 ## Summary

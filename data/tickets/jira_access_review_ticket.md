@@ -1,7 +1,7 @@
 # Mock Jira Ticket: Access Review Follow-Up
 
-**Ticket ID:** SEC-2026-0412  
-**Control area:** Access Control  
+**Ticket ID:** SEC-2026-0412
+**Control area:** Access Control
 **Dataset status:** Mock evidence only
 
 ## Summary

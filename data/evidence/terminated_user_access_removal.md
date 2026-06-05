@@ -1,9 +1,9 @@
 # Terminated User Access Removal Evidence
 
-**Evidence ID:** EV-ACCESS-TERM-001  
-**Control area:** Access Control  
-**Mock event date:** 2026-05-10  
-**Evidence source:** Mock HR termination notification and IAM action summary  
+**Evidence ID:** EV-ACCESS-TERM-001
+**Control area:** Access Control
+**Mock event date:** 2026-05-10
+**Evidence source:** Mock HR termination notification and IAM action summary
 **Dataset status:** Mock evidence only
 
 ## Summary

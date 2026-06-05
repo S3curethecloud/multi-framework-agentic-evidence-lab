@@ -1,8 +1,8 @@
 # Phase Tracker
 
-**Project:** Multi-Framework Agentic Evidence Lab  
-**Repository:** `S3curethecloud/multi-framework-agentic-evidence-lab`  
-**Current Status:** Phase 7 / Evidence Recorded
+**Project:** Multi-Framework Agentic Evidence Lab
+**Repository:** `S3curethecloud/multi-framework-agentic-evidence-lab`
+**Current Status:** Phase 8 / Evidence Recorded
 
 ## Phase 0 - Project Baseline / Governance Boundary
 

@@ -1,7 +1,7 @@
 # Phase 6 - ADK Implementation
 
-**Project:** Multi-Framework Agentic Evidence Lab  
-**Repository:** `S3curethecloud/multi-framework-agentic-evidence-lab`  
+**Project:** Multi-Framework Agentic Evidence Lab
+**Repository:** `S3curethecloud/multi-framework-agentic-evidence-lab`
 **Status:** Evidence Recorded
 
 ## Goal

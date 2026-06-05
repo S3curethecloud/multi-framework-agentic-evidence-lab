@@ -1,8 +1,8 @@
 # Phase 2 - Mock SOC 2 Evidence Dataset
 
-**Status:** Evidence Recorded  
-**Phase type:** Dataset baseline  
-**Runtime authority:** None  
+**Status:** Evidence Recorded
+**Phase type:** Dataset baseline
+**Runtime authority:** None
 **Framework implementation:** None
 
 ## Goal

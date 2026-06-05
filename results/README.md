@@ -1,38 +1,51 @@
-# Results
+# Results Artifacts
 
-Framework reports, traces, screenshots, and comparison outputs will be generated in later phases.
+**Status:** Phase 8 / Evidence Recorded
 
-Planned outputs:
+This directory contains report, trace, comparison, and portfolio packaging artifacts for the completed lab.
 
-- `results/reports/langchain_report.json`
-- `results/reports/langgraph_report.json`
-- `results/reports/strands_report.json`
-- `results/reports/adk_report.json`
-- `results/traces/langchain_trace.json`
-- `results/traces/langgraph_trace.json`
-- `results/traces/strands_trace.json`
-- `results/traces/adk_trace.json`
-- `results/comparison_matrix.md`
-- `results/executive_summary.md`
-- `results/framework_scores.json`
+## Framework reports
 
+```text
+results/reports/langchain_report.json
+results/reports/langgraph_report.json
+results/reports/strands_report.json
+results/reports/adk_report.json
+```
 
-## Phase 5 artifacts
+Each report contains ten structured `AgentReport` records using the shared schema.
 
-- `results/reports/strands_report.json` - Strands-style benchmark reports.
-- `results/traces/strands_trace.json` - Strands-style trace envelopes.
+## Framework traces
 
+```text
+results/traces/langchain_trace.json
+results/traces/langgraph_trace.json
+results/traces/strands_trace.json
+results/traces/adk_trace.json
+```
 
-## Phase 6 artifacts
+Each trace file contains ten `TraceEnvelope` records using the shared trace contract.
 
-- `results/reports/adk_report.json` - ADK-style benchmark reports.
-- `results/traces/adk_trace.json` - ADK-style trace envelopes.
+## Comparison artifacts
 
+```text
+results/framework_scores.json
+results/comparison_matrix.md
+results/executive_summary.md
+```
 
-## Phase 7 artifacts
+These files compare the four framework implementations using the shared evaluation rubric.
 
-- `results/framework_scores.json` - Machine-readable framework metrics and rubric scores.
-- `results/comparison_matrix.md` - Human-readable framework comparison matrix.
-- `results/executive_summary.md` - Portfolio-ready interpretation of the comparison.
+## Portfolio artifacts
 
-Phase 7 compares deterministic local lab implementations only. It does not claim SOC 2 certification, production operating effectiveness, live enforcement, authorization behavior, token issuance, runtime session creation, or production control operation.
+```text
+results/portfolio_summary.md
+results/resume_bullets.md
+results/project_closure_report.md
+```
+
+These files package the completed lab for recruiter, hiring-manager, and portfolio review.
+
+## Boundary
+
+All result artifacts use mock evidence and deterministic local execution. They are not production operating evidence, an audit report, a certification claim, or proof of live enforcement.

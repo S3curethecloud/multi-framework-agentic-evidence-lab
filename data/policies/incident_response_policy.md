@@ -1,9 +1,9 @@
 # Incident Response Policy
 
-**Document ID:** POL-IR-001  
-**Control area:** Incident Response  
-**Mock owner:** Security Operations  
-**Mock effective date:** 2026-02-01  
+**Document ID:** POL-IR-001
+**Control area:** Incident Response
+**Mock owner:** Security Operations
+**Mock effective date:** 2026-02-01
 **Dataset status:** Mock evidence only
 
 ## Purpose

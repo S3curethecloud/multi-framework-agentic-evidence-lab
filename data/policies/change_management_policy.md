@@ -1,9 +1,9 @@
 # Change Management Policy
 
-**Document ID:** POL-CHANGE-001  
-**Control area:** Change Management  
-**Mock owner:** Engineering Governance  
-**Mock effective date:** 2026-01-20  
+**Document ID:** POL-CHANGE-001
+**Control area:** Change Management
+**Mock owner:** Engineering Governance
+**Mock effective date:** 2026-01-20
 **Dataset status:** Mock evidence only
 
 ## Purpose
