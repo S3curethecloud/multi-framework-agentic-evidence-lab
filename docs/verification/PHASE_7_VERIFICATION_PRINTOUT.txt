@@ -1,0 +1,60 @@
+PHASE 7 VERIFICATION PRINTOUT
+Project: Multi-Framework Agentic Evidence Lab
+Expected status: Phase 7 / Evaluation Harness
+
+REQUIRED FILES
+PASS file tools/run_framework_comparison.py
+PASS file tools/verify_phase_7.py
+PASS file docs/phases/PHASE_7_EVALUATION_HARNESS_COMPARISON_MATRIX.md
+PASS file results/framework_scores.json
+PASS file results/comparison_matrix.md
+PASS file results/executive_summary.md
+
+PYTHON SYNTAX
+PASS syntax tools/run_framework_comparison.py
+PASS syntax tools/verify_phase_7.py
+
+FRAMEWORK ARTIFACT PARITY
+PASS langchain report count 10
+PASS langchain trace count 10
+PASS langgraph report count 10
+PASS langgraph trace count 10
+PASS strands report count 10
+PASS strands trace count 10
+PASS adk report count 10
+PASS adk trace count 10
+
+COMPARISON OUTPUTS
+PASS score record langchain
+PASS score record langgraph
+PASS score record strands
+PASS score record adk
+PASS ranked framework list contains all frameworks
+PASS comparison matrix contains rubric section
+PASS executive summary contains primary conclusion
+
+FORBIDDEN POSITIVE CLAIM SCAN
+PASS positive claim absent: soc 2 certified: true
+PASS positive claim absent: soc2 certified: true
+PASS positive claim absent: soc2_certified: true
+PASS positive claim absent: soc_2_certified: true
+PASS positive claim absent: type 2 certified: true
+PASS positive claim absent: independent audit completed: true
+PASS positive claim absent: production operating effectiveness proven: true
+PASS positive claim absent: live enforcement active: true
+PASS positive claim absent: production enforcement active: true
+PASS positive claim absent: tokens issued: true
+PASS positive claim absent: authorization granted: true
+PASS positive claim absent: runtime sessions created: true
+PASS positive claim absent: kubernetes mutation enabled: true
+PASS positive claim absent: provider mutation enabled: true
+PASS positive claim absent: sentinel bypass: true
+
+IMPLEMENTATION SCOPE GUARD
+PASS existing implementation retained: langchain_lab/agent.py
+PASS existing implementation retained: langgraph_lab/graph.py
+PASS existing implementation retained: strands_lab/agent.py
+PASS existing implementation retained: adk_lab/agent.py
+
+SUMMARY
+RESULT: PASS

@@ -1,0 +1,296 @@
+{
+  "benchmark_question_count": 10,
+  "claim_boundary": {
+    "live_enforcement_claimed": false,
+    "production_operating_effectiveness_claimed": false,
+    "runtime_authority_granted": false,
+    "soc2_certification_claimed": false
+  },
+  "frameworks": {
+    "adk": {
+      "average_score": 4.55,
+      "max_score": 55,
+      "metrics": {
+        "average_confidence": 0.7863,
+        "average_tool_calls": 10,
+        "average_trace_events": 26,
+        "evidence_reference_rate": 1.0,
+        "framework": "adk",
+        "human_review_rate": 0.8,
+        "report_count": 10,
+        "schema_pass_rate": 1.0,
+        "total_failure_modes": 8,
+        "trace_count": 10,
+        "unique_control_areas": [
+          "Access Control",
+          "Change Management",
+          "Risk Assessment",
+          "Unknown"
+        ]
+      },
+      "rubric_scores": {
+        "failure_handling": {
+          "justification": "Uncertainty and evidence gaps are handled through session-state routing.",
+          "score": 4
+        },
+        "governance_fit": {
+          "justification": "Session state plus planner traces provide strong evidence-grade auditability.",
+          "score": 5
+        },
+        "human_review": {
+          "justification": "Review routing is a planned step and visible in the trace.",
+          "score": 5
+        },
+        "observability": {
+          "justification": "Planner, tool invocation, and review-routing events produce high trace granularity.",
+          "score": 5
+        },
+        "portability": {
+          "justification": "Tool and schema contracts are portable, but app/session patterns may be platform-shaped.",
+          "score": 4
+        },
+        "production_fit": {
+          "justification": "Strong app-style structure for reliable agent workflow development.",
+          "score": 5
+        },
+        "rag_quality": {
+          "justification": "Uses the shared evidence retrieval and citation contract consistently.",
+          "score": 4
+        },
+        "setup_speed": {
+          "justification": "Planner/session pattern adds structure beyond a simple baseline.",
+          "score": 4
+        },
+        "state_handling": {
+          "justification": "Explicit ADK-style session state provides strong run-state visibility.",
+          "score": 5
+        },
+        "structured_output": {
+          "justification": "Every benchmark output validates through the shared AgentReport schema.",
+          "score": 5
+        },
+        "tool_ergonomics": {
+          "justification": "Registered tools are clear, with additional session/planner structure to manage.",
+          "score": 4
+        }
+      },
+      "total_score": 50
+    },
+    "langchain": {
+      "average_score": 4.09,
+      "max_score": 55,
+      "metrics": {
+        "average_confidence": 0.7863,
+        "average_tool_calls": 7,
+        "average_trace_events": 7,
+        "evidence_reference_rate": 1.0,
+        "framework": "langchain",
+        "human_review_rate": 0.5,
+        "report_count": 10,
+        "schema_pass_rate": 1.0,
+        "total_failure_modes": 0,
+        "trace_count": 10,
+        "unique_control_areas": [
+          "Access Control",
+          "Change Management",
+          "Risk Assessment",
+          "Unknown"
+        ]
+      },
+      "rubric_scores": {
+        "failure_handling": {
+          "justification": "Evidence gaps and review-required paths are visible in the report and trace.",
+          "score": 4
+        },
+        "governance_fit": {
+          "justification": "Produces evidence-grade reports and traces, though workflow state is not graph-governed.",
+          "score": 4
+        },
+        "human_review": {
+          "justification": "Human-review routing is implemented as a baseline conditional, not a first-class checkpoint.",
+          "score": 3
+        },
+        "observability": {
+          "justification": "Trace and tool-call records are complete, but less granular than graph or session implementations.",
+          "score": 4
+        },
+        "portability": {
+          "justification": "The implementation is the most generic and easiest to retarget to another model/provider layer.",
+          "score": 5
+        },
+        "production_fit": {
+          "justification": "Strong baseline structure, but governed routing is less explicit than LangGraph or ADK style.",
+          "score": 4
+        },
+        "rag_quality": {
+          "justification": "Uses the shared retriever and evidence references consistently across benchmark questions.",
+          "score": 4
+        },
+        "setup_speed": {
+          "justification": "Smallest baseline path to working RAG, tools, structured output, report, and trace artifacts.",
+          "score": 5
+        },
+        "state_handling": {
+          "justification": "State is present through local variables and trace records, but not graph-native.",
+          "score": 3
+        },
+        "structured_output": {
+          "justification": "Every benchmark output validates through the shared AgentReport schema.",
+          "score": 5
+        },
+        "tool_ergonomics": {
+          "justification": "Tool-shaped calls are explicit and easy to inspect, though orchestration remains linear.",
+          "score": 4
+        }
+      },
+      "total_score": 45
+    },
+    "langgraph": {
+      "average_score": 4.64,
+      "max_score": 55,
+      "metrics": {
+        "average_confidence": 0.7863,
+        "average_tool_calls": 7.5,
+        "average_trace_events": 18.5,
+        "evidence_reference_rate": 1.0,
+        "framework": "langgraph",
+        "human_review_rate": 0.5,
+        "report_count": 10,
+        "schema_pass_rate": 1.0,
+        "total_failure_modes": 5,
+        "trace_count": 10,
+        "unique_control_areas": [
+          "Access Control",
+          "Change Management",
+          "Risk Assessment",
+          "Unknown"
+        ]
+      },
+      "rubric_scores": {
+        "failure_handling": {
+          "justification": "Graph routing makes uncertainty and evidence gaps explicit before report generation.",
+          "score": 5
+        },
+        "governance_fit": {
+          "justification": "Best fit for proving what happened, why it routed, and where human review occurred.",
+          "score": 5
+        },
+        "human_review": {
+          "justification": "Simulated human-review checkpoint is a natural graph branch with traceable routing.",
+          "score": 5
+        },
+        "observability": {
+          "justification": "Node start/end events, route decisions, and review checkpoint events create the richest governance trace.",
+          "score": 5
+        },
+        "portability": {
+          "justification": "Portable at the model/tool layer, with more workflow-specific structure to preserve.",
+          "score": 4
+        },
+        "production_fit": {
+          "justification": "Strongest production-style orchestration pattern in the lab.",
+          "score": 5
+        },
+        "rag_quality": {
+          "justification": "Uses the same retrieval contract while preserving graph-state traceability.",
+          "score": 4
+        },
+        "setup_speed": {
+          "justification": "More structure than the baseline, with additional node and routing code.",
+          "score": 4
+        },
+        "state_handling": {
+          "justification": "Best explicit state and node-by-node control flow in this lab.",
+          "score": 5
+        },
+        "structured_output": {
+          "justification": "Every benchmark output validates through the shared AgentReport schema.",
+          "score": 5
+        },
+        "tool_ergonomics": {
+          "justification": "Tools are clear and framework-neutral, with graph nodes making invocation order explicit.",
+          "score": 4
+        }
+      },
+      "total_score": 51
+    },
+    "strands": {
+      "average_score": 4.27,
+      "max_score": 55,
+      "metrics": {
+        "average_confidence": 0.7863,
+        "average_tool_calls": 9,
+        "average_trace_events": 17,
+        "evidence_reference_rate": 1.0,
+        "framework": "strands",
+        "human_review_rate": 0.8,
+        "report_count": 10,
+        "schema_pass_rate": 1.0,
+        "total_failure_modes": 8,
+        "trace_count": 10,
+        "unique_control_areas": [
+          "Access Control",
+          "Change Management",
+          "Risk Assessment",
+          "Unknown"
+        ]
+      },
+      "rubric_scores": {
+        "failure_handling": {
+          "justification": "Gaps and review requirements are reported clearly, with registered tools preserving traceability.",
+          "score": 4
+        },
+        "governance_fit": {
+          "justification": "Strong traceability, especially for tool dispatch, with slightly less formal routing state.",
+          "score": 4
+        },
+        "human_review": {
+          "justification": "Guardrail routing is explicit and traceable in the Strands-style run.",
+          "score": 4
+        },
+        "observability": {
+          "justification": "Tool dispatch and guardrail events create strong observability for this lab pattern.",
+          "score": 5
+        },
+        "portability": {
+          "justification": "Tool contracts are portable, while runtime assumptions may need provider-specific adaptation.",
+          "score": 4
+        },
+        "production_fit": {
+          "justification": "Strong agent runtime shape; graph-level determinism is less explicit than LangGraph.",
+          "score": 4
+        },
+        "rag_quality": {
+          "justification": "Uses the same shared retriever and citation contract as the other frameworks.",
+          "score": 4
+        },
+        "setup_speed": {
+          "justification": "Tool catalog and autonomous-agent pattern are clear, with modest setup overhead.",
+          "score": 4
+        },
+        "state_handling": {
+          "justification": "Agent-style state is observable through events, though less formal than graph state.",
+          "score": 4
+        },
+        "structured_output": {
+          "justification": "Every benchmark output validates through the shared AgentReport schema.",
+          "score": 5
+        },
+        "tool_ergonomics": {
+          "justification": "Registered tool catalog and dispatch events are easy to compare and inspect.",
+          "score": 5
+        }
+      },
+      "total_score": 47
+    }
+  },
+  "phase": "Phase 7 - Evaluation Harness / Comparison Matrix",
+  "ranked_frameworks": [
+    "langgraph",
+    "adk",
+    "strands",
+    "langchain"
+  ],
+  "scope": "Deterministic local comparison of this repository's four framework implementations.",
+  "status": "evidence_recorded"
+}

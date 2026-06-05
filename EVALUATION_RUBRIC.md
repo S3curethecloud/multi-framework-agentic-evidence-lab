@@ -36,3 +36,14 @@ Baseline questions:
 ## Scoring rule
 
 A framework score is invalid unless the implementation uses the shared dataset, shared schema, shared question set, and shared trace envelope.
+
+
+## Phase 7 scoring output
+
+Phase 7 records the applied comparison results in:
+
+- `results/framework_scores.json`
+- `results/comparison_matrix.md`
+- `results/executive_summary.md`
+
+The scores compare this repository's deterministic local implementations. They are not universal claims about every possible use of each framework.

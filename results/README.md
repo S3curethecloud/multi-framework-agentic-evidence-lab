@@ -27,3 +27,12 @@ Planned outputs:
 
 - `results/reports/adk_report.json` - ADK-style benchmark reports.
 - `results/traces/adk_trace.json` - ADK-style trace envelopes.
+
+
+## Phase 7 artifacts
+
+- `results/framework_scores.json` - Machine-readable framework metrics and rubric scores.
+- `results/comparison_matrix.md` - Human-readable framework comparison matrix.
+- `results/executive_summary.md` - Portfolio-ready interpretation of the comparison.
+
+Phase 7 compares deterministic local lab implementations only. It does not claim SOC 2 certification, production operating effectiveness, live enforcement, authorization behavior, token issuance, runtime session creation, or production control operation.
