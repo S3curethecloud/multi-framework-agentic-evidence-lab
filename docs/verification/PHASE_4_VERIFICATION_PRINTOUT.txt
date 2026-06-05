@@ -1,0 +1,56 @@
+PHASE 4 VERIFICATION PRINTOUT
+Project: Multi-Framework Agentic Evidence Lab
+Expected status: Phase 4 / LangGraph Governed Workflow
+
+REQUIRED FILES
+PASS file langgraph_lab/README.md
+PASS file langgraph_lab/graph.py
+PASS file langgraph_lab/run_benchmark.py
+PASS file docs/phases/PHASE_4_LANGGRAPH_GOVERNED_WORKFLOW.md
+PASS file docs/verification/PHASE_4_VERIFICATION_PRINTOUT.txt
+PASS file results/reports/langgraph_report.json
+PASS file results/traces/langgraph_trace.json
+PASS file tools/verify_phase_4.py
+
+PYTHON SYNTAX
+PASS syntax langgraph_lab/graph.py
+PASS syntax langgraph_lab/run_benchmark.py
+PASS syntax tools/verify_phase_4.py
+
+GRAPH MARKERS
+PASS graph marker class GraphState
+PASS graph marker def node_classify_question
+PASS graph marker def node_retrieve_evidence
+PASS graph marker def node_evaluate_evidence
+PASS graph marker def node_route_by_confidence
+PASS graph marker def node_human_review
+PASS graph marker def node_generate_report
+PASS graph marker def run_langgraph_workflow
+
+LANGGRAPH REPORT ARTIFACT
+PASS langgraph report count 10
+PASS all reports framework langgraph
+PASS human-review reports present 5
+PASS required tools observed in reports
+PASS human_review_checkpoint tool observed
+
+LANGGRAPH TRACE ARTIFACT
+PASS langgraph trace count 10
+PASS trace event graph.start
+PASS trace event graph.node.start
+PASS trace event graph.node.end
+PASS trace event graph.route
+PASS trace event graph.human_review
+PASS trace event graph.complete
+
+FUTURE FRAMEWORK GUARD
+PASS future implementation not present yet: strands_lab/agent.py
+PASS future implementation not present yet: strands_lab/run_benchmark.py
+PASS future implementation not present yet: adk_lab/agent.py
+PASS future implementation not present yet: adk_lab/run_benchmark.py
+
+FORBIDDEN POSITIVE CLAIM SCAN
+PASS no unsafe positive claim patterns found
+
+SUMMARY
+RESULT: PASS

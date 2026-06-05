@@ -1,6 +1,6 @@
 # Multi-Framework Agentic Evidence Lab
 
-**Status:** Phase 0 / Project Baseline
+**Status:** Phase 4 / Evidence Recorded
 
 This repository compares LangChain, LangGraph, Strands, and ADK by implementing the same governed RAG evidence-review agent across all four frameworks.
 
@@ -53,11 +53,11 @@ Work proceeds through explicit phase gates. Each phase must end with a verificat
 
 | Phase | Name | Status |
 |---|---|---|
-| Phase 0 | Project Baseline / Governance Boundary | In progress |
-| Phase 1 | Shared Foundation / Schemas / Tracing | Not started |
-| Phase 2 | Mock SOC 2 Evidence Dataset | Not started |
-| Phase 3 | LangChain Baseline Agent | Not started |
-| Phase 4 | LangGraph Governed Workflow | Not started |
+| Phase 0 | Project Baseline / Governance Boundary | Closed |
+| Phase 1 | Shared Foundation / Schemas / Tracing | Closed |
+| Phase 2 | Mock SOC 2 Evidence Dataset | Closed |
+| Phase 3 | LangChain Baseline Agent | Closed |
+| Phase 4 | LangGraph Governed Workflow | Closed |
 | Phase 5 | Strands Implementation | Not started |
 | Phase 6 | ADK Implementation | Not started |
 | Phase 7 | Evaluation Harness / Comparison Matrix | Not started |
@@ -82,4 +82,4 @@ Before moving from one phase to the next, run the phase verification printout an
 
 ## Current checkpoint
 
-Phase 0 creates the baseline repository shape and governance boundary documents only. No framework implementation is added in Phase 0.
+Phase 4 adds the governed LangGraph-style workflow and records report/trace artifacts. Strands and ADK implementations remain future phases.

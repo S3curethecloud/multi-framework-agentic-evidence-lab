@@ -2,7 +2,7 @@
 
 **Project:** Multi-Framework Agentic Evidence Lab  
 **Repository:** `S3curethecloud/multi-framework-agentic-evidence-lab`  
-**Current Status:** Phase 3 / Evidence Recorded
+**Current Status:** Phase 4 / Evidence Recorded
 
 ## Phase 0 - Project Baseline / Governance Boundary
 
@@ -135,7 +135,42 @@
 
 **Goal:** Implement explicit stateful orchestration, confidence routing, and human-review checkpoint.
 
-**Status:** Not started
+**Status:** Evidence Recorded
+
+### Checklist
+
+- [x] LangGraph-style graph module created
+- [x] Explicit graph state created
+- [x] Load, classify, retrieve, evaluate, route, review, and report nodes created
+- [x] Confidence routing implemented
+- [x] Simulated human-review checkpoint implemented
+- [x] Shared schema contract reused
+- [x] Shared retrieval helper reused through tool-shaped calls
+- [x] Structured `AgentReport` generated
+- [x] Tool-call records generated
+- [x] Trace envelope generated with graph node events
+- [x] Shared benchmark questions executed
+- [x] LangGraph report artifact generated
+- [x] LangGraph trace artifact generated
+- [x] Phase 4 verification script created
+- [x] Phase 4 verification passed
+- [x] Phase 4 evidence recorded
+
+### Exit criteria
+
+- [x] LangGraph-style workflow can run without API keys
+- [x] Output validates against shared schema
+- [x] Report contains framework value `langgraph`
+- [x] Trace contains route and human-review checkpoint events
+- [x] No Strands or ADK implementation leakage is present
+- [x] Forbidden positive-claim scan passes
+
+### Evidence
+
+- Phase 4 document: `docs/phases/PHASE_4_LANGGRAPH_GOVERNED_WORKFLOW.md`
+- Phase 4 verification printout: `docs/verification/PHASE_4_VERIFICATION_PRINTOUT.txt`
+- LangGraph report: `results/reports/langgraph_report.json`
+- LangGraph trace: `results/traces/langgraph_trace.json`
 
 ## Phase 5 - Strands Implementation
 
