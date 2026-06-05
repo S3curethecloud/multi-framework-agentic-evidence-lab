@@ -21,3 +21,9 @@ Planned outputs:
 
 - `results/reports/strands_report.json` - Strands-style benchmark reports.
 - `results/traces/strands_trace.json` - Strands-style trace envelopes.
+
+
+## Phase 6 artifacts
+
+- `results/reports/adk_report.json` - ADK-style benchmark reports.
+- `results/traces/adk_trace.json` - ADK-style trace envelopes.

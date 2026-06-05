@@ -1,0 +1,4632 @@
+[
+  {
+    "completed_at_utc": "2026-06-05T08:03:18.468017+00:00",
+    "events": [
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "instruction_summary": "Evaluate mock SOC 2-style evidence using registered tools, maintain explicit session state, return structured AgentReport output, and route uncertainty to human",
+          "plan": [
+            "load_evidence_corpus",
+            "classify_question",
+            "search_evidence",
+            "summarize_document",
+            "score_evidence",
+            "route_human_review",
+            "generate_report"
+          ]
+        },
+        "event_type": "adk.agent.start",
+        "framework": "adk",
+        "message": "Started local ADK-style evidence-review workflow.",
+        "timestamp_utc": "2026-06-05T08:03:18.460658+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 1,
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.460716+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.460733+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "adk.tool.load_evidence_corpus",
+        "framework": "adk",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T08:03:18.464913+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 2,
+          "tool": "classify_question"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.464937+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "classify_question"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.464947+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Access Control"
+        },
+        "event_type": "adk.tool.classify_question",
+        "framework": "adk",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T08:03:18.464979+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 3,
+          "tool": "search_evidence"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.464987+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "search_evidence"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.464994+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-f2cd0794",
+            "doc-a1e9a5a7",
+            "doc-3936ecce",
+            "doc-982b587d"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "adk",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T08:03:18.467710+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-f2cd0794",
+            "doc-a1e9a5a7",
+            "doc-3936ecce",
+            "doc-982b587d"
+          ]
+        },
+        "event_type": "adk.tool.search_evidence.result",
+        "framework": "adk",
+        "message": "Stored retrieval results in ADK session state.",
+        "timestamp_utc": "2026-06-05T08:03:18.467729+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 4,
+          "tool": "summarize_document"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.467738+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "summarize_document"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.467744+00:00"
+      },
+      {
+        "data": {
+          "summary_count": 4
+        },
+        "event_type": "adk.tool.summarize_document.result",
+        "framework": "adk",
+        "message": "Summarized retrieved evidence snippets.",
+        "timestamp_utc": "2026-06-05T08:03:18.467807+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 5,
+          "tool": "score_evidence"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.467815+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "score_evidence"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.467821+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77,
+          "gaps": [
+            "Access-control evidence contains missing, absent, or open items."
+          ]
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "adk",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T08:03:18.467857+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77,
+          "gaps": [
+            "Access-control evidence contains missing, absent, or open items."
+          ]
+        },
+        "event_type": "adk.tool.score_evidence.result",
+        "framework": "adk",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T08:03:18.467872+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 6,
+          "tool": "route_human_review"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.467879+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "route_human_review"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.467885+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77,
+          "gap_count": 1,
+          "human_review_required": true,
+          "reason": "Evidence gaps require simulated human review."
+        },
+        "event_type": "adk.review.route",
+        "framework": "adk",
+        "message": "Applied ADK-style human-review routing policy.",
+        "timestamp_utc": "2026-06-05T08:03:18.467900+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 7,
+          "tool": "generate_report"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.467907+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "generate_report"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.467913+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "adk",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T08:03:18.467921+00:00"
+      },
+      {
+        "data": {
+          "framework": "adk"
+        },
+        "event_type": "adk.tool.generate_report.result",
+        "framework": "adk",
+        "message": "Prepared structured report generation marker.",
+        "timestamp_utc": "2026-06-05T08:03:18.467942+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "confidence": 0.77,
+          "human_review_required": true
+        },
+        "event_type": "adk.agent.complete",
+        "framework": "adk",
+        "message": "Completed local ADK-style workflow.",
+        "timestamp_utc": "2026-06-05T08:03:18.468009+00:00"
+      }
+    ],
+    "framework": "adk",
+    "question": "Is the evidence sufficient for access control?",
+    "report": {
+      "answer": "The ADK-style agent retrieved mock evidence for Access Control, but identified 1 gap(s). The ADK-style workflow routed the output to simulated human review.",
+      "confidence": 0.77,
+      "control_area": "Access Control",
+      "evidence": [
+        {
+          "evidence_id": "doc-f2cd0794",
+          "path": "evidence/privileged_access_review.md",
+          "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-a1e9a5a7",
+          "path": "evidence/mfa_rollout_evidence.md",
+          "quote": "Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control.",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-3936ecce",
+          "path": "evidence/terminated_user_access_removal.md",
+          "quote": "# Terminated User Access Removal Evidence\n\n**Evidence ID:** EV-ACCESS-TERM-001  \n**Control area:** Access Control  \n**Mock event date:** 2026-05-10  \n**Evidence source:** Mock HR termination notification and IAM action s",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-982b587d",
+          "path": "tickets/jira_access_review_ticket.md",
+          "quote": "# Mock Jira Ticket: Access Review Follow-Up\n\n**Ticket ID:** SEC-2026-0412  \n**Control area:** Access Control  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nFollow up on Q1 privileged access review exceptions.\n\n## ",
+          "relevance_score": 1.0
+        }
+      ],
+      "evidence_ids": [
+        "doc-f2cd0794",
+        "doc-a1e9a5a7",
+        "doc-3936ecce",
+        "doc-982b587d"
+      ],
+      "evidence_summary": "# Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control. # Terminated User Access Removal Evidence **Evidence ID:** EV-ACCESS-TERM-001 **Control area:** Access Control **Mock event date:** 2026-05-10 **Evidence source:** Mock HR termination notification and IAM action summary **Dataset status:** Mock evidence only ## Summary A terminat... # Mock Jira Ticket: Access Review Follow-Up **Ticket ID:** SEC-2026-0412 **Control area:** Access Control **Dataset status:** Mock evidence only ## Summary Follow up on Q1 privileged access review exceptions. ## Descriptio",
+      "failure_modes": [
+        "human_review_required_before_audit_use"
+      ],
+      "framework": "adk",
+      "gaps": [
+        "Access-control evidence contains missing, absent, or open items."
+      ],
+      "human_review_required": true,
+      "question": "Is the evidence sufficient for access control?",
+      "recommended_next_action": "Complete simulated human review before using this result in a portfolio narrative.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 4,
+          "status": "success",
+          "tool": "load_evidence_corpus"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "classify_question"
+        },
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "human_review_checkpoint"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "5b471fb9-dae5-445a-a2a1-cbf2759c478a",
+    "started_at_utc": "2026-06-05T08:03:18.460605+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 4,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "human_review_checkpoint"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T08:03:18.475042+00:00",
+    "events": [
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "instruction_summary": "Evaluate mock SOC 2-style evidence using registered tools, maintain explicit session state, return structured AgentReport output, and route uncertainty to human",
+          "plan": [
+            "load_evidence_corpus",
+            "classify_question",
+            "search_evidence",
+            "summarize_document",
+            "score_evidence",
+            "route_human_review",
+            "generate_report"
+          ]
+        },
+        "event_type": "adk.agent.start",
+        "framework": "adk",
+        "message": "Started local ADK-style evidence-review workflow.",
+        "timestamp_utc": "2026-06-05T08:03:18.468296+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 1,
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.468309+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.468316+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "adk.tool.load_evidence_corpus",
+        "framework": "adk",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T08:03:18.472367+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 2,
+          "tool": "classify_question"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.472389+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "classify_question"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.472404+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Unknown"
+        },
+        "event_type": "adk.tool.classify_question",
+        "framework": "adk",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T08:03:18.472425+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 3,
+          "tool": "search_evidence"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.472437+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "search_evidence"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.472443+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-a90617eb",
+            "doc-8ec9a00b",
+            "doc-e75cfacc",
+            "doc-f2cd0794"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "adk",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T08:03:18.474747+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-a90617eb",
+            "doc-8ec9a00b",
+            "doc-e75cfacc",
+            "doc-f2cd0794"
+          ]
+        },
+        "event_type": "adk.tool.search_evidence.result",
+        "framework": "adk",
+        "message": "Stored retrieval results in ADK session state.",
+        "timestamp_utc": "2026-06-05T08:03:18.474772+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 4,
+          "tool": "summarize_document"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.474783+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "summarize_document"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.474801+00:00"
+      },
+      {
+        "data": {
+          "summary_count": 4
+        },
+        "event_type": "adk.tool.summarize_document.result",
+        "framework": "adk",
+        "message": "Summarized retrieved evidence snippets.",
+        "timestamp_utc": "2026-06-05T08:03:18.474846+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 5,
+          "tool": "score_evidence"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.474853+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "score_evidence"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.474858+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gaps": []
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "adk",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T08:03:18.474888+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gaps": []
+        },
+        "event_type": "adk.tool.score_evidence.result",
+        "framework": "adk",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T08:03:18.474908+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 6,
+          "tool": "route_human_review"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.474922+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "route_human_review"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.474934+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gap_count": 0,
+          "human_review_required": false,
+          "reason": "No ADK review trigger matched."
+        },
+        "event_type": "adk.review.route",
+        "framework": "adk",
+        "message": "Applied ADK-style human-review routing policy.",
+        "timestamp_utc": "2026-06-05T08:03:18.474956+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 7,
+          "tool": "generate_report"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.474963+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "generate_report"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.474969+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "adk",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T08:03:18.474978+00:00"
+      },
+      {
+        "data": {
+          "framework": "adk"
+        },
+        "event_type": "adk.tool.generate_report.result",
+        "framework": "adk",
+        "message": "Prepared structured report generation marker.",
+        "timestamp_utc": "2026-06-05T08:03:18.474983+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "confidence": 0.85,
+          "human_review_required": false
+        },
+        "event_type": "adk.agent.complete",
+        "framework": "adk",
+        "message": "Completed local ADK-style workflow.",
+        "timestamp_utc": "2026-06-05T08:03:18.475031+00:00"
+      }
+    ],
+    "framework": "adk",
+    "question": "Which SOC 2 control area does this evidence support?",
+    "report": {
+      "answer": "The ADK-style agent retrieved mock evidence for Unknown without detecting an explicit gap in the local benchmark corpus.",
+      "confidence": 0.85,
+      "control_area": "Unknown",
+      "evidence": [
+        {
+          "evidence_id": "doc-a90617eb",
+          "path": "policies/access_control_policy.md",
+          "quote": "Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status.\n\n## Boundary\n\nThis policy is mock readiness evidence for a lab. It does not prove produc",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-8ec9a00b",
+          "path": "README.md",
+          "quote": "# Mock Evidence Dataset\n\nMock SOC 2-style evidence will be added in Phase 2.\n\nThis directory must not contain real customer evidence, production logs, credentials, secrets, or private audit materials.",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-e75cfacc",
+          "path": "policies/incident_response_policy.md",
+          "quote": "# Incident Response Policy\n\n**Document ID:** POL-IR-001  \n**Control area:** Incident Response  \n**Mock owner:** Security Operations  \n**Mock effective date:** 2026-02-01  \n**Dataset status:** Mock evidence only\n\n## Purpo",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-f2cd0794",
+          "path": "evidence/privileged_access_review.md",
+          "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+          "relevance_score": 1.0
+        }
+      ],
+      "evidence_ids": [
+        "doc-a90617eb",
+        "doc-8ec9a00b",
+        "doc-e75cfacc",
+        "doc-f2cd0794"
+      ],
+      "evidence_summary": "Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status. ## Boundary This policy is mock readiness evidence for a lab. It does not prove production operating effectiveness or SOC 2 certification. # Mock Evidence Dataset Mock SOC 2-style evidence will be added in Phase 2. This directory must not contain real customer evidence, production logs, credentials, secrets, or private audit materials. # Incident Response Policy **Document ID:** POL-IR-001 **Control area:** Incident Response **Mock owner:** Security Operations **Mock effective date:** 2026-02-01 **Dataset status:** Mock evidence only ## Purpose This mock policy defines incident-response expectations for the evi... # Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:*",
+      "failure_modes": [],
+      "framework": "adk",
+      "gaps": [],
+      "human_review_required": false,
+      "question": "Which SOC 2 control area does this evidence support?",
+      "recommended_next_action": "Retain the trace and have a reviewer confirm the evidence narrative.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 4,
+          "status": "success",
+          "tool": "load_evidence_corpus"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "classify_question"
+        },
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "human_review_checkpoint"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "81409e89-b2bb-4782-a9d9-518812193d06",
+    "started_at_utc": "2026-06-05T08:03:18.468263+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 4,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "human_review_checkpoint"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T08:03:18.481614+00:00",
+    "events": [
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "instruction_summary": "Evaluate mock SOC 2-style evidence using registered tools, maintain explicit session state, return structured AgentReport output, and route uncertainty to human",
+          "plan": [
+            "load_evidence_corpus",
+            "classify_question",
+            "search_evidence",
+            "summarize_document",
+            "score_evidence",
+            "route_human_review",
+            "generate_report"
+          ]
+        },
+        "event_type": "adk.agent.start",
+        "framework": "adk",
+        "message": "Started local ADK-style evidence-review workflow.",
+        "timestamp_utc": "2026-06-05T08:03:18.475272+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 1,
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.475286+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.475292+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "adk.tool.load_evidence_corpus",
+        "framework": "adk",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T08:03:18.479000+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 2,
+          "tool": "classify_question"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.479020+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "classify_question"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.479029+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Unknown"
+        },
+        "event_type": "adk.tool.classify_question",
+        "framework": "adk",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T08:03:18.479047+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 3,
+          "tool": "search_evidence"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.479053+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "search_evidence"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.479059+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-f2cd0794",
+            "doc-3936ecce",
+            "doc-a90617eb",
+            "doc-a1e9a5a7"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "adk",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T08:03:18.481328+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-f2cd0794",
+            "doc-3936ecce",
+            "doc-a90617eb",
+            "doc-a1e9a5a7"
+          ]
+        },
+        "event_type": "adk.tool.search_evidence.result",
+        "framework": "adk",
+        "message": "Stored retrieval results in ADK session state.",
+        "timestamp_utc": "2026-06-05T08:03:18.481352+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 4,
+          "tool": "summarize_document"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.481363+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "summarize_document"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.481370+00:00"
+      },
+      {
+        "data": {
+          "summary_count": 4
+        },
+        "event_type": "adk.tool.summarize_document.result",
+        "framework": "adk",
+        "message": "Summarized retrieved evidence snippets.",
+        "timestamp_utc": "2026-06-05T08:03:18.481414+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 5,
+          "tool": "score_evidence"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.481421+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "score_evidence"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.481427+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gaps": []
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "adk",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T08:03:18.481449+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gaps": []
+        },
+        "event_type": "adk.tool.score_evidence.result",
+        "framework": "adk",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T08:03:18.481457+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 6,
+          "tool": "route_human_review"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.481463+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "route_human_review"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.481469+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gap_count": 0,
+          "human_review_required": true,
+          "reason": "Question asks for sufficiency, approval, gap, or risk judgment."
+        },
+        "event_type": "adk.review.route",
+        "framework": "adk",
+        "message": "Applied ADK-style human-review routing policy.",
+        "timestamp_utc": "2026-06-05T08:03:18.481507+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 7,
+          "tool": "generate_report"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.481523+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "generate_report"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.481533+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "adk",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T08:03:18.481542+00:00"
+      },
+      {
+        "data": {
+          "framework": "adk"
+        },
+        "event_type": "adk.tool.generate_report.result",
+        "framework": "adk",
+        "message": "Prepared structured report generation marker.",
+        "timestamp_utc": "2026-06-05T08:03:18.481547+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "confidence": 0.85,
+          "human_review_required": true
+        },
+        "event_type": "adk.agent.complete",
+        "framework": "adk",
+        "message": "Completed local ADK-style workflow.",
+        "timestamp_utc": "2026-06-05T08:03:18.481605+00:00"
+      }
+    ],
+    "framework": "adk",
+    "question": "What evidence is missing?",
+    "report": {
+      "answer": "The ADK-style agent retrieved mock evidence for Unknown without detecting an explicit gap in the local benchmark corpus. The ADK-style workflow routed the output to simulated human review.",
+      "confidence": 0.85,
+      "control_area": "Unknown",
+      "evidence": [
+        {
+          "evidence_id": "doc-f2cd0794",
+          "path": "evidence/privileged_access_review.md",
+          "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-3936ecce",
+          "path": "evidence/terminated_user_access_removal.md",
+          "quote": "# Terminated User Access Removal Evidence\n\n**Evidence ID:** EV-ACCESS-TERM-001  \n**Control area:** Access Control  \n**Mock event date:** 2026-05-10  \n**Evidence source:** Mock HR termination notification and IAM action s",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-a90617eb",
+          "path": "policies/access_control_policy.md",
+          "quote": "Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status.\n\n## Boundary\n\nThis policy is mock readiness evidence for a lab. It does not prove produc",
+          "relevance_score": 0.8006
+        },
+        {
+          "evidence_id": "doc-a1e9a5a7",
+          "path": "evidence/mfa_rollout_evidence.md",
+          "quote": "# MFA Rollout Evidence\n\n**Evidence ID:** EV-ACCESS-MFA-001  \n**Control area:** Access Control  \n**Mock capture date:** 2026-05-20  \n**Evidence source:** Mock identity-provider export summary  \n**Dataset status:** Mock ev",
+          "relevance_score": 0.7396
+        }
+      ],
+      "evidence_ids": [
+        "doc-f2cd0794",
+        "doc-3936ecce",
+        "doc-a90617eb",
+        "doc-a1e9a5a7"
+      ],
+      "evidence_summary": "# Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... # Terminated User Access Removal Evidence **Evidence ID:** EV-ACCESS-TERM-001 **Control area:** Access Control **Mock event date:** 2026-05-10 **Evidence source:** Mock HR termination notification and IAM action summary **Dataset status:** Mock evidence only ## Summary A terminat... Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status. ## Boundary This policy is mock readiness evidence for a lab. It does not prove production operating effectiveness or SOC 2 certification. # MFA Rollout Evidence **Evidence ID:** EV-ACCESS-MFA-001 **C",
+      "failure_modes": [
+        "human_review_required_before_audit_use"
+      ],
+      "framework": "adk",
+      "gaps": [],
+      "human_review_required": true,
+      "question": "What evidence is missing?",
+      "recommended_next_action": "Complete simulated human review before using this result in a portfolio narrative.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 3,
+          "status": "success",
+          "tool": "load_evidence_corpus"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "classify_question"
+        },
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "human_review_checkpoint"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "354659ba-88ac-49d0-83d1-c291d099c0b2",
+    "started_at_utc": "2026-06-05T08:03:18.475250+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 3,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "human_review_checkpoint"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T08:03:18.487412+00:00",
+    "events": [
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "instruction_summary": "Evaluate mock SOC 2-style evidence using registered tools, maintain explicit session state, return structured AgentReport output, and route uncertainty to human",
+          "plan": [
+            "load_evidence_corpus",
+            "classify_question",
+            "search_evidence",
+            "summarize_document",
+            "score_evidence",
+            "route_human_review",
+            "generate_report"
+          ]
+        },
+        "event_type": "adk.agent.start",
+        "framework": "adk",
+        "message": "Started local ADK-style evidence-review workflow.",
+        "timestamp_utc": "2026-06-05T08:03:18.481841+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 1,
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.481854+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.481861+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "adk.tool.load_evidence_corpus",
+        "framework": "adk",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T08:03:18.485026+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 2,
+          "tool": "classify_question"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.485047+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "classify_question"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.485056+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Change Management"
+        },
+        "event_type": "adk.tool.classify_question",
+        "framework": "adk",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T08:03:18.485072+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 3,
+          "tool": "search_evidence"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.485079+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "search_evidence"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.485086+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-77fa58ed",
+            "doc-f2cd0794",
+            "doc-61e1c1bd",
+            "doc-fdfbdd11"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "adk",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T08:03:18.487171+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-77fa58ed",
+            "doc-f2cd0794",
+            "doc-61e1c1bd",
+            "doc-fdfbdd11"
+          ]
+        },
+        "event_type": "adk.tool.search_evidence.result",
+        "framework": "adk",
+        "message": "Stored retrieval results in ADK session state.",
+        "timestamp_utc": "2026-06-05T08:03:18.487186+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 4,
+          "tool": "summarize_document"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.487193+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "summarize_document"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.487199+00:00"
+      },
+      {
+        "data": {
+          "summary_count": 4
+        },
+        "event_type": "adk.tool.summarize_document.result",
+        "framework": "adk",
+        "message": "Summarized retrieved evidence snippets.",
+        "timestamp_utc": "2026-06-05T08:03:18.487252+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 5,
+          "tool": "score_evidence"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.487259+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "score_evidence"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.487265+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.7666,
+          "gaps": [
+            "Secondary approval status remains ambiguous."
+          ]
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "adk",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T08:03:18.487289+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.7666,
+          "gaps": [
+            "Secondary approval status remains ambiguous."
+          ]
+        },
+        "event_type": "adk.tool.score_evidence.result",
+        "framework": "adk",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T08:03:18.487296+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 6,
+          "tool": "route_human_review"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.487302+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "route_human_review"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.487308+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.7666,
+          "gap_count": 1,
+          "human_review_required": true,
+          "reason": "Evidence gaps require simulated human review."
+        },
+        "event_type": "adk.review.route",
+        "framework": "adk",
+        "message": "Applied ADK-style human-review routing policy.",
+        "timestamp_utc": "2026-06-05T08:03:18.487322+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 7,
+          "tool": "generate_report"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.487329+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "generate_report"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.487334+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "adk",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T08:03:18.487347+00:00"
+      },
+      {
+        "data": {
+          "framework": "adk"
+        },
+        "event_type": "adk.tool.generate_report.result",
+        "framework": "adk",
+        "message": "Prepared structured report generation marker.",
+        "timestamp_utc": "2026-06-05T08:03:18.487352+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "confidence": 0.7666,
+          "human_review_required": true
+        },
+        "event_type": "adk.agent.complete",
+        "framework": "adk",
+        "message": "Completed local ADK-style workflow.",
+        "timestamp_utc": "2026-06-05T08:03:18.487401+00:00"
+      }
+    ],
+    "framework": "adk",
+    "question": "Does this require human reviewer approval?",
+    "report": {
+      "answer": "The ADK-style agent retrieved mock evidence for Change Management, but identified 1 gap(s). The ADK-style workflow routed the output to simulated human review.",
+      "confidence": 0.7666,
+      "control_area": "Change Management",
+      "evidence": [
+        {
+          "evidence_id": "doc-77fa58ed",
+          "path": "tickets/change_approval_ticket.md",
+          "quote": "# Mock Change Ticket: CHG-2026-0518\n\n**Ticket ID:** CHG-2026-0518  \n**Control area:** Change Management  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nDeploy documentation and reporting metadata update to producti",
+          "relevance_score": 0.9901
+        },
+        {
+          "evidence_id": "doc-f2cd0794",
+          "path": "evidence/privileged_access_review.md",
+          "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+          "relevance_score": 0.7334
+        },
+        {
+          "evidence_id": "doc-61e1c1bd",
+          "path": "evidence/production_deploy_approval.md",
+          "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+          "relevance_score": 0.6682
+        },
+        {
+          "evidence_id": "doc-fdfbdd11",
+          "path": "policies/change_management_policy.md",
+          "quote": "# Change Management Policy\n\n**Document ID:** POL-CHANGE-001  \n**Control area:** Change Management  \n**Mock owner:** Engineering Governance  \n**Mock effective date:** 2026-01-20  \n**Dataset status:** Mock evidence only\n\n#",
+          "relevance_score": 0.5547
+        }
+      ],
+      "evidence_ids": [
+        "doc-77fa58ed",
+        "doc-f2cd0794",
+        "doc-61e1c1bd",
+        "doc-fdfbdd11"
+      ],
+      "evidence_summary": "# Mock Change Ticket: CHG-2026-0518 **Ticket ID:** CHG-2026-0518 **Control area:** Change Management **Dataset status:** Mock evidence only ## Summary Deploy documentation and reporting metadata update to production. ## Risk classification Low risk, pending final confirmation. ##... # Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... # Change Management Policy **Document ID:** POL-",
+      "failure_modes": [
+        "human_review_required_before_audit_use"
+      ],
+      "framework": "adk",
+      "gaps": [
+        "Secondary approval status remains ambiguous."
+      ],
+      "human_review_required": true,
+      "question": "Does this require human reviewer approval?",
+      "recommended_next_action": "Complete simulated human review before using this result in a portfolio narrative.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 3,
+          "status": "success",
+          "tool": "load_evidence_corpus"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "classify_question"
+        },
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "human_review_checkpoint"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "3675bcd2-18d3-4673-8512-adb32f464146",
+    "started_at_utc": "2026-06-05T08:03:18.481819+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 3,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "human_review_checkpoint"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T08:03:18.493715+00:00",
+    "events": [
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "instruction_summary": "Evaluate mock SOC 2-style evidence using registered tools, maintain explicit session state, return structured AgentReport output, and route uncertainty to human",
+          "plan": [
+            "load_evidence_corpus",
+            "classify_question",
+            "search_evidence",
+            "summarize_document",
+            "score_evidence",
+            "route_human_review",
+            "generate_report"
+          ]
+        },
+        "event_type": "adk.agent.start",
+        "framework": "adk",
+        "message": "Started local ADK-style evidence-review workflow.",
+        "timestamp_utc": "2026-06-05T08:03:18.487673+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 1,
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.487710+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.487719+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "adk.tool.load_evidence_corpus",
+        "framework": "adk",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T08:03:18.490772+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 2,
+          "tool": "classify_question"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.490798+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "classify_question"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.490809+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Unknown"
+        },
+        "event_type": "adk.tool.classify_question",
+        "framework": "adk",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T08:03:18.490829+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 3,
+          "tool": "search_evidence"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.490838+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "search_evidence"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.490846+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-a1e9a5a7",
+            "doc-61e1c1bd",
+            "doc-982b587d",
+            "doc-77fa58ed"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "adk",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T08:03:18.493450+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-a1e9a5a7",
+            "doc-61e1c1bd",
+            "doc-982b587d",
+            "doc-77fa58ed"
+          ]
+        },
+        "event_type": "adk.tool.search_evidence.result",
+        "framework": "adk",
+        "message": "Stored retrieval results in ADK session state.",
+        "timestamp_utc": "2026-06-05T08:03:18.493468+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 4,
+          "tool": "summarize_document"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.493477+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "summarize_document"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.493484+00:00"
+      },
+      {
+        "data": {
+          "summary_count": 4
+        },
+        "event_type": "adk.tool.summarize_document.result",
+        "framework": "adk",
+        "message": "Summarized retrieved evidence snippets.",
+        "timestamp_utc": "2026-06-05T08:03:18.493547+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 5,
+          "tool": "score_evidence"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.493559+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "score_evidence"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.493568+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.6294,
+          "gaps": []
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "adk",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T08:03:18.493598+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.6294,
+          "gaps": []
+        },
+        "event_type": "adk.tool.score_evidence.result",
+        "framework": "adk",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T08:03:18.493607+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 6,
+          "tool": "route_human_review"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.493613+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "route_human_review"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.493618+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.6294,
+          "gap_count": 0,
+          "human_review_required": true,
+          "reason": "Confidence is below the ADK review threshold."
+        },
+        "event_type": "adk.review.route",
+        "framework": "adk",
+        "message": "Applied ADK-style human-review routing policy.",
+        "timestamp_utc": "2026-06-05T08:03:18.493631+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 7,
+          "tool": "generate_report"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.493638+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "generate_report"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.493644+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "adk",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T08:03:18.493652+00:00"
+      },
+      {
+        "data": {
+          "framework": "adk"
+        },
+        "event_type": "adk.tool.generate_report.result",
+        "framework": "adk",
+        "message": "Prepared structured report generation marker.",
+        "timestamp_utc": "2026-06-05T08:03:18.493657+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "confidence": 0.6294,
+          "human_review_required": true
+        },
+        "event_type": "adk.agent.complete",
+        "framework": "adk",
+        "message": "Completed local ADK-style workflow.",
+        "timestamp_utc": "2026-06-05T08:03:18.493708+00:00"
+      }
+    ],
+    "framework": "adk",
+    "question": "Generate an auditor-safe summary.",
+    "report": {
+      "answer": "The ADK-style agent retrieved mock evidence for Unknown without detecting an explicit gap in the local benchmark corpus. The ADK-style workflow routed the output to simulated human review.",
+      "confidence": 0.6294,
+      "control_area": "Unknown",
+      "evidence": [
+        {
+          "evidence_id": "doc-a1e9a5a7",
+          "path": "evidence/mfa_rollout_evidence.md",
+          "quote": "# MFA Rollout Evidence\n\n**Evidence ID:** EV-ACCESS-MFA-001  \n**Control area:** Access Control  \n**Mock capture date:** 2026-05-20  \n**Evidence source:** Mock identity-provider export summary  \n**Dataset status:** Mock ev",
+          "relevance_score": 0.3698
+        },
+        {
+          "evidence_id": "doc-61e1c1bd",
+          "path": "evidence/production_deploy_approval.md",
+          "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+          "relevance_score": 0.2673
+        },
+        {
+          "evidence_id": "doc-982b587d",
+          "path": "tickets/jira_access_review_ticket.md",
+          "quote": "# Mock Jira Ticket: Access Review Follow-Up\n\n**Ticket ID:** SEC-2026-0412  \n**Control area:** Access Control  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nFollow up on Q1 privileged access review exceptions.\n\n## ",
+          "relevance_score": 0.2132
+        },
+        {
+          "evidence_id": "doc-77fa58ed",
+          "path": "tickets/change_approval_ticket.md",
+          "quote": "# Mock Change Ticket: CHG-2026-0518\n\n**Ticket ID:** CHG-2026-0518  \n**Control area:** Change Management  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nDeploy documentation and reporting metadata update to producti",
+          "relevance_score": 0.198
+        }
+      ],
+      "evidence_ids": [
+        "doc-a1e9a5a7",
+        "doc-61e1c1bd",
+        "doc-982b587d",
+        "doc-77fa58ed"
+      ],
+      "evidence_summary": "# MFA Rollout Evidence **Evidence ID:** EV-ACCESS-MFA-001 **Control area:** Access Control **Mock capture date:** 2026-05-20 **Evidence source:** Mock identity-provider export summary **Dataset status:** Mock evidence only ## Summary The security team completed a mock MFA rollout... The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... # Mock Jira Ticket: Access Review Follow-Up **Ticket ID:** SEC-2026-0412 **Control area:** Access Control **Dataset status:** Mock evidence only ## Summary Follow up on Q1 privileged access review exceptions. ## Description The Q1 privileged access review found an exception for `... # Mock Change Ticket: CHG-2026-0518 **Ticket ID:",
+      "failure_modes": [
+        "human_review_required_before_audit_use"
+      ],
+      "framework": "adk",
+      "gaps": [],
+      "human_review_required": true,
+      "question": "Generate an auditor-safe summary.",
+      "recommended_next_action": "Complete simulated human review before using this result in a portfolio narrative.",
+      "risk_level": "medium",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 3,
+          "status": "success",
+          "tool": "load_evidence_corpus"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "classify_question"
+        },
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "human_review_checkpoint"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "426769b9-1f6a-4abf-bd15-07145a0cc4ae",
+    "started_at_utc": "2026-06-05T08:03:18.487640+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 3,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "human_review_checkpoint"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T08:03:18.499985+00:00",
+    "events": [
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "instruction_summary": "Evaluate mock SOC 2-style evidence using registered tools, maintain explicit session state, return structured AgentReport output, and route uncertainty to human",
+          "plan": [
+            "load_evidence_corpus",
+            "classify_question",
+            "search_evidence",
+            "summarize_document",
+            "score_evidence",
+            "route_human_review",
+            "generate_report"
+          ]
+        },
+        "event_type": "adk.agent.start",
+        "framework": "adk",
+        "message": "Started local ADK-style evidence-review workflow.",
+        "timestamp_utc": "2026-06-05T08:03:18.494001+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 1,
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.494038+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.494046+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "adk.tool.load_evidence_corpus",
+        "framework": "adk",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T08:03:18.496895+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 2,
+          "tool": "classify_question"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.496921+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "classify_question"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.496933+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Unknown"
+        },
+        "event_type": "adk.tool.classify_question",
+        "framework": "adk",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T08:03:18.496954+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 3,
+          "tool": "search_evidence"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.496961+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "search_evidence"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.496967+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-f2cd0794",
+            "doc-8ec9a00b",
+            "doc-e75cfacc",
+            "doc-a90617eb"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "adk",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T08:03:18.499739+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-f2cd0794",
+            "doc-8ec9a00b",
+            "doc-e75cfacc",
+            "doc-a90617eb"
+          ]
+        },
+        "event_type": "adk.tool.search_evidence.result",
+        "framework": "adk",
+        "message": "Stored retrieval results in ADK session state.",
+        "timestamp_utc": "2026-06-05T08:03:18.499759+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 4,
+          "tool": "summarize_document"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.499768+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "summarize_document"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.499775+00:00"
+      },
+      {
+        "data": {
+          "summary_count": 4
+        },
+        "event_type": "adk.tool.summarize_document.result",
+        "framework": "adk",
+        "message": "Summarized retrieved evidence snippets.",
+        "timestamp_utc": "2026-06-05T08:03:18.499827+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 5,
+          "tool": "score_evidence"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.499834+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "score_evidence"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.499841+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.7567,
+          "gaps": []
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "adk",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T08:03:18.499868+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.7567,
+          "gaps": []
+        },
+        "event_type": "adk.tool.score_evidence.result",
+        "framework": "adk",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T08:03:18.499876+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 6,
+          "tool": "route_human_review"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.499883+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "route_human_review"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.499888+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.7567,
+          "gap_count": 0,
+          "human_review_required": true,
+          "reason": "Question asks for sufficiency, approval, gap, or risk judgment."
+        },
+        "event_type": "adk.review.route",
+        "framework": "adk",
+        "message": "Applied ADK-style human-review routing policy.",
+        "timestamp_utc": "2026-06-05T08:03:18.499903+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 7,
+          "tool": "generate_report"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.499910+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "generate_report"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.499915+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "adk",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T08:03:18.499923+00:00"
+      },
+      {
+        "data": {
+          "framework": "adk"
+        },
+        "event_type": "adk.tool.generate_report.result",
+        "framework": "adk",
+        "message": "Prepared structured report generation marker.",
+        "timestamp_utc": "2026-06-05T08:03:18.499928+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "confidence": 0.7567,
+          "human_review_required": true
+        },
+        "event_type": "adk.agent.complete",
+        "framework": "adk",
+        "message": "Completed local ADK-style workflow.",
+        "timestamp_utc": "2026-06-05T08:03:18.499973+00:00"
+      }
+    ],
+    "framework": "adk",
+    "question": "Identify conflicting or stale evidence.",
+    "report": {
+      "answer": "The ADK-style agent retrieved mock evidence for Unknown without detecting an explicit gap in the local benchmark corpus. The ADK-style workflow routed the output to simulated human review.",
+      "confidence": 0.7567,
+      "control_area": "Unknown",
+      "evidence": [
+        {
+          "evidence_id": "doc-f2cd0794",
+          "path": "evidence/privileged_access_review.md",
+          "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+          "relevance_score": 0.7334
+        },
+        {
+          "evidence_id": "doc-8ec9a00b",
+          "path": "README.md",
+          "quote": "# Mock Evidence Dataset\n\nMock SOC 2-style evidence will be added in Phase 2.\n\nThis directory must not contain real customer evidence, production logs, credentials, secrets, or private audit materials.",
+          "relevance_score": 0.7303
+        },
+        {
+          "evidence_id": "doc-e75cfacc",
+          "path": "policies/incident_response_policy.md",
+          "quote": "# Incident Response Policy\n\n**Document ID:** POL-IR-001  \n**Control area:** Incident Response  \n**Mock owner:** Security Operations  \n**Mock effective date:** 2026-02-01  \n**Dataset status:** Mock evidence only\n\n## Purpo",
+          "relevance_score": 0.6556
+        },
+        {
+          "evidence_id": "doc-a90617eb",
+          "path": "policies/access_control_policy.md",
+          "quote": "Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status.\n\n## Boundary\n\nThis policy is mock readiness evidence for a lab. It does not prove produc",
+          "relevance_score": 0.6405
+        }
+      ],
+      "evidence_ids": [
+        "doc-f2cd0794",
+        "doc-8ec9a00b",
+        "doc-e75cfacc",
+        "doc-a90617eb"
+      ],
+      "evidence_summary": "# Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... # Mock Evidence Dataset Mock SOC 2-style evidence will be added in Phase 2. This directory must not contain real customer evidence, production logs, credentials, secrets, or private audit materials. # Incident Response Policy **Document ID:** POL-IR-001 **Control area:** Incident Response **Mock owner:** Security Operations **Mock effective date:** 2026-02-01 **Dataset status:** Mock evidence only ## Purpose This mock policy defines incident-response expectations for the evi... Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status. #",
+      "failure_modes": [
+        "human_review_required_before_audit_use"
+      ],
+      "framework": "adk",
+      "gaps": [],
+      "human_review_required": true,
+      "question": "Identify conflicting or stale evidence.",
+      "recommended_next_action": "Complete simulated human review before using this result in a portfolio narrative.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "load_evidence_corpus"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "classify_question"
+        },
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "human_review_checkpoint"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "c78e8e06-3dbd-46e5-8250-a95cf41d3240",
+    "started_at_utc": "2026-06-05T08:03:18.493970+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "human_review_checkpoint"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T08:03:18.506842+00:00",
+    "events": [
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "instruction_summary": "Evaluate mock SOC 2-style evidence using registered tools, maintain explicit session state, return structured AgentReport output, and route uncertainty to human",
+          "plan": [
+            "load_evidence_corpus",
+            "classify_question",
+            "search_evidence",
+            "summarize_document",
+            "score_evidence",
+            "route_human_review",
+            "generate_report"
+          ]
+        },
+        "event_type": "adk.agent.start",
+        "framework": "adk",
+        "message": "Started local ADK-style evidence-review workflow.",
+        "timestamp_utc": "2026-06-05T08:03:18.500203+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 1,
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.500215+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.500221+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "adk.tool.load_evidence_corpus",
+        "framework": "adk",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T08:03:18.503937+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 2,
+          "tool": "classify_question"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.503959+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "classify_question"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.503968+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Unknown"
+        },
+        "event_type": "adk.tool.classify_question",
+        "framework": "adk",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T08:03:18.504009+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 3,
+          "tool": "search_evidence"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.504020+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "search_evidence"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.504028+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-61e1c1bd",
+            "doc-a1e9a5a7",
+            "doc-f2cd0794",
+            "doc-a90617eb"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "adk",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T08:03:18.506555+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-61e1c1bd",
+            "doc-a1e9a5a7",
+            "doc-f2cd0794",
+            "doc-a90617eb"
+          ]
+        },
+        "event_type": "adk.tool.search_evidence.result",
+        "framework": "adk",
+        "message": "Stored retrieval results in ADK session state.",
+        "timestamp_utc": "2026-06-05T08:03:18.506578+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 4,
+          "tool": "summarize_document"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.506590+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "summarize_document"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.506598+00:00"
+      },
+      {
+        "data": {
+          "summary_count": 4
+        },
+        "event_type": "adk.tool.summarize_document.result",
+        "framework": "adk",
+        "message": "Summarized retrieved evidence snippets.",
+        "timestamp_utc": "2026-06-05T08:03:18.506639+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 5,
+          "tool": "score_evidence"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.506646+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "score_evidence"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.506652+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gaps": []
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "adk",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T08:03:18.506673+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gaps": []
+        },
+        "event_type": "adk.tool.score_evidence.result",
+        "framework": "adk",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T08:03:18.506681+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 6,
+          "tool": "route_human_review"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.506700+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "route_human_review"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.506707+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gap_count": 0,
+          "human_review_required": false,
+          "reason": "No ADK review trigger matched."
+        },
+        "event_type": "adk.review.route",
+        "framework": "adk",
+        "message": "Applied ADK-style human-review routing policy.",
+        "timestamp_utc": "2026-06-05T08:03:18.506730+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 7,
+          "tool": "generate_report"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.506741+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "generate_report"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.506750+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "adk",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T08:03:18.506760+00:00"
+      },
+      {
+        "data": {
+          "framework": "adk"
+        },
+        "event_type": "adk.tool.generate_report.result",
+        "framework": "adk",
+        "message": "Prepared structured report generation marker.",
+        "timestamp_utc": "2026-06-05T08:03:18.506778+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "confidence": 0.85,
+          "human_review_required": false
+        },
+        "event_type": "adk.agent.complete",
+        "framework": "adk",
+        "message": "Completed local ADK-style workflow.",
+        "timestamp_utc": "2026-06-05T08:03:18.506834+00:00"
+      }
+    ],
+    "framework": "adk",
+    "question": "What is the confidence score and why?",
+    "report": {
+      "answer": "The ADK-style agent retrieved mock evidence for Unknown without detecting an explicit gap in the local benchmark corpus.",
+      "confidence": 0.85,
+      "control_area": "Unknown",
+      "evidence": [
+        {
+          "evidence_id": "doc-61e1c1bd",
+          "path": "evidence/production_deploy_approval.md",
+          "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-a1e9a5a7",
+          "path": "evidence/mfa_rollout_evidence.md",
+          "quote": "Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control.",
+          "relevance_score": 0.7276
+        },
+        {
+          "evidence_id": "doc-f2cd0794",
+          "path": "evidence/privileged_access_review.md",
+          "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+          "relevance_score": 0.55
+        },
+        {
+          "evidence_id": "doc-a90617eb",
+          "path": "policies/access_control_policy.md",
+          "quote": "# Access Control Policy\n\n**Document ID:** POL-ACCESS-001  \n**Control area:** Access Control  \n**Mock owner:** Security Governance  \n**Mock effective date:** 2026-01-15  \n**Dataset status:** Mock evidence only\n\n## Purpose",
+          "relevance_score": 0.5432
+        }
+      ],
+      "evidence_ids": [
+        "doc-61e1c1bd",
+        "doc-a1e9a5a7",
+        "doc-f2cd0794",
+        "doc-a90617eb"
+      ],
+      "evidence_summary": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control. # Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... # Access Control Policy **Document ID:** POL-ACCESS-001 **Control area:** Access Control **Mock owner:** Security Governance **Mock effective date:** 2026-01-15 **Dataset status:** Mock evidence only ## Purpose This mock p",
+      "failure_modes": [],
+      "framework": "adk",
+      "gaps": [],
+      "human_review_required": false,
+      "question": "What is the confidence score and why?",
+      "recommended_next_action": "Retain the trace and have a reviewer confirm the evidence narrative.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 3,
+          "status": "success",
+          "tool": "load_evidence_corpus"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "classify_question"
+        },
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "human_review_checkpoint"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "498d90b9-336f-49f6-bc75-9fea7374dc57",
+    "started_at_utc": "2026-06-05T08:03:18.500178+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 3,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "human_review_checkpoint"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T08:03:18.512738+00:00",
+    "events": [
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "instruction_summary": "Evaluate mock SOC 2-style evidence using registered tools, maintain explicit session state, return structured AgentReport output, and route uncertainty to human",
+          "plan": [
+            "load_evidence_corpus",
+            "classify_question",
+            "search_evidence",
+            "summarize_document",
+            "score_evidence",
+            "route_human_review",
+            "generate_report"
+          ]
+        },
+        "event_type": "adk.agent.start",
+        "framework": "adk",
+        "message": "Started local ADK-style evidence-review workflow.",
+        "timestamp_utc": "2026-06-05T08:03:18.507086+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 1,
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.507101+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.507108+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "adk.tool.load_evidence_corpus",
+        "framework": "adk",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T08:03:18.510246+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 2,
+          "tool": "classify_question"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.510271+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "classify_question"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.510284+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Risk Assessment"
+        },
+        "event_type": "adk.tool.classify_question",
+        "framework": "adk",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T08:03:18.510307+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 3,
+          "tool": "search_evidence"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.510317+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "search_evidence"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.510343+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-61e1c1bd",
+            "doc-a1e9a5a7",
+            "doc-77fa58ed",
+            "doc-e75cfacc"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "adk",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T08:03:18.512500+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-61e1c1bd",
+            "doc-a1e9a5a7",
+            "doc-77fa58ed",
+            "doc-e75cfacc"
+          ]
+        },
+        "event_type": "adk.tool.search_evidence.result",
+        "framework": "adk",
+        "message": "Stored retrieval results in ADK session state.",
+        "timestamp_utc": "2026-06-05T08:03:18.512517+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 4,
+          "tool": "summarize_document"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.512525+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "summarize_document"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.512531+00:00"
+      },
+      {
+        "data": {
+          "summary_count": 4
+        },
+        "event_type": "adk.tool.summarize_document.result",
+        "framework": "adk",
+        "message": "Summarized retrieved evidence snippets.",
+        "timestamp_utc": "2026-06-05T08:03:18.512575+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 5,
+          "tool": "score_evidence"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.512582+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "score_evidence"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.512587+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gaps": []
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "adk",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T08:03:18.512608+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gaps": []
+        },
+        "event_type": "adk.tool.score_evidence.result",
+        "framework": "adk",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T08:03:18.512615+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 6,
+          "tool": "route_human_review"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.512621+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "route_human_review"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.512626+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.85,
+          "gap_count": 0,
+          "human_review_required": true,
+          "reason": "Question asks for sufficiency, approval, gap, or risk judgment."
+        },
+        "event_type": "adk.review.route",
+        "framework": "adk",
+        "message": "Applied ADK-style human-review routing policy.",
+        "timestamp_utc": "2026-06-05T08:03:18.512640+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 7,
+          "tool": "generate_report"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.512662+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "generate_report"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.512668+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "adk",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T08:03:18.512677+00:00"
+      },
+      {
+        "data": {
+          "framework": "adk"
+        },
+        "event_type": "adk.tool.generate_report.result",
+        "framework": "adk",
+        "message": "Prepared structured report generation marker.",
+        "timestamp_utc": "2026-06-05T08:03:18.512683+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "confidence": 0.85,
+          "human_review_required": true
+        },
+        "event_type": "adk.agent.complete",
+        "framework": "adk",
+        "message": "Completed local ADK-style workflow.",
+        "timestamp_utc": "2026-06-05T08:03:18.512727+00:00"
+      }
+    ],
+    "framework": "adk",
+    "question": "Which evidence item creates the highest risk?",
+    "report": {
+      "answer": "The ADK-style agent retrieved mock evidence for Risk Assessment without detecting an explicit gap in the local benchmark corpus. The ADK-style workflow routed the output to simulated human review.",
+      "confidence": 0.85,
+      "control_area": "Risk Assessment",
+      "evidence": [
+        {
+          "evidence_id": "doc-61e1c1bd",
+          "path": "evidence/production_deploy_approval.md",
+          "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-a1e9a5a7",
+          "path": "evidence/mfa_rollout_evidence.md",
+          "quote": "# MFA Rollout Evidence\n\n**Evidence ID:** EV-ACCESS-MFA-001  \n**Control area:** Access Control  \n**Mock capture date:** 2026-05-20  \n**Evidence source:** Mock identity-provider export summary  \n**Dataset status:** Mock ev",
+          "relevance_score": 0.832
+        },
+        {
+          "evidence_id": "doc-77fa58ed",
+          "path": "tickets/change_approval_ticket.md",
+          "quote": "# Mock Change Ticket: CHG-2026-0518\n\n**Ticket ID:** CHG-2026-0518  \n**Control area:** Change Management  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nDeploy documentation and reporting metadata update to producti",
+          "relevance_score": 0.7921
+        },
+        {
+          "evidence_id": "doc-e75cfacc",
+          "path": "policies/incident_response_policy.md",
+          "quote": "# Incident Response Policy\n\n**Document ID:** POL-IR-001  \n**Control area:** Incident Response  \n**Mock owner:** Security Operations  \n**Mock effective date:** 2026-02-01  \n**Dataset status:** Mock evidence only\n\n## Purpo",
+          "relevance_score": 0.6556
+        }
+      ],
+      "evidence_ids": [
+        "doc-61e1c1bd",
+        "doc-a1e9a5a7",
+        "doc-77fa58ed",
+        "doc-e75cfacc"
+      ],
+      "evidence_summary": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... # MFA Rollout Evidence **Evidence ID:** EV-ACCESS-MFA-001 **Control area:** Access Control **Mock capture date:** 2026-05-20 **Evidence source:** Mock identity-provider export summary **Dataset status:** Mock evidence only ## Summary The security team completed a mock MFA rollout... # Mock Change Ticket: CHG-2026-0518 **Ticket ID:** CHG-2026-0518 **Control area:** Change Management **Dataset status:** Mock evidence only ## Summary Deploy documentation and reporting metadata update to production. ## Risk classification Low risk, pending final confirmation. ##... # Incident Response Policy **Document ID:** POL-",
+      "failure_modes": [
+        "human_review_required_before_audit_use"
+      ],
+      "framework": "adk",
+      "gaps": [],
+      "human_review_required": true,
+      "question": "Which evidence item creates the highest risk?",
+      "recommended_next_action": "Complete simulated human review before using this result in a portfolio narrative.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 3,
+          "status": "success",
+          "tool": "load_evidence_corpus"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "classify_question"
+        },
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "human_review_checkpoint"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "61ca6c2a-ec4a-4ad2-ad22-0a420f83c3e4",
+    "started_at_utc": "2026-06-05T08:03:18.507063+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 3,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "human_review_checkpoint"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T08:03:18.519843+00:00",
+    "events": [
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "instruction_summary": "Evaluate mock SOC 2-style evidence using registered tools, maintain explicit session state, return structured AgentReport output, and route uncertainty to human",
+          "plan": [
+            "load_evidence_corpus",
+            "classify_question",
+            "search_evidence",
+            "summarize_document",
+            "score_evidence",
+            "route_human_review",
+            "generate_report"
+          ]
+        },
+        "event_type": "adk.agent.start",
+        "framework": "adk",
+        "message": "Started local ADK-style evidence-review workflow.",
+        "timestamp_utc": "2026-06-05T08:03:18.512922+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 1,
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.512937+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.512943+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "adk.tool.load_evidence_corpus",
+        "framework": "adk",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T08:03:18.517309+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 2,
+          "tool": "classify_question"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.517335+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "classify_question"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.517347+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Access Control"
+        },
+        "event_type": "adk.tool.classify_question",
+        "framework": "adk",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T08:03:18.517368+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 3,
+          "tool": "search_evidence"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.517378+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "search_evidence"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.517387+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-3936ecce",
+            "doc-61e1c1bd",
+            "doc-f2cd0794",
+            "doc-a1e9a5a7"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "adk",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T08:03:18.519596+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-3936ecce",
+            "doc-61e1c1bd",
+            "doc-f2cd0794",
+            "doc-a1e9a5a7"
+          ]
+        },
+        "event_type": "adk.tool.search_evidence.result",
+        "framework": "adk",
+        "message": "Stored retrieval results in ADK session state.",
+        "timestamp_utc": "2026-06-05T08:03:18.519612+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 4,
+          "tool": "summarize_document"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.519621+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "summarize_document"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.519627+00:00"
+      },
+      {
+        "data": {
+          "summary_count": 4
+        },
+        "event_type": "adk.tool.summarize_document.result",
+        "framework": "adk",
+        "message": "Summarized retrieved evidence snippets.",
+        "timestamp_utc": "2026-06-05T08:03:18.519669+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 5,
+          "tool": "score_evidence"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.519675+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "score_evidence"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.519691+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77,
+          "gaps": [
+            "Access-control evidence contains missing, absent, or open items."
+          ]
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "adk",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T08:03:18.519729+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77,
+          "gaps": [
+            "Access-control evidence contains missing, absent, or open items."
+          ]
+        },
+        "event_type": "adk.tool.score_evidence.result",
+        "framework": "adk",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T08:03:18.519736+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 6,
+          "tool": "route_human_review"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.519743+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "route_human_review"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.519748+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77,
+          "gap_count": 1,
+          "human_review_required": true,
+          "reason": "Evidence gaps require simulated human review."
+        },
+        "event_type": "adk.review.route",
+        "framework": "adk",
+        "message": "Applied ADK-style human-review routing policy.",
+        "timestamp_utc": "2026-06-05T08:03:18.519762+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 7,
+          "tool": "generate_report"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.519768+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "generate_report"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.519774+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "adk",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T08:03:18.519787+00:00"
+      },
+      {
+        "data": {
+          "framework": "adk"
+        },
+        "event_type": "adk.tool.generate_report.result",
+        "framework": "adk",
+        "message": "Prepared structured report generation marker.",
+        "timestamp_utc": "2026-06-05T08:03:18.519792+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "confidence": 0.77,
+          "human_review_required": true
+        },
+        "event_type": "adk.agent.complete",
+        "framework": "adk",
+        "message": "Completed local ADK-style workflow.",
+        "timestamp_utc": "2026-06-05T08:03:18.519837+00:00"
+      }
+    ],
+    "framework": "adk",
+    "question": "Is the terminated user removal evidence complete?",
+    "report": {
+      "answer": "The ADK-style agent retrieved mock evidence for Access Control, but identified 1 gap(s). The ADK-style workflow routed the output to simulated human review.",
+      "confidence": 0.77,
+      "control_area": "Access Control",
+      "evidence": [
+        {
+          "evidence_id": "doc-3936ecce",
+          "path": "evidence/terminated_user_access_removal.md",
+          "quote": "# Terminated User Access Removal Evidence\n\n**Evidence ID:** EV-ACCESS-TERM-001  \n**Control area:** Access Control  \n**Mock event date:** 2026-05-10  \n**Evidence source:** Mock HR termination notification and IAM action s",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-61e1c1bd",
+          "path": "evidence/production_deploy_approval.md",
+          "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-f2cd0794",
+          "path": "evidence/privileged_access_review.md",
+          "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-a1e9a5a7",
+          "path": "evidence/mfa_rollout_evidence.md",
+          "quote": "Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control.",
+          "relevance_score": 0.9701
+        }
+      ],
+      "evidence_ids": [
+        "doc-3936ecce",
+        "doc-61e1c1bd",
+        "doc-f2cd0794",
+        "doc-a1e9a5a7"
+      ],
+      "evidence_summary": "# Terminated User Access Removal Evidence **Evidence ID:** EV-ACCESS-TERM-001 **Control area:** Access Control **Mock event date:** 2026-05-10 **Evidence source:** Mock HR termination notification and IAM action summary **Dataset status:** Mock evidence only ## Summary A terminat... The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... # Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... Human review is recommended if the question asks",
+      "failure_modes": [
+        "human_review_required_before_audit_use"
+      ],
+      "framework": "adk",
+      "gaps": [
+        "Access-control evidence contains missing, absent, or open items."
+      ],
+      "human_review_required": true,
+      "question": "Is the terminated user removal evidence complete?",
+      "recommended_next_action": "Complete simulated human review before using this result in a portfolio narrative.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 4,
+          "status": "success",
+          "tool": "load_evidence_corpus"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "classify_question"
+        },
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "human_review_checkpoint"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "0bcedca4-9301-4330-85fa-0d75ce3ee63e",
+    "started_at_utc": "2026-06-05T08:03:18.512905+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 4,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "human_review_checkpoint"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "completed_at_utc": "2026-06-05T08:03:18.526148+00:00",
+    "events": [
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "instruction_summary": "Evaluate mock SOC 2-style evidence using registered tools, maintain explicit session state, return structured AgentReport output, and route uncertainty to human",
+          "plan": [
+            "load_evidence_corpus",
+            "classify_question",
+            "search_evidence",
+            "summarize_document",
+            "score_evidence",
+            "route_human_review",
+            "generate_report"
+          ]
+        },
+        "event_type": "adk.agent.start",
+        "framework": "adk",
+        "message": "Started local ADK-style evidence-review workflow.",
+        "timestamp_utc": "2026-06-05T08:03:18.520039+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 1,
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.520051+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "load_evidence_corpus"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.520057+00:00"
+      },
+      {
+        "data": {
+          "document_count": 13
+        },
+        "event_type": "adk.tool.load_evidence_corpus",
+        "framework": "adk",
+        "message": "Loaded local mock evidence corpus.",
+        "timestamp_utc": "2026-06-05T08:03:18.523609+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 2,
+          "tool": "classify_question"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.523633+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "classify_question"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.523645+00:00"
+      },
+      {
+        "data": {
+          "control_area": "Change Management"
+        },
+        "event_type": "adk.tool.classify_question",
+        "framework": "adk",
+        "message": "Classified benchmark question.",
+        "timestamp_utc": "2026-06-05T08:03:18.523667+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 3,
+          "tool": "search_evidence"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.523677+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "search_evidence"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.523685+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-61e1c1bd",
+            "doc-fdfbdd11",
+            "doc-77fa58ed",
+            "doc-a1e9a5a7"
+          ],
+          "result_count": 4
+        },
+        "event_type": "tool.search_evidence",
+        "framework": "adk",
+        "message": "Retrieved local mock evidence.",
+        "timestamp_utc": "2026-06-05T08:03:18.525883+00:00"
+      },
+      {
+        "data": {
+          "evidence_ids": [
+            "doc-61e1c1bd",
+            "doc-fdfbdd11",
+            "doc-77fa58ed",
+            "doc-a1e9a5a7"
+          ]
+        },
+        "event_type": "adk.tool.search_evidence.result",
+        "framework": "adk",
+        "message": "Stored retrieval results in ADK session state.",
+        "timestamp_utc": "2026-06-05T08:03:18.525900+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 4,
+          "tool": "summarize_document"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.525911+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "summarize_document"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.525922+00:00"
+      },
+      {
+        "data": {
+          "summary_count": 4
+        },
+        "event_type": "adk.tool.summarize_document.result",
+        "framework": "adk",
+        "message": "Summarized retrieved evidence snippets.",
+        "timestamp_utc": "2026-06-05T08:03:18.525982+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 5,
+          "tool": "score_evidence"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.525990+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "score_evidence"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.525996+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77,
+          "gaps": [
+            "Secondary approval status remains ambiguous."
+          ]
+        },
+        "event_type": "tool.score_evidence",
+        "framework": "adk",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T08:03:18.526022+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77,
+          "gaps": [
+            "Secondary approval status remains ambiguous."
+          ]
+        },
+        "event_type": "adk.tool.score_evidence.result",
+        "framework": "adk",
+        "message": "Scored evidence sufficiency.",
+        "timestamp_utc": "2026-06-05T08:03:18.526029+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 6,
+          "tool": "route_human_review"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.526035+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "route_human_review"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.526041+00:00"
+      },
+      {
+        "data": {
+          "confidence": 0.77,
+          "gap_count": 1,
+          "human_review_required": true,
+          "reason": "Evidence gaps require simulated human review."
+        },
+        "event_type": "adk.review.route",
+        "framework": "adk",
+        "message": "Applied ADK-style human-review routing policy.",
+        "timestamp_utc": "2026-06-05T08:03:18.526060+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "step_number": 7,
+          "tool": "generate_report"
+        },
+        "event_type": "adk.planner.step",
+        "framework": "adk",
+        "message": "Executing ADK-style planner step.",
+        "timestamp_utc": "2026-06-05T08:03:18.526067+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "tool": "generate_report"
+        },
+        "event_type": "adk.tool.invoke",
+        "framework": "adk",
+        "message": "Invoking ADK-style registered tool.",
+        "timestamp_utc": "2026-06-05T08:03:18.526076+00:00"
+      },
+      {
+        "data": {},
+        "event_type": "tool.generate_report",
+        "framework": "adk",
+        "message": "Generated structured AgentReport payload.",
+        "timestamp_utc": "2026-06-05T08:03:18.526084+00:00"
+      },
+      {
+        "data": {
+          "framework": "adk"
+        },
+        "event_type": "adk.tool.generate_report.result",
+        "framework": "adk",
+        "message": "Prepared structured report generation marker.",
+        "timestamp_utc": "2026-06-05T08:03:18.526089+00:00"
+      },
+      {
+        "data": {
+          "agent": "local_adk_evidence_reviewer",
+          "confidence": 0.77,
+          "human_review_required": true
+        },
+        "event_type": "adk.agent.complete",
+        "framework": "adk",
+        "message": "Completed local ADK-style workflow.",
+        "timestamp_utc": "2026-06-05T08:03:18.526138+00:00"
+      }
+    ],
+    "framework": "adk",
+    "question": "Is the production deploy approval evidence sufficient?",
+    "report": {
+      "answer": "The ADK-style agent retrieved mock evidence for Change Management, but identified 1 gap(s). The ADK-style workflow routed the output to simulated human review.",
+      "confidence": 0.77,
+      "control_area": "Change Management",
+      "evidence": [
+        {
+          "evidence_id": "doc-61e1c1bd",
+          "path": "evidence/production_deploy_approval.md",
+          "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-fdfbdd11",
+          "path": "policies/change_management_policy.md",
+          "quote": "# Change Management Policy\n\n**Document ID:** POL-CHANGE-001  \n**Control area:** Change Management  \n**Mock owner:** Engineering Governance  \n**Mock effective date:** 2026-01-20  \n**Dataset status:** Mock evidence only\n\n#",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-77fa58ed",
+          "path": "tickets/change_approval_ticket.md",
+          "quote": "# Mock Change Ticket: CHG-2026-0518\n\n**Ticket ID:** CHG-2026-0518  \n**Control area:** Change Management  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nDeploy documentation and reporting metadata update to producti",
+          "relevance_score": 1.0
+        },
+        {
+          "evidence_id": "doc-a1e9a5a7",
+          "path": "evidence/mfa_rollout_evidence.md",
+          "quote": "Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control.",
+          "relevance_score": 1.0
+        }
+      ],
+      "evidence_ids": [
+        "doc-61e1c1bd",
+        "doc-fdfbdd11",
+        "doc-77fa58ed",
+        "doc-a1e9a5a7"
+      ],
+      "evidence_summary": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... # Change Management Policy **Document ID:** POL-CHANGE-001 **Control area:** Change Management **Mock owner:** Engineering Governance **Mock effective date:** 2026-01-20 **Dataset status:** Mock evidence only ## Purpose This mock policy defines change-approval expectations for th... # Mock Change Ticket: CHG-2026-0518 **Ticket ID:** CHG-2026-0518 **Control area:** Change Management **Dataset status:** Mock evidence only ## Summary Deploy documentation and reporting metadata update to production. ## Risk classification Low risk, pending final confirmation. ##... Human review is recommended if the question asks",
+      "failure_modes": [
+        "human_review_required_before_audit_use"
+      ],
+      "framework": "adk",
+      "gaps": [
+        "Secondary approval status remains ambiguous."
+      ],
+      "human_review_required": true,
+      "question": "Is the production deploy approval evidence sufficient?",
+      "recommended_next_action": "Complete simulated human review before using this result in a portfolio narrative.",
+      "risk_level": "low",
+      "tool_calls": [
+        {
+          "error": null,
+          "latency_ms": 3,
+          "status": "success",
+          "tool": "load_evidence_corpus"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "classify_question"
+        },
+        {
+          "error": null,
+          "latency_ms": 2,
+          "status": "success",
+          "tool": "search_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "summarize_document"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "score_evidence"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "human_review_checkpoint"
+        },
+        {
+          "error": null,
+          "latency_ms": 0,
+          "status": "success",
+          "tool": "generate_report"
+        }
+      ]
+    },
+    "run_id": "1f20a8b4-e285-4bca-9793-99e18048365f",
+    "started_at_utc": "2026-06-05T08:03:18.520016+00:00",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 3,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "human_review_checkpoint"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  }
+]

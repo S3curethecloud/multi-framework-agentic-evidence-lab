@@ -1,0 +1,1096 @@
+[
+  {
+    "answer": "The ADK-style agent retrieved mock evidence for Access Control, but identified 1 gap(s). The ADK-style workflow routed the output to simulated human review.",
+    "confidence": 0.77,
+    "control_area": "Access Control",
+    "evidence": [
+      {
+        "evidence_id": "doc-f2cd0794",
+        "path": "evidence/privileged_access_review.md",
+        "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+        "relevance_score": 1.0
+      },
+      {
+        "evidence_id": "doc-a1e9a5a7",
+        "path": "evidence/mfa_rollout_evidence.md",
+        "quote": "Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control.",
+        "relevance_score": 1.0
+      },
+      {
+        "evidence_id": "doc-3936ecce",
+        "path": "evidence/terminated_user_access_removal.md",
+        "quote": "# Terminated User Access Removal Evidence\n\n**Evidence ID:** EV-ACCESS-TERM-001  \n**Control area:** Access Control  \n**Mock event date:** 2026-05-10  \n**Evidence source:** Mock HR termination notification and IAM action s",
+        "relevance_score": 1.0
+      },
+      {
+        "evidence_id": "doc-982b587d",
+        "path": "tickets/jira_access_review_ticket.md",
+        "quote": "# Mock Jira Ticket: Access Review Follow-Up\n\n**Ticket ID:** SEC-2026-0412  \n**Control area:** Access Control  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nFollow up on Q1 privileged access review exceptions.\n\n## ",
+        "relevance_score": 1.0
+      }
+    ],
+    "evidence_ids": [
+      "doc-f2cd0794",
+      "doc-a1e9a5a7",
+      "doc-3936ecce",
+      "doc-982b587d"
+    ],
+    "evidence_summary": "# Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control. # Terminated User Access Removal Evidence **Evidence ID:** EV-ACCESS-TERM-001 **Control area:** Access Control **Mock event date:** 2026-05-10 **Evidence source:** Mock HR termination notification and IAM action summary **Dataset status:** Mock evidence only ## Summary A terminat... # Mock Jira Ticket: Access Review Follow-Up **Ticket ID:** SEC-2026-0412 **Control area:** Access Control **Dataset status:** Mock evidence only ## Summary Follow up on Q1 privileged access review exceptions. ## Descriptio",
+    "failure_modes": [
+      "human_review_required_before_audit_use"
+    ],
+    "framework": "adk",
+    "gaps": [
+      "Access-control evidence contains missing, absent, or open items."
+    ],
+    "human_review_required": true,
+    "question": "Is the evidence sufficient for access control?",
+    "recommended_next_action": "Complete simulated human review before using this result in a portfolio narrative.",
+    "risk_level": "low",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 4,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "human_review_checkpoint"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "answer": "The ADK-style agent retrieved mock evidence for Unknown without detecting an explicit gap in the local benchmark corpus.",
+    "confidence": 0.85,
+    "control_area": "Unknown",
+    "evidence": [
+      {
+        "evidence_id": "doc-a90617eb",
+        "path": "policies/access_control_policy.md",
+        "quote": "Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status.\n\n## Boundary\n\nThis policy is mock readiness evidence for a lab. It does not prove produc",
+        "relevance_score": 1.0
+      },
+      {
+        "evidence_id": "doc-8ec9a00b",
+        "path": "README.md",
+        "quote": "# Mock Evidence Dataset\n\nMock SOC 2-style evidence will be added in Phase 2.\n\nThis directory must not contain real customer evidence, production logs, credentials, secrets, or private audit materials.",
+        "relevance_score": 1.0
+      },
+      {
+        "evidence_id": "doc-e75cfacc",
+        "path": "policies/incident_response_policy.md",
+        "quote": "# Incident Response Policy\n\n**Document ID:** POL-IR-001  \n**Control area:** Incident Response  \n**Mock owner:** Security Operations  \n**Mock effective date:** 2026-02-01  \n**Dataset status:** Mock evidence only\n\n## Purpo",
+        "relevance_score": 1.0
+      },
+      {
+        "evidence_id": "doc-f2cd0794",
+        "path": "evidence/privileged_access_review.md",
+        "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+        "relevance_score": 1.0
+      }
+    ],
+    "evidence_ids": [
+      "doc-a90617eb",
+      "doc-8ec9a00b",
+      "doc-e75cfacc",
+      "doc-f2cd0794"
+    ],
+    "evidence_summary": "Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status. ## Boundary This policy is mock readiness evidence for a lab. It does not prove production operating effectiveness or SOC 2 certification. # Mock Evidence Dataset Mock SOC 2-style evidence will be added in Phase 2. This directory must not contain real customer evidence, production logs, credentials, secrets, or private audit materials. # Incident Response Policy **Document ID:** POL-IR-001 **Control area:** Incident Response **Mock owner:** Security Operations **Mock effective date:** 2026-02-01 **Dataset status:** Mock evidence only ## Purpose This mock policy defines incident-response expectations for the evi... # Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:*",
+    "failure_modes": [],
+    "framework": "adk",
+    "gaps": [],
+    "human_review_required": false,
+    "question": "Which SOC 2 control area does this evidence support?",
+    "recommended_next_action": "Retain the trace and have a reviewer confirm the evidence narrative.",
+    "risk_level": "low",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 4,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "human_review_checkpoint"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "answer": "The ADK-style agent retrieved mock evidence for Unknown without detecting an explicit gap in the local benchmark corpus. The ADK-style workflow routed the output to simulated human review.",
+    "confidence": 0.85,
+    "control_area": "Unknown",
+    "evidence": [
+      {
+        "evidence_id": "doc-f2cd0794",
+        "path": "evidence/privileged_access_review.md",
+        "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+        "relevance_score": 1.0
+      },
+      {
+        "evidence_id": "doc-3936ecce",
+        "path": "evidence/terminated_user_access_removal.md",
+        "quote": "# Terminated User Access Removal Evidence\n\n**Evidence ID:** EV-ACCESS-TERM-001  \n**Control area:** Access Control  \n**Mock event date:** 2026-05-10  \n**Evidence source:** Mock HR termination notification and IAM action s",
+        "relevance_score": 1.0
+      },
+      {
+        "evidence_id": "doc-a90617eb",
+        "path": "policies/access_control_policy.md",
+        "quote": "Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status.\n\n## Boundary\n\nThis policy is mock readiness evidence for a lab. It does not prove produc",
+        "relevance_score": 0.8006
+      },
+      {
+        "evidence_id": "doc-a1e9a5a7",
+        "path": "evidence/mfa_rollout_evidence.md",
+        "quote": "# MFA Rollout Evidence\n\n**Evidence ID:** EV-ACCESS-MFA-001  \n**Control area:** Access Control  \n**Mock capture date:** 2026-05-20  \n**Evidence source:** Mock identity-provider export summary  \n**Dataset status:** Mock ev",
+        "relevance_score": 0.7396
+      }
+    ],
+    "evidence_ids": [
+      "doc-f2cd0794",
+      "doc-3936ecce",
+      "doc-a90617eb",
+      "doc-a1e9a5a7"
+    ],
+    "evidence_summary": "# Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... # Terminated User Access Removal Evidence **Evidence ID:** EV-ACCESS-TERM-001 **Control area:** Access Control **Mock event date:** 2026-05-10 **Evidence source:** Mock HR termination notification and IAM action summary **Dataset status:** Mock evidence only ## Summary A terminat... Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status. ## Boundary This policy is mock readiness evidence for a lab. It does not prove production operating effectiveness or SOC 2 certification. # MFA Rollout Evidence **Evidence ID:** EV-ACCESS-MFA-001 **C",
+    "failure_modes": [
+      "human_review_required_before_audit_use"
+    ],
+    "framework": "adk",
+    "gaps": [],
+    "human_review_required": true,
+    "question": "What evidence is missing?",
+    "recommended_next_action": "Complete simulated human review before using this result in a portfolio narrative.",
+    "risk_level": "low",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 3,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "human_review_checkpoint"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "answer": "The ADK-style agent retrieved mock evidence for Change Management, but identified 1 gap(s). The ADK-style workflow routed the output to simulated human review.",
+    "confidence": 0.7666,
+    "control_area": "Change Management",
+    "evidence": [
+      {
+        "evidence_id": "doc-77fa58ed",
+        "path": "tickets/change_approval_ticket.md",
+        "quote": "# Mock Change Ticket: CHG-2026-0518\n\n**Ticket ID:** CHG-2026-0518  \n**Control area:** Change Management  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nDeploy documentation and reporting metadata update to producti",
+        "relevance_score": 0.9901
+      },
+      {
+        "evidence_id": "doc-f2cd0794",
+        "path": "evidence/privileged_access_review.md",
+        "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+        "relevance_score": 0.7334
+      },
+      {
+        "evidence_id": "doc-61e1c1bd",
+        "path": "evidence/production_deploy_approval.md",
+        "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+        "relevance_score": 0.6682
+      },
+      {
+        "evidence_id": "doc-fdfbdd11",
+        "path": "policies/change_management_policy.md",
+        "quote": "# Change Management Policy\n\n**Document ID:** POL-CHANGE-001  \n**Control area:** Change Management  \n**Mock owner:** Engineering Governance  \n**Mock effective date:** 2026-01-20  \n**Dataset status:** Mock evidence only\n\n#",
+        "relevance_score": 0.5547
+      }
+    ],
+    "evidence_ids": [
+      "doc-77fa58ed",
+      "doc-f2cd0794",
+      "doc-61e1c1bd",
+      "doc-fdfbdd11"
+    ],
+    "evidence_summary": "# Mock Change Ticket: CHG-2026-0518 **Ticket ID:** CHG-2026-0518 **Control area:** Change Management **Dataset status:** Mock evidence only ## Summary Deploy documentation and reporting metadata update to production. ## Risk classification Low risk, pending final confirmation. ##... # Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... # Change Management Policy **Document ID:** POL-",
+    "failure_modes": [
+      "human_review_required_before_audit_use"
+    ],
+    "framework": "adk",
+    "gaps": [
+      "Secondary approval status remains ambiguous."
+    ],
+    "human_review_required": true,
+    "question": "Does this require human reviewer approval?",
+    "recommended_next_action": "Complete simulated human review before using this result in a portfolio narrative.",
+    "risk_level": "low",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 3,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "human_review_checkpoint"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "answer": "The ADK-style agent retrieved mock evidence for Unknown without detecting an explicit gap in the local benchmark corpus. The ADK-style workflow routed the output to simulated human review.",
+    "confidence": 0.6294,
+    "control_area": "Unknown",
+    "evidence": [
+      {
+        "evidence_id": "doc-a1e9a5a7",
+        "path": "evidence/mfa_rollout_evidence.md",
+        "quote": "# MFA Rollout Evidence\n\n**Evidence ID:** EV-ACCESS-MFA-001  \n**Control area:** Access Control  \n**Mock capture date:** 2026-05-20  \n**Evidence source:** Mock identity-provider export summary  \n**Dataset status:** Mock ev",
+        "relevance_score": 0.3698
+      },
+      {
+        "evidence_id": "doc-61e1c1bd",
+        "path": "evidence/production_deploy_approval.md",
+        "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+        "relevance_score": 0.2673
+      },
+      {
+        "evidence_id": "doc-982b587d",
+        "path": "tickets/jira_access_review_ticket.md",
+        "quote": "# Mock Jira Ticket: Access Review Follow-Up\n\n**Ticket ID:** SEC-2026-0412  \n**Control area:** Access Control  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nFollow up on Q1 privileged access review exceptions.\n\n## ",
+        "relevance_score": 0.2132
+      },
+      {
+        "evidence_id": "doc-77fa58ed",
+        "path": "tickets/change_approval_ticket.md",
+        "quote": "# Mock Change Ticket: CHG-2026-0518\n\n**Ticket ID:** CHG-2026-0518  \n**Control area:** Change Management  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nDeploy documentation and reporting metadata update to producti",
+        "relevance_score": 0.198
+      }
+    ],
+    "evidence_ids": [
+      "doc-a1e9a5a7",
+      "doc-61e1c1bd",
+      "doc-982b587d",
+      "doc-77fa58ed"
+    ],
+    "evidence_summary": "# MFA Rollout Evidence **Evidence ID:** EV-ACCESS-MFA-001 **Control area:** Access Control **Mock capture date:** 2026-05-20 **Evidence source:** Mock identity-provider export summary **Dataset status:** Mock evidence only ## Summary The security team completed a mock MFA rollout... The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... # Mock Jira Ticket: Access Review Follow-Up **Ticket ID:** SEC-2026-0412 **Control area:** Access Control **Dataset status:** Mock evidence only ## Summary Follow up on Q1 privileged access review exceptions. ## Description The Q1 privileged access review found an exception for `... # Mock Change Ticket: CHG-2026-0518 **Ticket ID:",
+    "failure_modes": [
+      "human_review_required_before_audit_use"
+    ],
+    "framework": "adk",
+    "gaps": [],
+    "human_review_required": true,
+    "question": "Generate an auditor-safe summary.",
+    "recommended_next_action": "Complete simulated human review before using this result in a portfolio narrative.",
+    "risk_level": "medium",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 3,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "human_review_checkpoint"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "answer": "The ADK-style agent retrieved mock evidence for Unknown without detecting an explicit gap in the local benchmark corpus. The ADK-style workflow routed the output to simulated human review.",
+    "confidence": 0.7567,
+    "control_area": "Unknown",
+    "evidence": [
+      {
+        "evidence_id": "doc-f2cd0794",
+        "path": "evidence/privileged_access_review.md",
+        "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+        "relevance_score": 0.7334
+      },
+      {
+        "evidence_id": "doc-8ec9a00b",
+        "path": "README.md",
+        "quote": "# Mock Evidence Dataset\n\nMock SOC 2-style evidence will be added in Phase 2.\n\nThis directory must not contain real customer evidence, production logs, credentials, secrets, or private audit materials.",
+        "relevance_score": 0.7303
+      },
+      {
+        "evidence_id": "doc-e75cfacc",
+        "path": "policies/incident_response_policy.md",
+        "quote": "# Incident Response Policy\n\n**Document ID:** POL-IR-001  \n**Control area:** Incident Response  \n**Mock owner:** Security Operations  \n**Mock effective date:** 2026-02-01  \n**Dataset status:** Mock evidence only\n\n## Purpo",
+        "relevance_score": 0.6556
+      },
+      {
+        "evidence_id": "doc-a90617eb",
+        "path": "policies/access_control_policy.md",
+        "quote": "Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status.\n\n## Boundary\n\nThis policy is mock readiness evidence for a lab. It does not prove produc",
+        "relevance_score": 0.6405
+      }
+    ],
+    "evidence_ids": [
+      "doc-f2cd0794",
+      "doc-8ec9a00b",
+      "doc-e75cfacc",
+      "doc-a90617eb"
+    ],
+    "evidence_summary": "# Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... # Mock Evidence Dataset Mock SOC 2-style evidence will be added in Phase 2. This directory must not contain real customer evidence, production logs, credentials, secrets, or private audit materials. # Incident Response Policy **Document ID:** POL-IR-001 **Control area:** Incident Response **Mock owner:** Security Operations **Mock effective date:** 2026-02-01 **Dataset status:** Mock evidence only ## Purpose This mock policy defines incident-response expectations for the evi... Access-control evidence is sufficient only when it includes identity, timestamp, reviewer, evidence source, and gap closure status. #",
+    "failure_modes": [
+      "human_review_required_before_audit_use"
+    ],
+    "framework": "adk",
+    "gaps": [],
+    "human_review_required": true,
+    "question": "Identify conflicting or stale evidence.",
+    "recommended_next_action": "Complete simulated human review before using this result in a portfolio narrative.",
+    "risk_level": "low",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "human_review_checkpoint"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "answer": "The ADK-style agent retrieved mock evidence for Unknown without detecting an explicit gap in the local benchmark corpus.",
+    "confidence": 0.85,
+    "control_area": "Unknown",
+    "evidence": [
+      {
+        "evidence_id": "doc-61e1c1bd",
+        "path": "evidence/production_deploy_approval.md",
+        "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+        "relevance_score": 1.0
+      },
+      {
+        "evidence_id": "doc-a1e9a5a7",
+        "path": "evidence/mfa_rollout_evidence.md",
+        "quote": "Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control.",
+        "relevance_score": 0.7276
+      },
+      {
+        "evidence_id": "doc-f2cd0794",
+        "path": "evidence/privileged_access_review.md",
+        "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+        "relevance_score": 0.55
+      },
+      {
+        "evidence_id": "doc-a90617eb",
+        "path": "policies/access_control_policy.md",
+        "quote": "# Access Control Policy\n\n**Document ID:** POL-ACCESS-001  \n**Control area:** Access Control  \n**Mock owner:** Security Governance  \n**Mock effective date:** 2026-01-15  \n**Dataset status:** Mock evidence only\n\n## Purpose",
+        "relevance_score": 0.5432
+      }
+    ],
+    "evidence_ids": [
+      "doc-61e1c1bd",
+      "doc-a1e9a5a7",
+      "doc-f2cd0794",
+      "doc-a90617eb"
+    ],
+    "evidence_summary": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control. # Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... # Access Control Policy **Document ID:** POL-ACCESS-001 **Control area:** Access Control **Mock owner:** Security Governance **Mock effective date:** 2026-01-15 **Dataset status:** Mock evidence only ## Purpose This mock p",
+    "failure_modes": [],
+    "framework": "adk",
+    "gaps": [],
+    "human_review_required": false,
+    "question": "What is the confidence score and why?",
+    "recommended_next_action": "Retain the trace and have a reviewer confirm the evidence narrative.",
+    "risk_level": "low",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 3,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "human_review_checkpoint"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "answer": "The ADK-style agent retrieved mock evidence for Risk Assessment without detecting an explicit gap in the local benchmark corpus. The ADK-style workflow routed the output to simulated human review.",
+    "confidence": 0.85,
+    "control_area": "Risk Assessment",
+    "evidence": [
+      {
+        "evidence_id": "doc-61e1c1bd",
+        "path": "evidence/production_deploy_approval.md",
+        "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+        "relevance_score": 1.0
+      },
+      {
+        "evidence_id": "doc-a1e9a5a7",
+        "path": "evidence/mfa_rollout_evidence.md",
+        "quote": "# MFA Rollout Evidence\n\n**Evidence ID:** EV-ACCESS-MFA-001  \n**Control area:** Access Control  \n**Mock capture date:** 2026-05-20  \n**Evidence source:** Mock identity-provider export summary  \n**Dataset status:** Mock ev",
+        "relevance_score": 0.832
+      },
+      {
+        "evidence_id": "doc-77fa58ed",
+        "path": "tickets/change_approval_ticket.md",
+        "quote": "# Mock Change Ticket: CHG-2026-0518\n\n**Ticket ID:** CHG-2026-0518  \n**Control area:** Change Management  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nDeploy documentation and reporting metadata update to producti",
+        "relevance_score": 0.7921
+      },
+      {
+        "evidence_id": "doc-e75cfacc",
+        "path": "policies/incident_response_policy.md",
+        "quote": "# Incident Response Policy\n\n**Document ID:** POL-IR-001  \n**Control area:** Incident Response  \n**Mock owner:** Security Operations  \n**Mock effective date:** 2026-02-01  \n**Dataset status:** Mock evidence only\n\n## Purpo",
+        "relevance_score": 0.6556
+      }
+    ],
+    "evidence_ids": [
+      "doc-61e1c1bd",
+      "doc-a1e9a5a7",
+      "doc-77fa58ed",
+      "doc-e75cfacc"
+    ],
+    "evidence_summary": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... # MFA Rollout Evidence **Evidence ID:** EV-ACCESS-MFA-001 **Control area:** Access Control **Mock capture date:** 2026-05-20 **Evidence source:** Mock identity-provider export summary **Dataset status:** Mock evidence only ## Summary The security team completed a mock MFA rollout... # Mock Change Ticket: CHG-2026-0518 **Ticket ID:** CHG-2026-0518 **Control area:** Change Management **Dataset status:** Mock evidence only ## Summary Deploy documentation and reporting metadata update to production. ## Risk classification Low risk, pending final confirmation. ##... # Incident Response Policy **Document ID:** POL-",
+    "failure_modes": [
+      "human_review_required_before_audit_use"
+    ],
+    "framework": "adk",
+    "gaps": [],
+    "human_review_required": true,
+    "question": "Which evidence item creates the highest risk?",
+    "recommended_next_action": "Complete simulated human review before using this result in a portfolio narrative.",
+    "risk_level": "low",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 3,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "human_review_checkpoint"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "answer": "The ADK-style agent retrieved mock evidence for Access Control, but identified 1 gap(s). The ADK-style workflow routed the output to simulated human review.",
+    "confidence": 0.77,
+    "control_area": "Access Control",
+    "evidence": [
+      {
+        "evidence_id": "doc-3936ecce",
+        "path": "evidence/terminated_user_access_removal.md",
+        "quote": "# Terminated User Access Removal Evidence\n\n**Evidence ID:** EV-ACCESS-TERM-001  \n**Control area:** Access Control  \n**Mock event date:** 2026-05-10  \n**Evidence source:** Mock HR termination notification and IAM action s",
+        "relevance_score": 1.0
+      },
+      {
+        "evidence_id": "doc-61e1c1bd",
+        "path": "evidence/production_deploy_approval.md",
+        "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+        "relevance_score": 1.0
+      },
+      {
+        "evidence_id": "doc-f2cd0794",
+        "path": "evidence/privileged_access_review.md",
+        "quote": "# Privileged Access Review\n\n**Evidence ID:** EV-ACCESS-PAR-001  \n**Control area:** Access Control  \n**Mock review period:** 2026-Q1  \n**Evidence source:** Mock access-review worksheet  \n**Dataset status:** Mock evidence ",
+        "relevance_score": 1.0
+      },
+      {
+        "evidence_id": "doc-a1e9a5a7",
+        "path": "evidence/mfa_rollout_evidence.md",
+        "quote": "Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control.",
+        "relevance_score": 0.9701
+      }
+    ],
+    "evidence_ids": [
+      "doc-3936ecce",
+      "doc-61e1c1bd",
+      "doc-f2cd0794",
+      "doc-a1e9a5a7"
+    ],
+    "evidence_summary": "# Terminated User Access Removal Evidence **Evidence ID:** EV-ACCESS-TERM-001 **Control area:** Access Control **Mock event date:** 2026-05-10 **Evidence source:** Mock HR termination notification and IAM action summary **Dataset status:** Mock evidence only ## Summary A terminat... The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... # Privileged Access Review **Evidence ID:** EV-ACCESS-PAR-001 **Control area:** Access Control **Mock review period:** 2026-Q1 **Evidence source:** Mock access-review worksheet **Dataset status:** Mock evidence only ## Summary A privileged access review was performed for producti... Human review is recommended if the question asks",
+    "failure_modes": [
+      "human_review_required_before_audit_use"
+    ],
+    "framework": "adk",
+    "gaps": [
+      "Access-control evidence contains missing, absent, or open items."
+    ],
+    "human_review_required": true,
+    "question": "Is the terminated user removal evidence complete?",
+    "recommended_next_action": "Complete simulated human review before using this result in a portfolio narrative.",
+    "risk_level": "low",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 4,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "human_review_checkpoint"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  },
+  {
+    "answer": "The ADK-style agent retrieved mock evidence for Change Management, but identified 1 gap(s). The ADK-style workflow routed the output to simulated human review.",
+    "confidence": 0.77,
+    "control_area": "Change Management",
+    "evidence": [
+      {
+        "evidence_id": "doc-61e1c1bd",
+        "path": "evidence/production_deploy_approval.md",
+        "quote": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_",
+        "relevance_score": 1.0
+      },
+      {
+        "evidence_id": "doc-fdfbdd11",
+        "path": "policies/change_management_policy.md",
+        "quote": "# Change Management Policy\n\n**Document ID:** POL-CHANGE-001  \n**Control area:** Change Management  \n**Mock owner:** Engineering Governance  \n**Mock effective date:** 2026-01-20  \n**Dataset status:** Mock evidence only\n\n#",
+        "relevance_score": 1.0
+      },
+      {
+        "evidence_id": "doc-77fa58ed",
+        "path": "tickets/change_approval_ticket.md",
+        "quote": "# Mock Change Ticket: CHG-2026-0518\n\n**Ticket ID:** CHG-2026-0518  \n**Control area:** Change Management  \n**Dataset status:** Mock evidence only\n\n## Summary\n\nDeploy documentation and reporting metadata update to producti",
+        "relevance_score": 1.0
+      },
+      {
+        "evidence_id": "doc-a1e9a5a7",
+        "path": "evidence/mfa_rollout_evidence.md",
+        "quote": "Human review is recommended if the question asks whether MFA evidence is fully sufficient for access control.",
+        "relevance_score": 1.0
+      }
+    ],
+    "evidence_ids": [
+      "doc-61e1c1bd",
+      "doc-fdfbdd11",
+      "doc-77fa58ed",
+      "doc-a1e9a5a7"
+    ],
+    "evidence_summary": "The change was labeled low risk in the approval summary, but the linked ticket contains an unresolved note asking whether secondary approval was required. The agent should compare this file with `tickets/change_approval_ticket.md` and `logs/deployment_log.json`. ## Reviewer note ... # Change Management Policy **Document ID:** POL-CHANGE-001 **Control area:** Change Management **Mock owner:** Engineering Governance **Mock effective date:** 2026-01-20 **Dataset status:** Mock evidence only ## Purpose This mock policy defines change-approval expectations for th... # Mock Change Ticket: CHG-2026-0518 **Ticket ID:** CHG-2026-0518 **Control area:** Change Management **Dataset status:** Mock evidence only ## Summary Deploy documentation and reporting metadata update to production. ## Risk classification Low risk, pending final confirmation. ##... Human review is recommended if the question asks",
+    "failure_modes": [
+      "human_review_required_before_audit_use"
+    ],
+    "framework": "adk",
+    "gaps": [
+      "Secondary approval status remains ambiguous."
+    ],
+    "human_review_required": true,
+    "question": "Is the production deploy approval evidence sufficient?",
+    "recommended_next_action": "Complete simulated human review before using this result in a portfolio narrative.",
+    "risk_level": "low",
+    "tool_calls": [
+      {
+        "error": null,
+        "latency_ms": 3,
+        "status": "success",
+        "tool": "load_evidence_corpus"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "classify_question"
+      },
+      {
+        "error": null,
+        "latency_ms": 2,
+        "status": "success",
+        "tool": "search_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "summarize_document"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "score_evidence"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "human_review_checkpoint"
+      },
+      {
+        "error": null,
+        "latency_ms": 0,
+        "status": "success",
+        "tool": "generate_report"
+      }
+    ]
+  }
+]
