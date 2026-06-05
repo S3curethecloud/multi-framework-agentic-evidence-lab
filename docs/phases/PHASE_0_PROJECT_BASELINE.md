@@ -1,6 +1,6 @@
 # Phase 0 - Project Baseline / Governance Boundary
 
-**Status:** Implementation In Progress
+**Status:** Evidence Recorded
 
 ## Goal
 
@@ -27,23 +27,22 @@ Phase 0 must not implement framework-specific agents.
 
 Phase 0 must not add real customer evidence, credentials, production integrations, live backend calls, token issuance, authorization behavior, runtime session creation, provider mutation, Kubernetes mutation, production enforcement, or SOC 2 certification claims.
 
-## Phase 0 verification command
+## Verification command
 
 ```bash
 python tools/verify_phase_0.py
 ```
 
-## Expected verification output
+## Verification result
 
-The verification printout must show:
+Phase 0 verification passed after correcting the initial false-positive forbidden-claim scanner.
 
-- all required baseline files present;
-- all required directories present;
-- forbidden claims absent;
-- framework implementation files absent;
-- phase tracker present;
-- pass/fail summary.
+The scanner now checks positive unsafe claim patterns while allowing negative boundary wording such as statements that the lab must not claim certification or enforcement.
 
 ## Evidence
 
-Phase 0 evidence is recorded after the verification printout is clean and reviewed.
+- Verification printout: `docs/verification/PHASE_0_VERIFICATION_PRINTOUT.txt`
+- Required baseline files present: true
+- Required directories present: true
+- Forbidden positive-claim scan passed: true
+- Framework implementation files absent before scoped phases: true

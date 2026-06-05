@@ -33,20 +33,22 @@ PASS dir  docs/phases
 PASS dir  docs/verification
 PASS dir  tools
 
-FORBIDDEN CLAIM SCAN
-FAIL claim 'soc 2 certified' found in ['tools/verify_phase_0.py']
-FAIL claim 'soc2 certified' found in ['tools/verify_phase_0.py']
-FAIL claim 'type 2 certified' found in ['tools/verify_phase_0.py']
-FAIL claim 'independent audit completed' found in ['tools/verify_phase_0.py']
-FAIL claim 'production operating effectiveness proven' found in ['tools/verify_phase_0.py']
-FAIL claim 'live enforcement active' found in ['tools/verify_phase_0.py']
-FAIL claim 'production enforcement active' found in ['tools/verify_phase_0.py']
-FAIL claim 'tokens issued' found in ['tools/verify_phase_0.py']
-FAIL claim 'authorization granted' found in ['tools/verify_phase_0.py']
-FAIL claim 'runtime sessions created' found in ['tools/verify_phase_0.py']
-FAIL claim 'kubernetes mutation enabled' found in ['tools/verify_phase_0.py']
-FAIL claim 'provider mutation enabled' found in ['tools/verify_phase_0.py']
-FAIL claim 'sentinel bypass' found in ['AGENTS.md', 'GOVERNANCE_NOTES.md', 'tools/verify_phase_0.py']
+FORBIDDEN POSITIVE CLAIM SCAN
+PASS positive claim absent: soc 2 certified: true
+PASS positive claim absent: soc2 certified: true
+PASS positive claim absent: soc2_certified: true
+PASS positive claim absent: soc_2_certified: true
+PASS positive claim absent: type 2 certified: true
+PASS positive claim absent: independent audit completed: true
+PASS positive claim absent: production operating effectiveness proven: true
+PASS positive claim absent: live enforcement active: true
+PASS positive claim absent: production enforcement active: true
+PASS positive claim absent: tokens issued: true
+PASS positive claim absent: authorization granted: true
+PASS positive claim absent: runtime sessions created: true
+PASS positive claim absent: kubernetes mutation enabled: true
+PASS positive claim absent: provider mutation enabled: true
+PASS positive claim absent: sentinel bypass: true
 
 FRAMEWORK IMPLEMENTATION GUARD
 PASS implementation not present yet: langchain_lab/agent.py
@@ -54,18 +56,9 @@ PASS implementation not present yet: langgraph_lab/graph.py
 PASS implementation not present yet: strands_lab/agent.py
 PASS implementation not present yet: adk_lab/agent.py
 
+CONSISTENCY NOTES
+PASS Phase 0 is baseline-only; no framework implementation files are present.
+PASS Governance boundary wording is allowed when written as a negative restriction.
+
 SUMMARY
-ERROR Forbidden claim found: soc 2 certified
-ERROR Forbidden claim found: soc2 certified
-ERROR Forbidden claim found: type 2 certified
-ERROR Forbidden claim found: independent audit completed
-ERROR Forbidden claim found: production operating effectiveness proven
-ERROR Forbidden claim found: live enforcement active
-ERROR Forbidden claim found: production enforcement active
-ERROR Forbidden claim found: tokens issued
-ERROR Forbidden claim found: authorization granted
-ERROR Forbidden claim found: runtime sessions created
-ERROR Forbidden claim found: kubernetes mutation enabled
-ERROR Forbidden claim found: provider mutation enabled
-ERROR Forbidden claim found: sentinel bypass
-RESULT: FAIL
+RESULT: PASS
