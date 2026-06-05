@@ -1,0 +1,71 @@
+PHASE 0 VERIFICATION PRINTOUT
+Project: Multi-Framework Agentic Evidence Lab
+Expected status: Phase 0 / Project Baseline
+
+REQUIRED FILES
+PASS file README.md
+PASS file AGENTS.md
+PASS file ARCHITECTURE.md
+PASS file GOVERNANCE_NOTES.md
+PASS file EVALUATION_RUBRIC.md
+PASS file RUNBOOK.md
+PASS file docs/phases/PHASE_TRACKER.md
+PASS file docs/phases/PHASE_0_PROJECT_BASELINE.md
+PASS file shared/README.md
+PASS file data/README.md
+PASS file results/README.md
+PASS file tools/verify_phase_0.py
+
+REQUIRED DIRECTORIES
+PASS dir  shared
+PASS dir  data/policies
+PASS dir  data/evidence
+PASS dir  data/logs
+PASS dir  data/tickets
+PASS dir  langchain_lab
+PASS dir  langgraph_lab
+PASS dir  strands_lab
+PASS dir  adk_lab
+PASS dir  results/traces
+PASS dir  results/reports
+PASS dir  results/screenshots
+PASS dir  docs/phases
+PASS dir  docs/verification
+PASS dir  tools
+
+FORBIDDEN CLAIM SCAN
+FAIL claim 'soc 2 certified' found in ['tools/verify_phase_0.py']
+FAIL claim 'soc2 certified' found in ['tools/verify_phase_0.py']
+FAIL claim 'type 2 certified' found in ['tools/verify_phase_0.py']
+FAIL claim 'independent audit completed' found in ['tools/verify_phase_0.py']
+FAIL claim 'production operating effectiveness proven' found in ['tools/verify_phase_0.py']
+FAIL claim 'live enforcement active' found in ['tools/verify_phase_0.py']
+FAIL claim 'production enforcement active' found in ['tools/verify_phase_0.py']
+FAIL claim 'tokens issued' found in ['tools/verify_phase_0.py']
+FAIL claim 'authorization granted' found in ['tools/verify_phase_0.py']
+FAIL claim 'runtime sessions created' found in ['tools/verify_phase_0.py']
+FAIL claim 'kubernetes mutation enabled' found in ['tools/verify_phase_0.py']
+FAIL claim 'provider mutation enabled' found in ['tools/verify_phase_0.py']
+FAIL claim 'sentinel bypass' found in ['AGENTS.md', 'GOVERNANCE_NOTES.md', 'tools/verify_phase_0.py']
+
+FRAMEWORK IMPLEMENTATION GUARD
+PASS implementation not present yet: langchain_lab/agent.py
+PASS implementation not present yet: langgraph_lab/graph.py
+PASS implementation not present yet: strands_lab/agent.py
+PASS implementation not present yet: adk_lab/agent.py
+
+SUMMARY
+ERROR Forbidden claim found: soc 2 certified
+ERROR Forbidden claim found: soc2 certified
+ERROR Forbidden claim found: type 2 certified
+ERROR Forbidden claim found: independent audit completed
+ERROR Forbidden claim found: production operating effectiveness proven
+ERROR Forbidden claim found: live enforcement active
+ERROR Forbidden claim found: production enforcement active
+ERROR Forbidden claim found: tokens issued
+ERROR Forbidden claim found: authorization granted
+ERROR Forbidden claim found: runtime sessions created
+ERROR Forbidden claim found: kubernetes mutation enabled
+ERROR Forbidden claim found: provider mutation enabled
+ERROR Forbidden claim found: sentinel bypass
+RESULT: FAIL
