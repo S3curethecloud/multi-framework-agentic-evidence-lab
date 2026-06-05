@@ -1,0 +1,23 @@
+{
+  "log_id": "LOG-ACCESS-REVIEW-001",
+  "control_area": "Access Control",
+  "dataset_status": "mock_evidence_only",
+  "review_period": "2026-Q1",
+  "review_started_at": "2026-04-01T09:00:00Z",
+  "review_exported_at": "2026-04-03T17:00:00Z",
+  "reviewer_identity": null,
+  "reviewer_approval_timestamp": null,
+  "groups_reviewed": [
+    "prod-admins",
+    "security-admins",
+    "break-glass"
+  ],
+  "exceptions": [
+    {
+      "account": "breakglass-02@example.invalid",
+      "issue": "owner confirmed but compensating control evidence missing",
+      "closure_status": "open"
+    }
+  ],
+  "known_gap": "Reviewer identity and approval timestamp are absent. One exception remains open."
+}

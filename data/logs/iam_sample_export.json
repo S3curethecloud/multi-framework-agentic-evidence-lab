@@ -1,0 +1,41 @@
+{
+  "log_id": "LOG-IAM-001",
+  "control_area": "Access Control",
+  "mock_capture_date": "2026-05-20T12:00:00Z",
+  "dataset_status": "mock_evidence_only",
+  "users": [
+    {
+      "user": "employee.admin@example.invalid",
+      "user_type": "employee",
+      "privileged": true,
+      "mfa_enrolled": true,
+      "owner": "security-governance@example.invalid",
+      "expiration_date": null
+    },
+    {
+      "user": "breakglass-01@example.invalid",
+      "user_type": "break_glass",
+      "privileged": true,
+      "mfa_enrolled": true,
+      "owner": "security-governance@example.invalid",
+      "compensating_control_documented": true
+    },
+    {
+      "user": "breakglass-02@example.invalid",
+      "user_type": "break_glass",
+      "privileged": true,
+      "mfa_enrolled": false,
+      "owner": "security-governance@example.invalid",
+      "compensating_control_documented": false
+    },
+    {
+      "user": "contractor.analytics@example.invalid",
+      "user_type": "contractor",
+      "privileged": false,
+      "mfa_enrolled": false,
+      "owner": "data-platform@example.invalid",
+      "expiration_date": null
+    }
+  ],
+  "known_gap": "One contractor account lacks MFA and expiration date. One break-glass account lacks compensating control documentation."
+}

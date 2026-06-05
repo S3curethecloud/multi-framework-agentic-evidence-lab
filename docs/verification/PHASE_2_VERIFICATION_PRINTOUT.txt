@@ -1,0 +1,79 @@
+PHASE 2 VERIFICATION PRINTOUT
+Project: Multi-Framework Agentic Evidence Lab
+Expected status: Phase 2 / Mock SOC 2 Evidence Dataset
+
+REQUIRED FILES
+PASS file data/README.md
+PASS file data/policies/access_control_policy.md
+PASS file data/policies/change_management_policy.md
+PASS file data/policies/incident_response_policy.md
+PASS file data/evidence/mfa_rollout_evidence.md
+PASS file data/evidence/privileged_access_review.md
+PASS file data/evidence/terminated_user_access_removal.md
+PASS file data/evidence/production_deploy_approval.md
+PASS file data/logs/iam_sample_export.json
+PASS file data/logs/access_review_log.json
+PASS file data/logs/deployment_log.json
+PASS file data/tickets/jira_access_review_ticket.md
+PASS file data/tickets/change_approval_ticket.md
+PASS file docs/phases/PHASE_2_MOCK_SOC2_EVIDENCE_DATASET.md
+PASS file tools/verify_phase_2.py
+
+PYTHON SYNTAX
+PASS syntax tools/verify_phase_2.py
+
+JSON VALIDITY
+PASS json data/logs/iam_sample_export.json
+PASS json data/logs/access_review_log.json
+PASS json data/logs/deployment_log.json
+
+DATASET IDENTIFIERS
+PASS identifier POL-ACCESS-001
+PASS identifier POL-CHANGE-001
+PASS identifier POL-IR-001
+PASS identifier EV-ACCESS-MFA-001
+PASS identifier EV-ACCESS-PAR-001
+PASS identifier EV-ACCESS-TERM-001
+PASS identifier EV-CHANGE-DEPLOY-001
+PASS identifier LOG-IAM-001
+PASS identifier LOG-ACCESS-REVIEW-001
+PASS identifier LOG-DEPLOY-001
+PASS identifier SEC-2026-0412
+PASS identifier CHG-2026-0518
+
+INTENTIONAL GAP MARKERS
+PASS gap marker present: reviewer identity is missing
+PASS gap marker present: approval timestamp is missing
+PASS gap marker present: compensating control evidence missing
+PASS gap marker present: contractor account is missing an expiration date
+PASS gap marker present: Final privileged group removal confirmation is absent
+PASS gap marker present: secondary approval was required
+PASS gap marker present: tabletop exercise evidence
+
+SHARED LOADER CHECK
+PASS loaded document count 13
+PASS document kind policy
+PASS document kind evidence
+PASS document kind log
+PASS document kind ticket
+
+RETRIEVAL SMOKE CHECK
+PASS access-control retrieval returns relevant evidence
+PASS change-management retrieval returns relevant evidence
+
+FORBIDDEN POSITIVE CLAIM SCAN
+PASS no unsafe positive claim patterns found
+
+FRAMEWORK IMPLEMENTATION GUARD
+PASS implementation not present yet: langchain_lab/agent.py
+PASS implementation not present yet: langgraph_lab/graph.py
+PASS implementation not present yet: strands_lab/agent.py
+PASS implementation not present yet: adk_lab/agent.py
+
+CONSISTENCY NOTES
+PASS Phase 2 is dataset-only; no framework implementation files are present.
+PASS Dataset uses mock local evidence only.
+PASS Intentional gaps are available for human-review routing tests.
+
+SUMMARY
+RESULT: PASS

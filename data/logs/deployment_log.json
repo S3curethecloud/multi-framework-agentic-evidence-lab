@@ -1,0 +1,13 @@
+{
+  "log_id": "LOG-DEPLOY-001",
+  "control_area": "Change Management",
+  "dataset_status": "mock_evidence_only",
+  "change_ticket": "CHG-2026-0518",
+  "deployment_timestamp": "2026-05-18T17:00:00Z",
+  "target_environment": "production",
+  "deployed_by": "release-bot@example.invalid",
+  "approver": "release-manager@example.invalid",
+  "rollback_plan": "Restore previous reporting template package if validation fails.",
+  "post_deploy_validation": "Completed for homepage and report schema smoke checks.",
+  "known_gap": "Secondary approval status must be checked against the change ticket."
+}

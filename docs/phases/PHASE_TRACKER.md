@@ -1,12 +1,14 @@
 # Phase Tracker
 
-**Project:** Multi-Framework Agentic Evidence Lab
-**Repository:** `S3curethecloud/multi-framework-agentic-evidence-lab`
-**Current Status:** Phase 0 / Evidence Recorded
+**Project:** Multi-Framework Agentic Evidence Lab  
+**Repository:** `S3curethecloud/multi-framework-agentic-evidence-lab`  
+**Current Status:** Phase 2 / Evidence Recorded
 
 ## Phase 0 - Project Baseline / Governance Boundary
 
 **Goal:** Establish the repository structure, phase model, governance boundary, and verification discipline.
+
+**Status:** Evidence Recorded
 
 ### Checklist
 
@@ -21,32 +23,74 @@
 - [x] Phase 0 verification passed
 - [x] Phase 0 evidence recorded
 
-### Exit criteria
-
-- [x] Required baseline files exist
-- [x] Required directories exist
-- [x] Forbidden positive-claim scan passes
-- [x] No framework implementation is present before Phase 1
-- [x] User verification checkpoint prepared
-
 ### Evidence
 
 - Phase 0 verification printout: `docs/verification/PHASE_0_VERIFICATION_PRINTOUT.txt`
-- Local commit: `Initialize lab baseline and governance boundary`
-- Local commit: `Record Phase 0 verification printout`
-- Correction commit: `Fix Phase 0 verification false positives`
+- Phase 0 closure commit present in repository history.
 
 ## Phase 1 - Shared Foundation / Schemas / Tracing
 
 **Goal:** Create shared schemas, document model, retrieval contract, benchmark questions, trace envelope, and evaluation harness.
 
-**Status:** Ready to plan after user verification
+**Status:** Evidence Recorded
+
+### Checklist
+
+- [x] Shared schemas created
+- [x] Shared document loader created
+- [x] Shared retrieval helper created
+- [x] Benchmark questions created
+- [x] Evaluation helper created
+- [x] Trace envelope helper created
+- [x] Phase 1 verification script created
+- [x] Phase 1 verification passed
+- [x] Phase 1 evidence recorded
+
+### Evidence
+
+- Phase 1 document: `docs/phases/PHASE_1_SHARED_FOUNDATION.md`
+- Phase 1 verification printout: `docs/verification/PHASE_1_VERIFICATION_PRINTOUT.txt`
 
 ## Phase 2 - Mock SOC 2 Evidence Dataset
 
 **Goal:** Add mock policies, evidence, logs, and tickets with intentional evidence gaps.
 
-**Status:** Not started
+**Status:** Evidence Recorded
+
+### Checklist
+
+- [x] Access control policy created
+- [x] Change management policy created
+- [x] Incident response policy created
+- [x] MFA rollout evidence created
+- [x] Privileged access review evidence created
+- [x] Terminated-user access removal evidence created
+- [x] Production deploy approval evidence created
+- [x] IAM sample export created
+- [x] Access review log created
+- [x] Deployment log created
+- [x] Access review ticket created
+- [x] Change approval ticket created
+- [x] Dataset boundary documented
+- [x] Intentional evidence gaps documented
+- [x] Phase 2 verification script created
+- [x] Phase 2 verification passed
+- [x] Phase 2 evidence recorded
+
+### Exit criteria
+
+- [x] Required dataset files exist
+- [x] Mock evidence boundary is present
+- [x] Intentional gaps are present
+- [x] Shared document loader can load dataset files
+- [x] Retrieval can find access-control and change-management evidence
+- [x] Forbidden positive-claim scan passes
+- [x] No framework implementation is present before Phase 3
+
+### Evidence
+
+- Phase 2 document: `docs/phases/PHASE_2_MOCK_SOC2_EVIDENCE_DATASET.md`
+- Phase 2 verification printout: `docs/verification/PHASE_2_VERIFICATION_PRINTOUT.txt`
 
 ## Phase 3 - LangChain Baseline Agent
 
